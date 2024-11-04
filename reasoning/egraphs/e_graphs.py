@@ -33,9 +33,9 @@ class EGraph:
         self.next_id = 0
 
     def _get_next_eclass_id(self):
-        while True:
-            yield self.next_id
-            self.next_id += 1
+        id_ = self.next_id
+        self.next_id += 1
+        return id_
 
     def add(self, enode):
         if enode in self.enode_to_eclass_id:
@@ -48,7 +48,7 @@ class EGraph:
         self.classes[eclass_id] = EClass(eclass_id)
         self.classes[eclass_id].nodes.add(enode)
         self.enode_to_eclass_id[enode] = eclass_id
-        self.parents[eclass_id] = eclass_id 
+        self.parents[eclass_id] = eclass_id
     
         # Skip merging for constant nodes
         if not enode.args:
@@ -211,7 +211,38 @@ def test_egraph_multiplication_optimization():
 
     return egraph 
 
+def test_loop_equivalence():
+    egraph = EGraph()
+
+    var = lambda name: egraph.add(ENode(name, ()))
+    const = lambda x: egraph.add(ENode(str(x), ()))
+
+    x = var('x')
+    one = const('1')
+
+    mult1 = lambda y: egraph.add(ENode('*', (one, y)))
+    mult1x = mult1(x)
+    mult11x = mult1(mult1x)
+    mult111x = mult1(mult11x)
+    mult1111x = mult1(mult111x)
+
+    # Set 1*x = x 
+    egraph.union(mult1x, x)
+
+    egraph.rebuild()
+
+    # These should all be equivalent
+    assert egraph.find(mult1x) == egraph.find(x)
+    assert egraph.find(mult11x) == egraph.find(mult111x)
+    assert egraph.find(mult1111x) == egraph.find(mult111x)
+
+    print(egraph.extract(mult1111x)) # Prints x
+
+    return egraph
+
+
 
 if __name__ == "__main__":
     test_egraph_arithmetic()
     test_egraph_multiplication_optimization()
+    test_loop_equivalence()

@@ -2,9 +2,10 @@
 # See this component's README.md and the repository AI_NOTICE.md before relying on results.
 """Tests for selectorate theory module (channel-based model)."""
 
+import pytest
 import torch
 from .selectorate import (
-    SelectorateModel, p_min_composed, total_attenuation,
+    SelectorateModel, p_min_composed, total_attenuation, r_eff_from_levels,
     decision_count, channel_coefficients, democratic_region,
 )
 
@@ -78,24 +79,67 @@ def test_composition_two_level():
     print("[ok] two-level composition")
 
 
-def test_composition_exponential():
-    """p_min grows exponentially with hierarchy depth."""
-    top = SelectorateModel(W=10.0, S=100.0, B=100.0)
-    tau = 1.0 / 0.9
-    for n_sub in [1, 2, 4, 9]:
-        subs = [SelectorateModel(W=10.0, S=100.0) for _ in range(n_sub)]
-        p = p_min_composed(top, *subs).item()
-        expected = 10.0 * tau ** n_sub
-        assert abs(p - expected) < 1e-2, f"n={n_sub}: {p} vs {expected}"
-    print("[ok] exponential growth with depth")
+def test_composition_continued_fraction():
+    expected = {1: 10.0, 2: 100/9, 3: 11.25, 30: 50*(1-0.6**0.5)}
+    for depth, value in expected.items():
+        levels = [SelectorateModel(W=10, S=100, B=100).double() for _ in range(depth)]
+        assert p_min_composed(*levels).item() == pytest.approx(value, abs=1e-11)
 
 
-def test_total_attenuation():
-    """Product of kappa values."""
-    subs = [SelectorateModel(W=10.0, S=100.0) for _ in range(3)]
-    kappa = total_attenuation(*subs).item()
-    assert abs(kappa - 0.9 ** 3) < 1e-4
-    print("[ok] total attenuation")
+def test_unequal_levels_and_attenuation():
+    # .2/(1 - .3/(1 - .1)) = .3; reverse order yields .16.
+    levels = [SelectorateModel(W=w, S=10, B=100).double() for w in (2, 3, 1)]
+    assert p_min_composed(*levels).item() == pytest.approx(30)
+    assert p_min_composed(*reversed(levels)).item() == pytest.approx(16)
+    assert total_attenuation(*levels[1:]).item() == pytest.approx(2/3)
+    assert total_attenuation().item() == 1
+    assert total_attenuation(*[SelectorateModel() for _ in range(3)]).item() == pytest.approx(.8875)
+
+
+def test_boundaries_and_budget():
+    full = SelectorateModel(W=1, S=1, B=100)
+    assert p_min_composed(full).item() == 100
+    with pytest.raises(ValueError, match="attenuation"):
+        p_min_composed(SelectorateModel(), full)
+    with pytest.raises(ValueError, match="attenuation"):
+        full.tau()
+    levels = [SelectorateModel(W=w, S=10, B=100).double() for w in (9, 2)]
+    # A finite but over-budget requirement is reported, not silently capped.
+    assert p_min_composed(*levels).item() == pytest.approx(112.5)
+    with pytest.raises(ValueError, match="attenuation"):
+        p_min_composed(SelectorateModel(), *levels)
+    with pytest.raises(ValueError, match="attenuation"):
+        total_attenuation(*levels)
+    with pytest.raises(ValueError, match="one level"):
+        r_eff_from_levels()
+    assert p_min_composed(SelectorateModel(B=0)).item() == 0
+
+
+@pytest.mark.parametrize("kwargs", [{"W":0}, {"W":-1}, {"W":101}, {"S":0}, {"B":-1}, {"B":float("inf")}, {"W":float("nan")}])
+def test_invalid_parameters(kwargs):
+    with pytest.raises(ValueError):
+        SelectorateModel(**kwargs)
+
+
+def test_nested_gradients_and_dtype():
+    levels = [SelectorateModel(W=w, S=10, B=100).double() for w in (2, 3, 1)]
+    result = p_min_composed(*levels)
+    assert result.dtype == torch.float64 and result.ndim == 0
+    result.backward()
+    for level in levels:
+        analytic = level.W.grad.item()
+        with torch.no_grad():
+            original = level.W.item()
+            level.W.fill_(original + 1e-5)
+            plus = p_min_composed(*levels).item()
+            level.W.fill_(original - 1e-5)
+            minus = p_min_composed(*levels).item()
+            level.W.fill_(original)
+        assert analytic == pytest.approx((plus-minus)/2e-5, rel=1e-8)
+    with torch.no_grad():
+        levels[1].W.fill_(-1)
+    with pytest.raises(ValueError):
+        p_min_composed(*levels)
 
 
 def test_democratic_sub_costs_more():
@@ -163,8 +207,8 @@ if __name__ == "__main__":
     test_tau_and_kappa()
     test_composition_flat()
     test_composition_two_level()
-    test_composition_exponential()
-    test_total_attenuation()
+    test_composition_continued_fraction()
+    test_unequal_levels_and_attenuation()
     test_democratic_sub_costs_more()
     test_channel_coefficients()
     test_democratic_region()

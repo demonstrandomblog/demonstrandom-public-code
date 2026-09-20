@@ -1,29 +1,45 @@
 {
-  "status": "Source recovery records for the six-component distribution; not a claim of complete historical authorship review.",
+  "status": "Source recovery and prepared-file records for the nine-component distribution; not a complete historical authorship review.",
   "recovered_components": [
     {
       "source": "analysis/public-code-comment-review-20260920/candidates/games/selectorate/selectorate.py",
       "destination": "games/selectorate/selectorate.py",
       "source_sha256": "f7e6d78f6d7cd74cec16e16dfd9caea88c06e8b102ae6fe968b0c425354cb3f4",
-      "prepared_sha256": "bd25c831d32a325bb746c2cf6e176d42faab986682e62b4893c4b407ff7af238"
+      "prepared_sha256": "568eb54c3dc07908c95dfd7961de57a9bd37ead06e9601a02aadcffc827433d8",
+      "earlier_prepared_sha256": [
+        "bd25c831d32a325bb746c2cf6e176d42faab986682e62b4893c4b407ff7af238"
+      ],
+      "update": "2026-09-20 hierarchy/canonicalization correctness repair; see ARTICLE_DIFFERENCES.md"
     },
     {
       "source": "analysis/public-code-comment-review-20260920/candidates/games/selectorate/test_selectorate.py",
       "destination": "games/selectorate/test_selectorate.py",
       "source_sha256": "60ae93e6cef0942ee83ec2ebbd3e2d91138343a44febd056a765a6a168799e35",
-      "prepared_sha256": "fb736a60f0c40b52be2ecaaea132c33838fe8d621b037c0dfbbdda1d761d3daf"
+      "prepared_sha256": "005d7edf61376446cfb9959a91fef974a9f5ee981d236bdf7dbb9d67ab7d028f",
+      "earlier_prepared_sha256": [
+        "fb736a60f0c40b52be2ecaaea132c33838fe8d621b037c0dfbbdda1d761d3daf"
+      ],
+      "update": "2026-09-20 hierarchy/canonicalization correctness repair; see ARTICLE_DIFFERENCES.md"
     },
     {
       "source": "analysis/public-code-comment-review-20260920/candidates/games/selectorate/__init__.py",
       "destination": "games/selectorate/__init__.py",
       "source_sha256": "57d1ae9f23c975790a7dea76dcd02dce9fb4fdc8ce82debe2626f5c110e9da56",
-      "prepared_sha256": "107cef0bc302f3f0d4ea13a169fbef1c9ba60b6e928d0b882ae1c1cc309d4567"
+      "prepared_sha256": "c517529cb2f0f74de039de200951566379b77818d458077ce28138f6e45eaf6f",
+      "earlier_prepared_sha256": [
+        "107cef0bc302f3f0d4ea13a169fbef1c9ba60b6e928d0b882ae1c1cc309d4567"
+      ],
+      "update": "2026-09-20 hierarchy/canonicalization correctness repair; see ARTICLE_DIFFERENCES.md"
     },
     {
       "source": "analysis/public-code-comment-review-20260920/candidates/games/games/robinson_goforth.py",
       "destination": "games/canonicalization/robinson_goforth.py",
       "source_sha256": "dee88080652cb30da90cd8fe754a0b3970b151fe3efb064c9ee8d80fbc08e9f5",
-      "prepared_sha256": "8d22d51c7975b4d20fb20653896a06d9040b4576b9da486985d033ac2a44c4ff"
+      "prepared_sha256": "057f8c7a09bf1035c596464ce333ce2f10de7fe7790d889a447c7f5dc5464125",
+      "earlier_prepared_sha256": [
+        "8d22d51c7975b4d20fb20653896a06d9040b4576b9da486985d033ac2a44c4ff"
+      ],
+      "update": "2026-09-20 hierarchy/canonicalization correctness repair; see ARTICLE_DIFFERENCES.md"
     },
     {
       "source": "analysis/public-code-comment-review-20260920/candidates/games/games/test_games.py",
@@ -73,6 +89,41 @@
       "source_sha256": "70e52c429ed608253b8409f3c0fa9d77a7eeeca5fe2926b755dc5ace88bcc7aa",
       "prepared_sha256": "83f3799810eff9bab08f130c2567aea26cce2299dae31ebba254ccfd466bc0d3",
       "changes": "Retained comment cleanup and explicit Arnoldi stub; fixed heat-diffusion step-size wiring; stripped trailing whitespace."
+    },
+    {
+      "source": "analysis/post-code-inventory-20260920/branch-sources/research-checkpoint-2026-08-02/inspection_bias/persistence.py",
+      "source_revision": "19d1371",
+      "destination": "inspection_bias/persistence.py",
+      "source_sha256": "82e0edbdaa24ac9fbdc212d0f0af7278ef2608e9e87759e5572e3652daf179ac",
+      "prepared_sha256": "d028771fb24ab4e5a0d07be082d53c0f5c499ff9b10c18ee5861014697110d70"
+    },
+    {
+      "source": "analysis/post-code-inventory-20260920/branch-sources/research-checkpoint-2026-08-02/inspection_bias/fit.py",
+      "source_revision": "19d1371",
+      "destination": "inspection_bias/fit.py",
+      "source_sha256": "882bc3add12c7443cda563cb0e3fdab41a12ec86838d4086cb7608911d417361",
+      "prepared_sha256": "b8f84d161fa679fb7febe839fc8fb2fdfa5796dbaaaf279ffcb35f084495f605"
+    },
+    {
+      "source": "analysis/post-code-inventory-20260920/branch-sources/research-checkpoint-2026-08-02/art_and_info/hamming_radius_plot.py",
+      "source_revision": "19d1371",
+      "destination": "art_and_info/hamming_radius_plot.py",
+      "source_sha256": "9090320a270e714216a78d44ad23a68dd47147041934bbca2e74d1f98f67191f",
+      "prepared_sha256": "f849f0781672ab4154c54054de852ee6610ba6aaac3bfcc0910889109c81541d"
+    },
+    {
+      "source": "analysis/post-code-inventory-20260920/branch-sources/research-checkpoint-2026-08-02/art_and_info/weighted_hamming_radius_plot.py",
+      "source_revision": "19d1371",
+      "destination": "art_and_info/weighted_hamming_radius_plot.py",
+      "source_sha256": "a607454759e694aa77badd9cf7f1820f5572217d60fae607450180ca1bc7645e",
+      "prepared_sha256": "a95a0653790c5ca907f6c64d862e3a3662f27d71a49d61e2f5483b2af71969c7"
+    },
+    {
+      "source": "demonstrandom/theory_of_mind/posts/color_qualia_riemannian/index.qmd",
+      "destination": "color_metric/metric.py",
+      "source_sha256": "09acb6a03b73eb8346274ad99f884d3f5507208dac065f77b7757550fd300cad",
+      "prepared_sha256": "fecd63bba87a053aa0ee9de887c227fccf07cb9c50839606affe8bd4b4c92577",
+      "changes": "Functions extracted and parameterized; article-component reproduction retained; log-Euclidean interpolation added. Data and its upstream notice are separate."
     }
   ],
   "egraphs": "Current public-main teaching examples with explicitly documented collision/test cleanup.",

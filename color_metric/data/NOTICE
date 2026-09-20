@@ -1,0 +1,9 @@
+MacAdam ellipse table (25 measured ellipses, 10-step magnification).
+MacAdam, D. L. (1942), Visual Sensitivities to Color Differences in Daylight,
+Journal of the Optical Society of America 32(5), 247-274.
+Numeric table transcribed through LuxPy's macadamellipses module:
+https://ksmet1977.github.io/luxpy/build/html/_modules/luxpy/color/deltaE/macadamellipses.html
+Copyright (C) 2017 Kevin A.G. Smet. Upstream source: GPL-3.0; see LICENSE.
+The transcribed table is stored as JSON; no LuxPy executable code is bundled.
+This third-party table is excluded from the repository's original-code license.
+The article also cites Wyszecki & Stiles (1982), Color Science, Table 5(5.4.1).

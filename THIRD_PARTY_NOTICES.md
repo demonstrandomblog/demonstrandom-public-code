@@ -5,8 +5,9 @@ assets, and dependencies retain their own licenses and required notices.
 
 ## Current distribution
 
-The source includes the six components listed in README.md. Dependencies are
-installed separately; no third-party runtime package or artwork is bundled.
+The source includes the components listed in README.md. Dependencies are
+installed separately; no third-party runtime package or artwork is bundled. The two numerical tables
+below retain their source notices.
 EGraphs uses the Python standard library. The game components use PyTorch,
 NumPy, SciPy, SymPy, and torchsort as listed in their requirements; game control
 uses z3-solver for its optional polynomial solver and full verification suite.
@@ -25,6 +26,14 @@ limitations and the source provenance records.
 Linked articles, papers, and implementations remain separate works. A reference
 does not grant rights to copy their code, text, artwork, or data. Further provenance
 review is required before describing this collection as fully audited.
+
+## Numerical tables
+
+- Color metric: [MacAdam table notice](color_metric/data/NOTICE) and
+  [upstream GPL-3.0 license](color_metric/data/LICENSE). The JSON transcription
+  is separated from the original PolyForm-licensed analysis code.
+- Inspection bias: [Hazen-Wong Table 1 notice](inspection_bias/DATA_NOTICE.md),
+  with attribution, source link, transcription details, and CC BY-NC 4.0 terms.
 
 ## Adding or distributing third-party material
 

@@ -22,12 +22,21 @@ class SelectorateModel(nn.Module):
 
     def __init__(self, W=10.0, S=100.0, B=100.0):
         super().__init__()
-        self.W = nn.Parameter(torch.tensor(W))
-        self.S = nn.Parameter(torch.tensor(S))
-        self.B = nn.Parameter(torch.tensor(B))
+        self.W = nn.Parameter(torch.tensor(float(W)))
+        self.S = nn.Parameter(torch.tensor(float(S)))
+        self.B = nn.Parameter(torch.tensor(float(B)))
+        self._validate()
+
+    def _validate(self):
+        # Parameters may change during optimization; validate on evaluation too.
+        if not all(bool(torch.isfinite(x)) for x in (self.W, self.S, self.B)):
+            raise ValueError("W, S, and B must be finite")
+        if not bool((self.W > 0) & (self.S >= self.W) & (self.B >= 0)):
+            raise ValueError("Require 0 < W <= S and B >= 0")
 
     @property
     def r(self):
+        self._validate()
         return self.W / self.S
 
     def p_min(self):
@@ -40,7 +49,10 @@ class SelectorateModel(nn.Module):
 
     def tau(self):
         """Hierarchy tax: the cost multiplier this level imposes on the level above."""
-        return 1.0 / torch.clamp(1.0 - self.r, min=1e-8)
+        attenuation = self.kappa()
+        if bool(attenuation <= 0):
+            raise ValueError("A fully inclusive sub-level leaves no positive attenuation")
+        return 1.0 / attenuation
 
     def forward(self):
         p = self.p_min()
@@ -55,23 +67,40 @@ class SelectorateModel(nn.Module):
         )
 
 
-def p_min_composed(top, *sub_levels):
-    """Top-level p_min accounting for hierarchy attenuation.
+def r_eff_from_levels(*levels):
+    """Effective share, with levels ordered top to bottom.
 
-    Each sub-level contributes a multiplicative hierarchy tax tau_k = 1/(1-r_k).
+    Evaluate x = r_bottom, then x = r_level / (1 - x). Nonpositive
+    denominators raise ValueError. A final share above one is returned:
+    it means the required transfer exceeds the budget.
     """
-    tau_total = torch.ones(1)
-    for level in sub_levels:
-        tau_total = tau_total * level.tau()
-    return top.B * top.r * tau_total
+    if not levels:
+        raise ValueError("At least one level is required")
+    x = levels[-1].r
+    for level in reversed(levels[:-1]):
+        if bool(x >= 1):
+            raise ValueError("Sub-hierarchy leaves no positive attenuation")
+        x = level.r / (1.0 - x)
+    return x
+
+
+def p_min_composed(top, *sub_levels):
+    """Required top transfer under the article's nested hierarchy model."""
+    return top.B * r_eff_from_levels(top, *sub_levels)
 
 
 def total_attenuation(*sub_levels):
-    """Total attenuation across sub-levels: product of kappa_k = (1-r_k)."""
-    kappa_total = torch.ones(1)
-    for level in sub_levels:
-        kappa_total = kappa_total * level.kappa()
-    return kappa_total
+    """Fraction left by the entire sub-hierarchy, 1 - r_sub^eff.
+
+    An empty hierarchy returns scalar one. A nonpositive fraction raises
+    ValueError, as in p_min_composed.
+    """
+    if not sub_levels:
+        return torch.tensor(1.0)
+    attenuation = 1.0 - r_eff_from_levels(*sub_levels)
+    if bool(attenuation <= 0):
+        raise ValueError("Sub-hierarchy leaves no positive attenuation")
+    return attenuation
 
 
 def decision_count(r, s, n):
@@ -231,21 +260,25 @@ def test_composition():
         subs = [SelectorateModel(W=10.0, S=100.0) for _ in range(n_sub)]
         p = p_min_composed(top, *subs)
         kappa_tot = total_attenuation(*subs) if subs else torch.ones(1)
-        expected_p = 10.0 * expected_tau ** n_sub
+        # Independent continuant for identical ratios.
+        previous, current = 1.0, 1.0
+        for _ in range(n_sub):
+            previous, current = current, current - 0.1 * previous
+        expected_p = 10.0 * previous / current
         print(f"  n={n_sub+1} levels: p_min={p.item():.4f} "
               f"(expected {expected_p:.4f}), kappa_tot={kappa_tot.item():.6f}")
         assert abs(p.item() - expected_p) < 1e-2
-    print("  -> Exponential growth of p_min [ok]")
+    print("  -> Continued-fraction composition [ok]")
 
     # Total attenuation
     print(f"\nTotal attenuation:")
     subs_3 = [SelectorateModel(W=10.0, S=100.0) for _ in range(3)]
     kappa_3 = total_attenuation(*subs_3)
-    expected_kappa = 0.9 ** 3
+    expected_kappa = 1.0 - 0.1125
     print(f"  3 levels, r=0.1: kappa_tot = {kappa_3.item():.6f} "
           f"(expected {expected_kappa:.6f})")
     assert abs(kappa_3.item() - expected_kappa) < 1e-4
-    print("  -> Multiplicative attenuation [ok]")
+    print("  -> Nested attenuation [ok]")
 
     # Decision counts
     print(f"\nDecision counts (s=100, r=0.1):")

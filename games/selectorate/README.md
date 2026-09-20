@@ -20,7 +20,26 @@ python -m pytest -q games/selectorate
 
 ## Scope and known limitations
 
-Scaling, hierarchy, channel, and gradient checks cover the implemented model. They do not establish empirical political predictions.
+`p_min_composed(top, *subs)` now follows the article's continued fraction,
+with levels ordered top to bottom. Three ratios of 0.1 and budget 100 give
+11.25; at 30 levels the requirement is approximately 11.27017. Earlier releases
+used an incorrect product for deeper hierarchies. `total_attenuation(*subs)`
+now returns one minus the effective share of the entire sub-hierarchy.
+
+```python
+from games.selectorate import SelectorateModel, p_min_composed
+levels = [SelectorateModel(W=10, S=100, B=100) for _ in range(3)]
+p_min_composed(*levels)  # tensor(11.2500), with autograd
+```
+
+Parameters require finite `0 < W <= S` and `B >= 0`. Parameters are rechecked
+on evaluation after optimization. A nonpositive hierarchy denominator raises
+`ValueError`; it is not clamped to a tiny positive number. A finite final
+requirement above B is returned unchanged, indicating an over-budget hierarchy.
+Flat full inclusion W=S is allowed; using it as an attenuating sub-level is not.
+Scalar output follows the model's dtype/device. Gradients are retained inside
+the valid domain. Checks include unequal levels, depth, infeasibility, and
+finite-difference sensitivities.
 
 See [validation report](../../VALIDATION.md) for the exact checks and their results.
 Dependencies retain their own licenses. The original project code is covered

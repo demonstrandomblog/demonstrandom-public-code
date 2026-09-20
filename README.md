@@ -15,15 +15,19 @@ Educational and experimental code accompanying [Demonstrandom](https://demonstra
 | Component | Scope | Status |
 |---|---|---|
 | [EGraphs](reasoning/egraphs/) | Union-find, hash-consing, equality examples | Teaching implementation; collision handling and test fixtures corrected |
-| [Selectorate](games/selectorate/) | Model, hierarchy, channels, gradients | Focused tests pass |
-| [Canonicalization](games/canonicalization/) | Ordinal 2x2 game examples | Example checks pass; imports preserve caller settings |
+| [Selectorate](games/selectorate/) | Model, hierarchy, channels, gradients | Nested hierarchy repaired; independent formula and gradient checks |
+| [Canonicalization](games/canonicalization/) | Ordinal 2x2 game examples | Exact 2x2 orbit enumeration; all 576 strict games verified |
 | [Lie groups](games/geometric_controls/) | Rotations, rigid motions, trainable layers | Repaired operations; 85 checks pass within the documented scope |
 | [System identification](systems/) | DMD, EDMD, kernel DMD, SINDy, SINDyC | Seven analytic checks and demo pass; Arnoldi unimplemented |
 | [Game control](game_control/) | Engineering Game Types appendix and ten vignettes | Portable mathematical/PID/polynomial checks; human review pending |
+| [Color metric](color_metric/) | Polynomial Killing-field search | Article table reproduced; positive-definite interpolation added |
+| [Inspection bias](inspection_bias/) | Functional-information fitting draft | Four recorded fits and analytic checks reproduced |
+| [Cultural counting](art_and_info/) | Hamming/weighted counting and five overlap figures | Brute-force count checks and article example reproduced |
 
 Each component has its own dependency and run instructions. See
 [VALIDATION.md](VALIDATION.md) for checks and limitations and
 [AI_NOTICE.md](AI_NOTICE.md) for AI assistance and review status.
+[ARTICLE_DIFFERENCES.md](ARTICLE_DIFFERENCES.md) records corrections and article comparisons.
 
 ## License and terms
 

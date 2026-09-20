@@ -109,12 +109,12 @@
   },
   "runtime": {
     "python": "3.13.5",
-    "numpy": "2.3.3",
-    "scipy": "1.16.1",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "torch": "2.7.1+cu126",
+    "torch": "2.7.1+cpu",
     "z3": "5.1.0"
   },
-  "elapsed_seconds": 26.2,
-  "verified_at_utc": "2026-09-20T20:25:03Z"
+  "elapsed_seconds": 23.2,
+  "verified_at_utc": "2026-09-20T22:10:43Z"
 }

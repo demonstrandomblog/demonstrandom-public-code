@@ -70,8 +70,10 @@ checks do not establish all mathematical claims or suitability for deployment.
 The full human-review status remains pending. Release checks used CPU execution
 on Python 3.13.5 in WSL; other platforms, dependency versions, and GPU behavior
 have not been validated. A wheel installation and source-distribution checks
-used a virtual environment sharing preinstalled scientific dependencies, not
-a fresh resolution/download of all dependencies.
+now includes a new isolated environment with freshly installed dependencies:
+NumPy 2.5.3, SciPy 1.18.1, SymPy 1.14.0, PyTorch 2.7.1+cpu and z3-solver 5.1.0.0.
+CPU Torch was installed from its official CPU wheel index. The complete verifier
+also passes there; see the root [validation record](../VALIDATION.md).
 
 ## License and citation
 

@@ -1,3 +1,5 @@
+# AI-assisted research code; no blanket human or mathematical review is claimed.
+# See this component's README.md and the repository AI_NOTICE.md before relying on results.
 class UnionFind:
     def __init__(self):
         self.parent = {}
@@ -11,7 +13,7 @@ class UnionFind:
     def find(self, x):
         if self.parent[x] != x:
             # Path compression
-            self.parent[x] = self.find(self.parent[x]) 
+            self.parent[x] = self.find(self.parent[x])
         return self.parent[x]
 
     def union(self, x, y):
@@ -40,8 +42,8 @@ def test_unionfind():
     uf.union("a", "b")
     uf.union("c", "d")
 
-    # Test 
-    assert "x" == uf.find("a") 
+    # Test
+    assert "x" == uf.find("a")
     assert "x" == uf.find("b")
     assert "e" == uf.find("e")
     assert uf.find("x") == uf.find("y") # checks x ?= y

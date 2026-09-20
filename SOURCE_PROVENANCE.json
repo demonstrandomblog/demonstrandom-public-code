@@ -1,0 +1,74 @@
+{
+  "status": "Source recovery records for the four-component distribution; not a claim of complete historical authorship review.",
+  "recovered_components": [
+    {
+      "source": "analysis/public-code-comment-review-20260920/candidates/games/selectorate/selectorate.py",
+      "destination": "games/selectorate/selectorate.py",
+      "source_sha256": "f7e6d78f6d7cd74cec16e16dfd9caea88c06e8b102ae6fe968b0c425354cb3f4",
+      "prepared_sha256": "bd25c831d32a325bb746c2cf6e176d42faab986682e62b4893c4b407ff7af238"
+    },
+    {
+      "source": "analysis/public-code-comment-review-20260920/candidates/games/selectorate/test_selectorate.py",
+      "destination": "games/selectorate/test_selectorate.py",
+      "source_sha256": "60ae93e6cef0942ee83ec2ebbd3e2d91138343a44febd056a765a6a168799e35",
+      "prepared_sha256": "fb736a60f0c40b52be2ecaaea132c33838fe8d621b037c0dfbbdda1d761d3daf"
+    },
+    {
+      "source": "analysis/public-code-comment-review-20260920/candidates/games/selectorate/__init__.py",
+      "destination": "games/selectorate/__init__.py",
+      "source_sha256": "57d1ae9f23c975790a7dea76dcd02dce9fb4fdc8ce82debe2626f5c110e9da56",
+      "prepared_sha256": "107cef0bc302f3f0d4ea13a169fbef1c9ba60b6e928d0b882ae1c1cc309d4567"
+    },
+    {
+      "source": "analysis/public-code-comment-review-20260920/candidates/games/games/robinson_goforth.py",
+      "destination": "games/canonicalization/robinson_goforth.py",
+      "source_sha256": "dee88080652cb30da90cd8fe754a0b3970b151fe3efb064c9ee8d80fbc08e9f5",
+      "prepared_sha256": "8d22d51c7975b4d20fb20653896a06d9040b4576b9da486985d033ac2a44c4ff"
+    },
+    {
+      "source": "analysis/public-code-comment-review-20260920/candidates/games/games/test_games.py",
+      "destination": "games/canonicalization/test_games.py",
+      "source_sha256": "63de0e66948995327561ce698d47b981acc200c3dc36beb55c715bc13783f976",
+      "prepared_sha256": "aff74045ba0aeac0daa8a9ccf83a9af0820c6d8324d5121de77acd4305e39465"
+    },
+    {
+      "source": "code_promotion/repairs/candidates/games/geometric_controls/learnable_lie_groups.py",
+      "destination": "games/geometric_controls/learnable_lie_groups.py",
+      "source_sha256": "2a1c5708f803d46cc9fada19e5db09c61d31004034dcf3810206e92747264c6c",
+      "prepared_sha256": "fa510fd87dba72f403ea7361a85c6e89f625ff334ea29c339a789f5098ecec54"
+    },
+    {
+      "source": "code_promotion/repairs/candidates/games/geometric_controls/lie_groups.py",
+      "destination": "games/geometric_controls/lie_groups.py",
+      "source_sha256": "950eca82d910caa3e46d1d7aa9f20606d7edd57d24842d4f4099277ba7768fc9",
+      "prepared_sha256": "f98ce746af28ec5062cd6711011884d2990ee072ba8d483af4954817f12142d9"
+    },
+    {
+      "source": "code_promotion/repairs/candidates/games/geometric_controls/test_learnable_lie_groups.py",
+      "destination": "games/geometric_controls/test_learnable_lie_groups.py",
+      "source_sha256": "b2bcbf3ba6bb56233d23e2881b5757186fc19511c8e902fc8f413b1703a7d5de",
+      "prepared_sha256": "9febe4a36e2dcc800243639f848a93892062bece1f379467584d69492b3d12cc"
+    },
+    {
+      "source": "code_promotion/repairs/candidates/games/geometric_controls/test_lie_groups.py",
+      "destination": "games/geometric_controls/test_lie_groups.py",
+      "source_sha256": "e0b5568edb32663f2745bd70e5ad9aa412d8546182eeb62784df4a653aed7d8e",
+      "prepared_sha256": "117641c6eac23c317654ca4e9a6addfbc30446f94899498c8d7f2f01ab0c1e83"
+    },
+    {
+      "source": "code_promotion/repairs/candidates/games/geometric_controls/test_lie_repairs.py",
+      "destination": "games/geometric_controls/test_lie_repairs.py",
+      "source_sha256": "0595a30e622edea156cb5f151dcdf234ad6b7cbcfce2754c5a1179c3e81fed9e",
+      "prepared_sha256": "05efba44ca427c437418463a69afeb11ac90b431a860190893528c2c03475e30"
+    },
+    {
+      "source": "code_promotion/repairs/candidates/games/geometric_controls/__init__.py",
+      "destination": "games/geometric_controls/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "prepared_sha256": "5a20a04912368760c3d9fb289912ec996a3b9d3da1e9b7829405b547408b96d4"
+    }
+  ],
+  "egraphs": "Current public-main teaching examples with explicitly documented collision/test cleanup.",
+  "source_paths": "Source paths identify preserved files in the private preparation workspace, not files included in this distribution. Destination paths are relative to this repository.",
+  "prepared_hash_format": "SHA-256 of UTF-8 file bytes with LF line endings, as stored in Git; trailing source whitespace was removed with Python ASTs unchanged."
+}

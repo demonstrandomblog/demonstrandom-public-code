@@ -1,10 +1,12 @@
+# AI-assisted research code; no blanket human or mathematical review is claimed.
+# See this component's README.md and the repository AI_NOTICE.md before relying on results.
 class ENode:
     def __init__(self, op, args):
         self.op = op
         self.args = args
 
     def __eq__(self, other):
-        ops_equal = self.op == other.op 
+        ops_equal = self.op == other.op
         args_equal = self.args == other.args
         return ops_equal and args_equal
 
@@ -40,25 +42,25 @@ class EGraph:
     def add(self, enode):
         if enode in self.enode_to_eclass_id:
             return self.find(self.enode_to_eclass_id[enode])
-    
+
         # Allocate a new id
         eclass_id = self._get_next_eclass_id()
 
-        # Create a new eclass 
+        # Create a new eclass
         self.classes[eclass_id] = EClass(eclass_id)
         self.classes[eclass_id].nodes.add(enode)
         self.enode_to_eclass_id[enode] = eclass_id
         self.parents[eclass_id] = eclass_id
-    
+
         # Skip merging for constant nodes
         if not enode.args:
             return eclass_id
-        
+
         # Only union with congruent nodes
         for other_node in list(self.enode_to_eclass_id.keys()):
             ops_equal = other_node.op == enode.op
             args_equal_len = len(other_node.args) == len(enode.args)
-            
+
             if ops_equal and args_equal_len:
 
                 for arg1, arg2 in zip(other_node.args, enode.args):
@@ -72,25 +74,25 @@ class EGraph:
                     other_canonical_id = self.find(other_class)
                     union = self.union(eclass_id, other_canonical_id)
                     return union
-            
+
         return eclass_id
 
     def find(self, id_):
-        if id_ not in self.parents:  
+        if id_ not in self.parents:
             self.parents[id_] = id_
         if self.parents[id_] != id_:
             self.parents[id_] = self.find(self.parents[id_])
         return self.parents[id_]
 
-    # union by size of e-class 
+    # union by size of e-class
     def _compare_eclass_ranks(self, rep1, rep2):
         rank1 = len(self.classes[rep1].nodes)
         rank2 = len(self.classes[rep2].nodes)
         if rank2 > rank1:
             return rep2, rep1
-        else: 
+        else:
             # root1 wins ties
-            return rep1, rep2 
+            return rep1, rep2
 
     def union(self, id1, id2):
         rep1, rep2 = self.find(id1), self.find(id2)
@@ -98,7 +100,7 @@ class EGraph:
         if rep1 == rep2:
             # No need to merge if they're the same eclass
             return rep1
-        
+
         ranked_reps = self._compare_eclass_ranks(rep1, rep2)
         parent_rep, child_rep = ranked_reps
 
@@ -120,12 +122,12 @@ class EGraph:
 
         # Maintain a queue of nodes to be processed
         pending_nodes = list(self.enode_to_eclass_id.items())
-    
+
         while pending_nodes:
             enode, initial_id = pending_nodes.pop(0)
             current_id = self.find(initial_id)
             new_args = tuple(self.find(arg) for arg in enode.args)
-        
+
             if new_args != enode.args:
                 new_enode = ENode(enode.op, new_args)
 
@@ -136,7 +138,7 @@ class EGraph:
                 # Add the new enode
                 new_id = self.add(new_enode)
 
-                # Merge  
+                # Merge
                 if self.find(current_id) != self.find(new_id):
                     self.union(current_id, new_id)
 
@@ -161,7 +163,7 @@ class EGraph:
 
 
 def test_egraph_arithmetic():
-    
+
     egraph = EGraph()
 
     # Add some expressions
@@ -172,7 +174,7 @@ def test_egraph_arithmetic():
     var_x, var_y = var('x'), var('y')
     one, two, three = const(1), const(2), const(3)
     expr1 = plus(one, two)  # 1 + 2
-    expr2 = plus(two, one)  # 2 + 1 - note that this is never unioned 
+    expr2 = plus(two, one)  # 2 + 1 - note that this is never unioned
 
     egraph.union(var_x, one) # Set x = 1
     egraph.union(var_y, two) # Set y = 2
@@ -194,14 +196,14 @@ def test_egraph_multiplication_optimization():
 
     mul = lambda a, b: egraph.add(ENode('*', (a, b)))
     var = lambda name: egraph.add(ENode(name, ()))
-    
+
     x = var('x')
-    y = var('y')    
-    
+    y = var('y')
+
     c = var('c')
     expr1 = mul(x, y)
-    egraph.union(c, expr1) 
-    
+    egraph.union(c, expr1)
+
     expr2 = mul(mul(x, y), mul(x, y))
 
     egraph.rebuild()
@@ -209,7 +211,6 @@ def test_egraph_multiplication_optimization():
     print(egraph.extract(expr2)) # prints (*, 'c', 'c')
     assert egraph.extract(expr2) == egraph.extract(mul(c, c))
 
-    return egraph 
 
 def test_loop_equivalence():
     egraph = EGraph()
@@ -226,7 +227,7 @@ def test_loop_equivalence():
     mult111x = mult1(mult11x)
     mult1111x = mult1(mult111x)
 
-    # Set 1*x = x 
+    # Set 1*x = x
     egraph.union(mult1x, x)
 
     egraph.rebuild()
@@ -238,7 +239,6 @@ def test_loop_equivalence():
 
     print(egraph.extract(mult1111x)) # Prints x
 
-    return egraph
 
 
 

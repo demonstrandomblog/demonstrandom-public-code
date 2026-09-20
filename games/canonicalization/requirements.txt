@@ -1,0 +1,4 @@
+torch
+torchsort
+scipy
+pytest

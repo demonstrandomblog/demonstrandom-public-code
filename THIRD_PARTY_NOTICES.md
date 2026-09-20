@@ -5,16 +5,19 @@ assets, and dependencies retain their own licenses and required notices.
 
 ## Current distribution
 
-The source includes the four components listed in README.md. Dependencies are
+The source includes the six components listed in README.md. Dependencies are
 installed separately; no third-party runtime package or artwork is bundled.
 EGraphs uses the Python standard library. The game components use PyTorch,
-SciPy, and torchsort as listed in their requirements; NumPy is also used by
-the tests. pytest is used for verification. Those dependencies retain their
-upstream licenses.
+NumPy, SciPy, SymPy, and torchsort as listed in their requirements; game control
+uses z3-solver for its optional polynomial solver and full verification suite.
+pytest is used for verification. Those dependencies retain their upstream
+licenses.
 
 Existing AI-generation and attribution comments are preserved, including the
 GPT-generated, unreviewed trainable Lie-group layer and its tests. Historical
-provenance is not fully established for every file.
+provenance is not fully established for every file. The system-identification
+Arnoldi draft retains its Claude attribution and explicit unimplemented status.
+Game control retains the article's AI-generation disclosure.
 The stable SO(3) logarithm repair consulted PyTorch3D's rotation-conversion
 reference; PyTorch3D itself is not bundled or required. See the component's
 limitations and the source provenance records.

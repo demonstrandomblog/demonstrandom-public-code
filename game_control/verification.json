@@ -1,0 +1,120 @@
+{
+  "status": "passed",
+  "source_sha256": "aa63887c1d941b0f87c7a205a8dc3fefe163d1ee8e39583a89eb7d297bd360c6",
+  "generated_files": {
+    "src/game_control/__init__.py": "f2c86131fea07dacfe7f5dab231a18d475a7ab99ed70060afd1bef6d9c28617a",
+    "examples.py": "e558ef982486ea318c0004f3ad9c6a1ab63b5cc681789721777ae3295139320a",
+    "pyproject.toml": "842442ee5d3a68d1ed5db53d726f0dc3e77cfce2d8c3836774d97591f50f45b8"
+  },
+  "suites": {
+    "mathematical_regression": {
+      "running_family_relabelings": 24,
+      "safe_route_and_disconnected_actuator": true,
+      "robust_policy_and_interval_closure": true,
+      "lower_order_basis_elements_preserved": 72,
+      "exact_fiber_minimum_and_local_limit": true,
+      "behavioral_counterexample": true,
+      "finite_policy_states": 84,
+      "network_entries": 384,
+      "policy_entries": 324,
+      "information_obstruction_and_discovered_cubic": true
+    },
+    "pid": {
+      "exact_filter_breakpoints": [
+        "1/4",
+        "13/48",
+        "5/16",
+        "17/48",
+        "3/8"
+      ],
+      "filter_endpoint_certificates": true,
+      "full_invariant_target_checked": true,
+      "filtered_parameter_range": [
+        0.25,
+        0.375
+      ],
+      "actuator_only_peak": 0.37794537967299363,
+      "filtered_commands": 11,
+      "training_objective_before": 2.3325392904860253e-05,
+      "training_objective_after": 1.7103393310501388e-05,
+      "tuned_gains": [
+        7.494023364514925,
+        2.700398571951184,
+        0.0
+      ],
+      "autodiff_matches_finite_differences": true,
+      "relabelled_feedback_matches": true,
+      "additional_adversarial_rollouts": 8
+    },
+    "polynomial": {
+      "same_problem_as_affine_solver": "verified_optimal",
+      "nonlinear_actuator_full_invariant_target": "verified_optimal",
+      "quadratic_gram_target": "verified_optimal",
+      "interior_disturbance_full_target": "verified_optimal",
+      "algebraic_witness": "CRootOf(_root**2 - 2, 1)",
+      "nonlinear_infeasibility": "verified_infeasible",
+      "forall_over_union": "verified_optimal",
+      "unattained_minimum": "No attained minimum",
+      "unsupported_expressions_rejected": true
+    }
+  },
+  "vignette_blocks": [
+    [
+      1,
+      6
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      10,
+      1
+    ]
+  ],
+  "verifier_sources": {
+    "verify.py": "a2d38a459e4ad7f80b472f149383167e4473cfe6b84f3e9fd2cfb2e2b2569142",
+    "checks/__init__.py": "b543f7aed26d1387a00678b8bfe15c64a2d1fe181fc19fa237627381ace3eb0e",
+    "checks/mathematical.py": "6c6ff645b22b6c2404748b920231bc3a97a11fdb6e8c6059f3c7f1998d6dc762",
+    "checks/pid.py": "1026929d64adcf08924d379811d55774ef7d40f5583b5714239664b126535546",
+    "checks/polynomial.py": "019dafb65ccab1861237089f9733f584b296013986efd024ed70943c473cc8a2"
+  },
+  "runtime": {
+    "python": "3.13.5",
+    "numpy": "2.3.3",
+    "scipy": "1.16.1",
+    "sympy": "1.14.0",
+    "torch": "2.7.1+cu126",
+    "z3": "5.1.0"
+  },
+  "elapsed_seconds": 26.2,
+  "verified_at_utc": "2026-09-20T20:25:03Z"
+}

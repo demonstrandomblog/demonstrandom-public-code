@@ -1,0 +1,723 @@
+{
+  "source": "demonstrandom/game_theory/posts/engineering_game_types/index.qmd",
+  "source_sha256": "aa63887c1d941b0f87c7a205a8dc3fefe163d1ee8e39583a89eb7d297bd360c6",
+  "generator": "code_promotion/game_control/promote.py",
+  "generator_sha256": "9f109b52780a708ce0e4f181a25fc82969e2fccd0796ad6898b85ab1e47d13f9",
+  "definition_count": 103,
+  "definitions": [
+    {
+      "name": "compose_maps",
+      "kind": "FunctionDef",
+      "source_line": 1604,
+      "generated_line": 31
+    },
+    {
+      "name": "Map",
+      "kind": "ClassDef",
+      "source_line": 1608,
+      "generated_line": 34
+    },
+    {
+      "name": "Game",
+      "kind": "ClassDef",
+      "source_line": 1625,
+      "generated_line": 47
+    },
+    {
+      "name": "instantiate_game",
+      "kind": "FunctionDef",
+      "source_line": 1642,
+      "generated_line": 63
+    },
+    {
+      "name": "exact",
+      "kind": "FunctionDef",
+      "source_line": 1669,
+      "generated_line": 66
+    },
+    {
+      "name": "like",
+      "kind": "FunctionDef",
+      "source_line": 1676,
+      "generated_line": 72
+    },
+    {
+      "name": "stack",
+      "kind": "FunctionDef",
+      "source_line": 1684,
+      "generated_line": 79
+    },
+    {
+      "name": "average",
+      "kind": "FunctionDef",
+      "source_line": 1690,
+      "generated_line": 84
+    },
+    {
+      "name": "evaluate_polynomial",
+      "kind": "FunctionDef",
+      "source_line": 1721,
+      "generated_line": 89
+    },
+    {
+      "name": "polynomial",
+      "kind": "FunctionDef",
+      "source_line": 1732,
+      "generated_line": 99
+    },
+    {
+      "name": "subsets",
+      "kind": "FunctionDef",
+      "source_line": 1795,
+      "generated_line": 103
+    },
+    {
+      "name": "effect",
+      "kind": "FunctionDef",
+      "source_line": 1799,
+      "generated_line": 106
+    },
+    {
+      "name": "recipient",
+      "kind": "FunctionDef",
+      "source_line": 1808,
+      "generated_line": 114
+    },
+    {
+      "name": "average_relabelings",
+      "kind": "FunctionDef",
+      "source_line": 1857,
+      "generated_line": 117
+    },
+    {
+      "name": "reynolds",
+      "kind": "FunctionDef",
+      "source_line": 1861,
+      "generated_line": 120
+    },
+    {
+      "name": "flatten_payoffs",
+      "kind": "FunctionDef",
+      "source_line": 1868,
+      "generated_line": 123
+    },
+    {
+      "name": "payoff_polynomial",
+      "kind": "FunctionDef",
+      "source_line": 1872,
+      "generated_line": 126
+    },
+    {
+      "name": "contract_moment",
+      "kind": "FunctionDef",
+      "source_line": 1897,
+      "generated_line": 129
+    },
+    {
+      "name": "moment",
+      "kind": "FunctionDef",
+      "source_line": 1904,
+      "generated_line": 135
+    },
+    {
+      "name": "gram",
+      "kind": "FunctionDef",
+      "source_line": 1909,
+      "generated_line": 139
+    },
+    {
+      "name": "expected",
+      "kind": "FunctionDef",
+      "source_line": 1930,
+      "generated_line": 142
+    },
+    {
+      "name": "Constraint",
+      "kind": "ClassDef",
+      "source_line": 1967,
+      "generated_line": 150
+    },
+    {
+      "name": "Region",
+      "kind": "ClassDef",
+      "source_line": 1973,
+      "generated_line": 155
+    },
+    {
+      "name": "subtract_target",
+      "kind": "FunctionDef",
+      "source_line": 2033,
+      "generated_line": 214
+    },
+    {
+      "name": "ge",
+      "kind": "FunctionDef",
+      "source_line": 2037,
+      "generated_line": 217
+    },
+    {
+      "name": "eq",
+      "kind": "FunctionDef",
+      "source_line": 2042,
+      "generated_line": 221
+    },
+    {
+      "name": "action_relabelings",
+      "kind": "FunctionDef",
+      "source_line": 2093,
+      "generated_line": 225
+    },
+    {
+      "name": "comparison_groups",
+      "kind": "FunctionDef",
+      "source_line": 2097,
+      "generated_line": 228
+    },
+    {
+      "name": "reference_comparisons",
+      "kind": "FunctionDef",
+      "source_line": 2113,
+      "generated_line": 243
+    },
+    {
+      "name": "payoffs_for_shape",
+      "kind": "FunctionDef",
+      "source_line": 2125,
+      "generated_line": 254
+    },
+    {
+      "name": "compare_entries",
+      "kind": "FunctionDef",
+      "source_line": 2131,
+      "generated_line": 259
+    },
+    {
+      "name": "same_type_as",
+      "kind": "FunctionDef",
+      "source_line": 2136,
+      "generated_line": 263
+    },
+    {
+      "name": "compute_deviation_gaps",
+      "kind": "FunctionDef",
+      "source_line": 2192,
+      "generated_line": 297
+    },
+    {
+      "name": "deviation_gaps",
+      "kind": "FunctionDef",
+      "source_line": 2209,
+      "generated_line": 313
+    },
+    {
+      "name": "compute_dominance_gaps",
+      "kind": "FunctionDef",
+      "source_line": 2213,
+      "generated_line": 316
+    },
+    {
+      "name": "dominance_gaps",
+      "kind": "FunctionDef",
+      "source_line": 2232,
+      "generated_line": 334
+    },
+    {
+      "name": "compute_mixed_gaps",
+      "kind": "FunctionDef",
+      "source_line": 2247,
+      "generated_line": 337
+    },
+    {
+      "name": "mixed_gaps",
+      "kind": "FunctionDef",
+      "source_line": 2258,
+      "generated_line": 347
+    },
+    {
+      "name": "potential_residual",
+      "kind": "FunctionDef",
+      "source_line": 2289,
+      "generated_line": 350
+    },
+    {
+      "name": "potential",
+      "kind": "FunctionDef",
+      "source_line": 2306,
+      "generated_line": 366
+    },
+    {
+      "name": "compute_potential_differences",
+      "kind": "FunctionDef",
+      "source_line": 2323,
+      "generated_line": 374
+    },
+    {
+      "name": "potential_differences",
+      "kind": "FunctionDef",
+      "source_line": 2330,
+      "generated_line": 380
+    },
+    {
+      "name": "Control",
+      "kind": "ClassDef",
+      "source_line": 2365,
+      "generated_line": 384
+    },
+    {
+      "name": "game_payoffs",
+      "kind": "FunctionDef",
+      "source_line": 2373,
+      "generated_line": 391
+    },
+    {
+      "name": "Problem",
+      "kind": "ClassDef",
+      "source_line": 2377,
+      "generated_line": 394
+    },
+    {
+      "name": "Intervention",
+      "kind": "ClassDef",
+      "source_line": 2392,
+      "generated_line": 408
+    },
+    {
+      "name": "design",
+      "kind": "FunctionDef",
+      "source_line": 2417,
+      "generated_line": 432
+    },
+    {
+      "name": "local_controls",
+      "kind": "FunctionDef",
+      "source_line": 2475,
+      "generated_line": 438
+    },
+    {
+      "name": "affine_system",
+      "kind": "FunctionDef",
+      "source_line": 2511,
+      "generated_line": 445
+    },
+    {
+      "name": "eliminate",
+      "kind": "FunctionDef",
+      "source_line": 2534,
+      "generated_line": 456
+    },
+    {
+      "name": "constraint_loss",
+      "kind": "FunctionDef",
+      "source_line": 2572,
+      "generated_line": 471
+    },
+    {
+      "name": "search",
+      "kind": "FunctionDef",
+      "source_line": 2581,
+      "generated_line": 479
+    },
+    {
+      "name": "dot",
+      "kind": "FunctionDef",
+      "source_line": 2637,
+      "generated_line": 499
+    },
+    {
+      "name": "satisfies_linear_constraints",
+      "kind": "FunctionDef",
+      "source_line": 2641,
+      "generated_line": 502
+    },
+    {
+      "name": "verify_linear_certificate",
+      "kind": "FunctionDef",
+      "source_line": 2647,
+      "generated_line": 507
+    },
+    {
+      "name": "Result",
+      "kind": "ClassDef",
+      "source_line": 2673,
+      "generated_line": 532
+    },
+    {
+      "name": "numerical_lp",
+      "kind": "FunctionDef",
+      "source_line": 2687,
+      "generated_line": 542
+    },
+    {
+      "name": "rational_point",
+      "kind": "FunctionDef",
+      "source_line": 2699,
+      "generated_line": 553
+    },
+    {
+      "name": "exact_lp",
+      "kind": "FunctionDef",
+      "source_line": 2725,
+      "generated_line": 575
+    },
+    {
+      "name": "AlternativeResult",
+      "kind": "ClassDef",
+      "source_line": 2818,
+      "generated_line": 664
+    },
+    {
+      "name": "solve_affine",
+      "kind": "FunctionDef",
+      "source_line": 2859,
+      "generated_line": 704
+    },
+    {
+      "name": "equality_obstruction",
+      "kind": "FunctionDef",
+      "source_line": 2888,
+      "generated_line": 720
+    },
+    {
+      "name": "authority_obstruction",
+      "kind": "FunctionDef",
+      "source_line": 2916,
+      "generated_line": 738
+    },
+    {
+      "name": "polynomial_term",
+      "kind": "FunctionDef",
+      "source_line": 2958,
+      "generated_line": 746
+    },
+    {
+      "name": "polynomial_formula",
+      "kind": "FunctionDef",
+      "source_line": 2972,
+      "generated_line": 759
+    },
+    {
+      "name": "polynomial_decision",
+      "kind": "FunctionDef",
+      "source_line": 2987,
+      "generated_line": 773
+    },
+    {
+      "name": "exact_algebraic_value",
+      "kind": "FunctionDef",
+      "source_line": 3002,
+      "generated_line": 787
+    },
+    {
+      "name": "PolynomialResult",
+      "kind": "ClassDef",
+      "source_line": 3017,
+      "generated_line": 801
+    },
+    {
+      "name": "solve_polynomial",
+      "kind": "FunctionDef",
+      "source_line": 3031,
+      "generated_line": 814
+    },
+    {
+      "name": "interpolate_segment",
+      "kind": "FunctionDef",
+      "source_line": 3108,
+      "generated_line": 875
+    },
+    {
+      "name": "segment_ok",
+      "kind": "FunctionDef",
+      "source_line": 3112,
+      "generated_line": 878
+    },
+    {
+      "name": "predecessor",
+      "kind": "FunctionDef",
+      "source_line": 3151,
+      "generated_line": 905
+    },
+    {
+      "name": "winning_layers",
+      "kind": "FunctionDef",
+      "source_line": 3163,
+      "generated_line": 916
+    },
+    {
+      "name": "rollout",
+      "kind": "FunctionDef",
+      "source_line": 3183,
+      "generated_line": 928
+    },
+    {
+      "name": "evaluate_policy_game",
+      "kind": "FunctionDef",
+      "source_line": 3214,
+      "generated_line": 935
+    },
+    {
+      "name": "policy_game",
+      "kind": "FunctionDef",
+      "source_line": 3231,
+      "generated_line": 951
+    },
+    {
+      "name": "observation_classes",
+      "kind": "FunctionDef",
+      "source_line": 3259,
+      "generated_line": 958
+    },
+    {
+      "name": "zero_cost",
+      "kind": "FunctionDef",
+      "source_line": 3267,
+      "generated_line": 965
+    },
+    {
+      "name": "audit_observations",
+      "kind": "FunctionDef",
+      "source_line": 3271,
+      "generated_line": 968
+    },
+    {
+      "name": "moment_candidates",
+      "kind": "FunctionDef",
+      "source_line": 3286,
+      "generated_line": 977
+    },
+    {
+      "name": "refine_observations",
+      "kind": "FunctionDef",
+      "source_line": 3293,
+      "generated_line": 983
+    },
+    {
+      "name": "univariate_region",
+      "kind": "FunctionDef",
+      "source_line": 3349,
+      "generated_line": 1020
+    },
+    {
+      "name": "evaluate_rational_maps",
+      "kind": "FunctionDef",
+      "source_line": 3368,
+      "generated_line": 1038
+    },
+    {
+      "name": "rational_map",
+      "kind": "FunctionDef",
+      "source_line": 3372,
+      "generated_line": 1041
+    },
+    {
+      "name": "rational_curve_minimum",
+      "kind": "FunctionDef",
+      "source_line": 3379,
+      "generated_line": 1047
+    },
+    {
+      "name": "find_axis_route",
+      "kind": "FunctionDef",
+      "source_line": 3412,
+      "generated_line": 1074
+    },
+    {
+      "name": "transition_at_vertex",
+      "kind": "FunctionDef",
+      "source_line": 3429,
+      "generated_line": 1085
+    },
+    {
+      "name": "box_preimage",
+      "kind": "FunctionDef",
+      "source_line": 3433,
+      "generated_line": 1088
+    },
+    {
+      "name": "scalar_command_bounds",
+      "kind": "FunctionDef",
+      "source_line": 3447,
+      "generated_line": 1094
+    },
+    {
+      "name": "evaluate_command_bounds",
+      "kind": "FunctionDef",
+      "source_line": 3464,
+      "generated_line": 1110
+    },
+    {
+      "name": "project_scalar_command",
+      "kind": "FunctionDef",
+      "source_line": 3476,
+      "generated_line": 1121
+    },
+    {
+      "name": "PIDState",
+      "kind": "ClassDef",
+      "source_line": 3483,
+      "generated_line": 1127
+    },
+    {
+      "name": "pid_feedback",
+      "kind": "FunctionDef",
+      "source_line": 3492,
+      "generated_line": 1135
+    },
+    {
+      "name": "pid_transition",
+      "kind": "FunctionDef",
+      "source_line": 3502,
+      "generated_line": 1144
+    },
+    {
+      "name": "pid_rollout",
+      "kind": "FunctionDef",
+      "source_line": 3509,
+      "generated_line": 1150
+    },
+    {
+      "name": "pid_loss",
+      "kind": "FunctionDef",
+      "source_line": 3517,
+      "generated_line": 1157
+    },
+    {
+      "name": "select_coordinates",
+      "kind": "FunctionDef",
+      "source_line": 3531,
+      "generated_line": 1163
+    },
+    {
+      "name": "restrict_controls",
+      "kind": "FunctionDef",
+      "source_line": 3535,
+      "generated_line": 1166
+    },
+    {
+      "name": "find_minimal_permissions",
+      "kind": "FunctionDef",
+      "source_line": 3541,
+      "generated_line": 1171
+    },
+    {
+      "name": "pure_equilibria",
+      "kind": "FunctionDef",
+      "source_line": 3566,
+      "generated_line": 1190
+    },
+    {
+      "name": "best_response_step",
+      "kind": "FunctionDef",
+      "source_line": 3571,
+      "generated_line": 1194
+    },
+    {
+      "name": "round_robin",
+      "kind": "FunctionDef",
+      "source_line": 3578,
+      "generated_line": 1200
+    },
+    {
+      "name": "scheduled_responses",
+      "kind": "FunctionDef",
+      "source_line": 3582,
+      "generated_line": 1203
+    }
+  ],
+  "vignette_blocks": [
+    [
+      1,
+      6
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      10,
+      1
+    ]
+  ],
+  "generated_files": {
+    "src/game_control/__init__.py": "f2c86131fea07dacfe7f5dab231a18d475a7ab99ed70060afd1bef6d9c28617a",
+    "examples.py": "e558ef982486ea318c0004f3ad9c6a1ab63b5cc681789721777ae3295139320a",
+    "pyproject.toml": "842442ee5d3a68d1ed5db53d726f0dc3e77cfce2d8c3836774d97591f50f45b8"
+  },
+  "provenance": "Article discloses ChatGPT-generated code with user architecture guidance.",
+  "publication_status": "prepared_public_distribution",
+  "original_generated_files": {
+    "src/game_control/__init__.py": "f2c86131fea07dacfe7f5dab231a18d475a7ab99ed70060afd1bef6d9c28617a",
+    "examples.py": "e558ef982486ea318c0004f3ad9c6a1ab63b5cc681789721777ae3295139320a",
+    "pyproject.toml": "b1d0acffd27d214f4425b61bdd2a169b5f9c2eb5927f1751bbf8b3ae70d1842d"
+  },
+  "packaging_changes": "Added portable verification and extraction tools, distribution metadata, documentation, and license notices. Generated implementation and example bytes are unchanged.",
+  "portable_generator": {
+    "path": "tools/extract_article.py",
+    "sha256": "c775baaafa23f3f32a0b2d4fb4a54fc8e13af8669a6b333cd340dd0017748bc9"
+  },
+  "portable_verifiers": [
+    {
+      "source": "scratch/game-visualization-proposal/rebuild/verify.py",
+      "source_sha256": "03151b3b3f606b68a7a75d4b7f4f4ac7be4fd9734b9c70dbe7c741a4fe9871db",
+      "destination": "checks/mathematical.py",
+      "sha256": "6c6ff645b22b6c2404748b920231bc3a97a11fdb6e8c6059f3c7f1998d6dc762",
+      "retained_functions": [
+        "verify"
+      ],
+      "assertion_count": 56
+    },
+    {
+      "source": "scratch/game-visualization-proposal/pid-extension/verify-pid.py",
+      "source_sha256": "50aeae97ec490308f83fc0b8175a3ac9f8ef5ae7062626754abc5ad5a4bed220",
+      "destination": "checks/pid.py",
+      "sha256": "1026929d64adcf08924d379811d55774ef7d40f5583b5714239664b126535546",
+      "retained_functions": [
+        "relabeled_measure",
+        "check_pid"
+      ],
+      "assertion_count": 14
+    },
+    {
+      "source": "scratch/game-visualization-proposal/polynomial-solver/verify.py",
+      "source_sha256": "20387f7c621fc7f3cb8082de4bfa3bf1cb1fb5c0602565634fafd2763059c3bf",
+      "destination": "checks/polynomial.py",
+      "sha256": "019dafb65ccab1861237089f9733f584b296013986efd024ed70943c473cc8a2",
+      "retained_functions": [
+        "square_commands",
+        "disturbed_parameter",
+        "check"
+      ],
+      "assertion_count": 19
+    }
+  ],
+  "source_paths": "Original source and generator paths identify the preparation workspace; they are not runtime dependencies. The bundled tools use paths within this package or an explicit --source argument.",
+  "hash_format": "SHA-256 of UTF-8 text with LF line endings, matching Git blobs; portable checks normalize checkout line endings."
+}

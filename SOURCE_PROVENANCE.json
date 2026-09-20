@@ -1,5 +1,5 @@
 {
-  "status": "Source recovery records for the four-component distribution; not a claim of complete historical authorship review.",
+  "status": "Source recovery records for the six-component distribution; not a claim of complete historical authorship review.",
   "recovered_components": [
     {
       "source": "analysis/public-code-comment-review-20260920/candidates/games/selectorate/selectorate.py",
@@ -66,9 +66,17 @@
       "destination": "games/geometric_controls/__init__.py",
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "prepared_sha256": "5a20a04912368760c3d9fb289912ec996a3b9d3da1e9b7829405b547408b96d4"
+    },
+    {
+      "source": "analysis/public-code-comment-review-20260920/candidates/systems/data_driven_systems.py",
+      "destination": "systems/data_driven_systems.py",
+      "source_sha256": "70e52c429ed608253b8409f3c0fa9d77a7eeeca5fe2926b755dc5ace88bcc7aa",
+      "prepared_sha256": "83f3799810eff9bab08f130c2567aea26cce2299dae31ebba254ccfd466bc0d3",
+      "changes": "Retained comment cleanup and explicit Arnoldi stub; fixed heat-diffusion step-size wiring; stripped trailing whitespace."
     }
   ],
   "egraphs": "Current public-main teaching examples with explicitly documented collision/test cleanup.",
   "source_paths": "Source paths identify preserved files in the private preparation workspace, not files included in this distribution. Destination paths are relative to this repository.",
-  "prepared_hash_format": "SHA-256 of UTF-8 file bytes with LF line endings, as stored in Git; trailing source whitespace was removed with Python ASTs unchanged."
+  "prepared_hash_format": "SHA-256 of UTF-8 file bytes with LF line endings, as stored in Git; trailing source whitespace was removed with Python ASTs unchanged.",
+  "game_control": "See game_control/provenance.json for article, implementation, extraction, and verification provenance."
 }

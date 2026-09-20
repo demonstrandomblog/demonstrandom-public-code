@@ -1,0 +1,3 @@
+include LICENSE NOTICE README.md examples.py run_examples.py verify.py provenance.json verification.json human-review.json
+recursive-include checks *.py
+recursive-include tools *.py

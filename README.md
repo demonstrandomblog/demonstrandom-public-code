@@ -18,6 +18,8 @@ Educational and experimental code accompanying [Demonstrandom](https://demonstra
 | [Selectorate](games/selectorate/) | Model, hierarchy, channels, gradients | Focused tests pass |
 | [Canonicalization](games/canonicalization/) | Ordinal 2x2 game examples | Example checks pass; imports preserve caller settings |
 | [Lie groups](games/geometric_controls/) | Rotations, rigid motions, trainable layers | Repaired operations; 85 checks pass within the documented scope |
+| [System identification](systems/) | DMD, EDMD, kernel DMD, SINDy, SINDyC | Seven analytic checks and demo pass; Arnoldi unimplemented |
+| [Game control](game_control/) | Engineering Game Types appendix and ten vignettes | Portable mathematical/PID/polynomial checks; human review pending |
 
 Each component has its own dependency and run instructions. See
 [VALIDATION.md](VALIDATION.md) for checks and limitations and

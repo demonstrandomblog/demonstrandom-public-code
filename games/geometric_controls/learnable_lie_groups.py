@@ -7,9 +7,7 @@ from typing import Tuple, Optional
 from .lie_groups import LieGroup, LieGroupElement
 
 # WARNING - This file entirely GPT generated. NOT REVIEWED
-# Note - the idea here is: given a Lie Group, can we learn a
-# specific element of the Lie Group? A separate problem is "can
-# you learn the Lie Group structure itself?"
+# Learn an element of a fixed Lie group through its Lie algebra coordinates.
 
 class LearnableLieElement(nn.Module):
     """
@@ -95,7 +93,8 @@ class LieGroupActionLayer(nn.Module):
     For groups that implement `action`, e.g.:
       - SOn(n): rotation of vectors
       - Rn(n): translation of vectors
-      - SE(n): you can define an action if desired
+
+    The group must implement `action`; SE(n) does not currently provide it.
 
     Inputs:
       x: Tensor of shape (*batch, point_dim) or matching group.action conventions.

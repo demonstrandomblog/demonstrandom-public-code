@@ -51,7 +51,10 @@
       "source": "games/geometric_controls/learnable_lie_groups.py",
       "destination": "games/geometric_controls/learnable_lie_groups.py",
       "source_sha256": "2a1c5708f803d46cc9fada19e5db09c61d31004034dcf3810206e92747264c6c",
-      "prepared_sha256": "fa510fd87dba72f403ea7361a85c6e89f625ff334ea29c339a789f5098ecec54"
+      "prepared_sha256": "f02735800628e1cfbf3cd605f47ccf4e528dd6dbebbd511bb4f0bdac1ff8f120",
+      "earlier_prepared_sha256": [
+        "fa510fd87dba72f403ea7361a85c6e89f625ff334ea29c339a789f5098ecec54"
+      ]
     },
     {
       "source": "games/geometric_controls/lie_groups.py",
@@ -87,15 +90,21 @@
       "source": "systems/data_driven_systems.py",
       "destination": "systems/data_driven_systems.py",
       "source_sha256": "70e52c429ed608253b8409f3c0fa9d77a7eeeca5fe2926b755dc5ace88bcc7aa",
-      "prepared_sha256": "83f3799810eff9bab08f130c2567aea26cce2299dae31ebba254ccfd466bc0d3",
-      "changes": "Heat-diffusion stepping uses the computed step size; Arnoldi raises NotImplementedError."
+      "prepared_sha256": "e6fe19529e8b97d3833843bba258c7c3e818dc603c95b948e15abcb742b1410b",
+      "changes": "Heat-diffusion stepping uses the computed step size; Arnoldi raises NotImplementedError.",
+      "earlier_prepared_sha256": [
+        "83f3799810eff9bab08f130c2567aea26cce2299dae31ebba254ccfd466bc0d3"
+      ]
     },
     {
       "source": "inspection_bias/persistence.py",
       "source_revision": "19d1371",
       "destination": "inspection_bias/persistence.py",
       "source_sha256": "82e0edbdaa24ac9fbdc212d0f0af7278ef2608e9e87759e5572e3652daf179ac",
-      "prepared_sha256": "d028771fb24ab4e5a0d07be082d53c0f5c499ff9b10c18ee5861014697110d70"
+      "prepared_sha256": "dd6b329337c9f5f9c7ab6105b591a1615e9f33ed39299e089280d1581ccb4786",
+      "earlier_prepared_sha256": [
+        "d028771fb24ab4e5a0d07be082d53c0f5c499ff9b10c18ee5861014697110d70"
+      ]
     },
     {
       "source": "inspection_bias/fit.py",
@@ -109,7 +118,10 @@
       "source_revision": "19d1371",
       "destination": "art_and_info/hamming_radius_plot.py",
       "source_sha256": "9090320a270e714216a78d44ad23a68dd47147041934bbca2e74d1f98f67191f",
-      "prepared_sha256": "f849f0781672ab4154c54054de852ee6610ba6aaac3bfcc0910889109c81541d"
+      "prepared_sha256": "c46fd62b95c5194674b396852ceed7ff8cc2777c95799faa9154f7c76ee97dea",
+      "earlier_prepared_sha256": [
+        "f849f0781672ab4154c54054de852ee6610ba6aaac3bfcc0910889109c81541d"
+      ]
     },
     {
       "source": "art_and_info/weighted_hamming_radius_plot.py",
@@ -145,9 +157,12 @@
       "source": "games/games/diffl_games3.py",
       "destination": "games/differential_games/core.py",
       "source_sha256": "5c811ba15d51507a710289a0eb21b69f9a7b14b1282894cdaf852f5d6c2b1e05",
-      "prepared_sha256": "f82afc4e6c88fa22a7a6c8c4348c0c518d87d717815970bb5a96a509ecefb5e4",
+      "prepared_sha256": "3e7fb3a392b6d088f3c278d52a9b39e6b364de4799f5e31d2a955d3c5192983d",
       "changes": "Finite simulation bounds and positive dt/sample counts are required; whole-step timing is retained.",
-      "source_revision": "19d1371"
+      "source_revision": "19d1371",
+      "earlier_prepared_sha256": [
+        "f82afc4e6c88fa22a7a6c8c4348c0c518d87d717815970bb5a96a509ecefb5e4"
+      ]
     },
     {
       "source": "games/games/games.py",

@@ -19,9 +19,8 @@ python -m pip install pytest
 python -m pytest -q reasoning/egraphs/union_find.py reasoning/egraphs/hashcons.py reasoning/egraphs/e_graphs.py
 ```
 
-Hash-consing now distinguishes unequal values with colliding hashes. The tuple
-identity fixture and pytest return-value warnings are corrected. EGraph extraction
-uses a simple node ordering; this is not a general minimum-cost extractor.
+Hash-consing distinguishes unequal values with colliding hashes. EGraph
+extraction uses a simple node ordering, rather than a minimum-cost search.
 
 ## License
 

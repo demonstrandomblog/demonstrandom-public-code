@@ -1,5 +1,5 @@
 # AI-assisted research code; see README.md and the repository AI_NOTICE.md.
-"""Regenerate the functional-information draft's observed/predicted figure."""
+"""Plot observed functional information and power-law model predictions."""
 import argparse
 from pathlib import Path
 import matplotlib.pyplot as plt

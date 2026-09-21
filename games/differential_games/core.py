@@ -178,7 +178,7 @@ class Constraint(ABC):
     def violated(self, state: torch.Tensor) -> torch.Tensor:
         """
         Returns violation amount (0 = satisfied, >0 = violated).
-        MUST be differentiable!
+        Must be differentiable for gradient-based optimization.
         """
         pass
 
@@ -208,7 +208,7 @@ class BoundaryConstraint(Constraint):
         return violation
 
     def project(self, state):
-        """Hard projection (like game engine collision resolution)"""
+        """Clamp positions and reflect velocities at box boundaries."""
         new_state = state.clone()
         for agent in self.state_space.agent_names:
             pos = self.state_space.get_state(state, agent)[:2]
@@ -242,14 +242,14 @@ class PayoffModel(ABC):
         pass
 
     def step(self,
-             state: torch.Tensor,  # Still tensor!
+             state: torch.Tensor,
              controls: Dict,
              dt: float) -> Dict[str, float]:
         """Running cost per timestep"""
         return {a: 0.0 for a in self.agents()}
 
     def terminal(self,
-                 state: torch.Tensor) -> Dict[str, float]:  # Still tensor!
+                 state: torch.Tensor) -> Dict[str, float]:
         """Terminal payoff"""
         return {a: 0.0 for a in self.agents()}
 
@@ -455,7 +455,7 @@ class DifferentialGame:
                  initial_sampler: Callable[[], torch.Tensor],
                  name: str = "Differential Game"):
         """
-        payoff_fn(final_state) -> dict of agent -> payoff
+        Combine state, observations, dynamics, payoff model, and initial sampler.
         """
         self.state_space = state_space
         self.agents = {a.name: a for a in agents}
@@ -722,8 +722,8 @@ def plot_trajectory(trajectory: List[GameState],
 
     for agent_name in state_space.agent_names:
         positions = []
-        for game_state in trajectory:  # game_state is GameState
-            state = game_state.physical_state  # ← Extract tensor
+        for game_state in trajectory:
+            state = game_state.physical_state
             agent_state = state_space.get_state(state, agent_name)
             positions.append(agent_state[:2])
 
@@ -868,7 +868,7 @@ def build_stag_hunt():
 
     obs_model = FullObs()
 
-    # Dynamics: kinematic (differentiable!)
+    # Kinematic dynamics
     all_agents = ['c1', 'c2', 'stag', 'hare1', 'hare2']
 
     class StagHuntPayoff(PayoffModel):
@@ -930,7 +930,7 @@ def build_stag_hunt():
                 speed = torch.norm(vel_des) + 1e-6
                 max_speed = self.max_speeds[agent]
 
-                # Soft clamp: vel = direction * min(speed, max_speed)
+                # Smooth speed bound: max_speed * tanh(speed / max_speed)
                 scale_factor = max_speed * torch.tanh(speed / max_speed) / speed
                 vel = vel_des * scale_factor
 

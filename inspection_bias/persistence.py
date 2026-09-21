@@ -4,8 +4,7 @@ Candidate persistence functions w(k) and functional information computation.
 
 The effective weight w(k) combines reaching a configuration of complexity k
 and its persistence. Functional information I = -log2(w_bar), with w_bar the
-possibility-space-weighted average. This is the fitting model in the provisional
-Inertial Growth of Functional Information draft.
+possibility-space-weighted average. The fitting model is provisional.
 
 Data from Hazen & Wong (2024), "Open-ended versus bounded evolution:
 Mineral evolution as a case study", PNAS Nexus 3(7), Table 1.

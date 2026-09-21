@@ -58,11 +58,10 @@ def plot_overlap_heatmap(
 ):
     """
     Heatmap of d_f as a function of log10 N (x-axis) and k (y-axis).
-    Bounds chosen to avoid huge trivial-saturation regions but keep all
-    interesting structure.
+    Uses semantic dimensions 5 through 60 in steps of 5.
     """
     if k_values is None:
-        # focus on the interesting human-ish range
+        # Semantic dimensions used in the article's heatmap.
         k_values = np.arange(5, 61, 5)  # 5,10,...,60
 
     if log10N_values is None:

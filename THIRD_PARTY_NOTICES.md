@@ -17,7 +17,7 @@ licenses.
 Existing AI-generation and attribution comments are preserved, including the
 GPT-generated, unreviewed trainable Lie-group layer and its tests. Historical
 provenance is not fully established for every file. The system-identification
-Arnoldi draft retains its Claude attribution and explicit unimplemented status.
+Arnoldi function is attributed to Claude and is unimplemented.
 Game control retains the article's AI-generation disclosure.
 The stable SO(3) logarithm repair consulted PyTorch3D's rotation-conversion
 reference; PyTorch3D itself is not bundled or required. See the component's

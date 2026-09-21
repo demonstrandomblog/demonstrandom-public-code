@@ -29,7 +29,7 @@ def heat_diffusion(time, m=50, n=50, alpha=0.01, dt=0.1, dx=1.0):
     # Discretization
     steps = int(time / dt)
 
-    # Stability condition (not enforced but usually should be)
+    # Warn when the explicit two-dimensional diffusion stability bound is exceeded.
     r = alpha * dt / dx**2
     if r > 0.25:
         print("Warning: Scheme may be unstable (r > 0.25)")
@@ -77,7 +77,7 @@ def dmd(X, Y, r=None):
 
     return modes, eigenvalues, amplitudes, reconstruction
 
-# Original source attribution: Claude. This Arnoldi draft is unimplemented.
+# Original source attribution: Claude. Arnoldi is unimplemented.
 def dmd_arnoldi(X, Y, r):
     raise NotImplementedError("The Arnoldi DMD variant is not implemented; use dmd() instead.")
     n, m = X.shape
@@ -230,7 +230,7 @@ def kdmd(X, Y, kernel_fn, r=None, epsilon=1e-8):
 
     U_g, S_g, Vt_g = reduced_svd(G_XX, r=r)
     S_g_inv = np.zeros_like(S_g)
-    significant_s_vals = S_g > epsilon # Could also be a fraction of S_g[0]
+    significant_s_vals = S_g > epsilon  # Absolute singular-value cutoff.
     S_g_inv[significant_s_vals] = 1.0 / S_g[significant_s_vals]
 
     if r is None:

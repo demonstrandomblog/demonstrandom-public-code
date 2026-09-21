@@ -1,7 +1,5 @@
 # Demonstrandom code
 
-By **Kevin T. Procopio**.
-
 Educational and experimental code accompanying [Demonstrandom](https://demonstrandom.com/).
 
 ## Components

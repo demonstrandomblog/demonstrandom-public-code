@@ -1,12 +1,8 @@
 # Inspection bias: functional-information fits
 
-This package implements the fitting portion of **Inertial Growth of Functional
-Information**, a provisional draft at
-`demonstrandom/ml/posts/inspection_bias_functional_information/index.qmd`.
-The published [Inspection Bias](https://demonstrandom.com/ml/posts/inspection_bias/index.html)
-post provides the length-biased-sampling background. The recovered README's
-older title, "The Law of Increasing Functional Information Is a Theorem", is
-superseded by the current draft title.
+Fits persistence-weighted functional-information models to nine geological stages.
+[Inspection Bias](https://demonstrandom.com/ml/posts/inspection_bias/index.html)
+provides the length-biased-sampling background. The fitting model is provisional.
 
 > **AI warning:** Experimental research code with AI assistance. Historical
 > generation details are not established for every file; automated checks do
@@ -35,8 +31,8 @@ bits = compute_I(k_max=15, m=72, n=135, log2_w=weight)
 ```
 
 `compute_I` calculates the logarithm of total possibility-space weight divided
-by persistence-weighted mass. `w(k)` is the draft's **effective weight**, combining
-formation/discovery and persistence. The draft already explains this interpretation.
+by persistence-weighted mass. `w(k)` is an **effective weight**, combining
+formation/discovery and persistence.
 The fitter uses the nine supplied geological stages and two parameters per model.
 
 | Model | Reproduced RMSE (bits) |
@@ -46,15 +42,12 @@ The fitter uses the nine supplied geological stages and two parameters per model
 | Gaussian | 1.35 |
 | Factorial | 2.02 |
 
-The power exponent is 34.763 (34.8 at the draft's precision). Tests compare
+The fitted power exponent is 34.763. Tests compare
 small combinatorial cases against direct counts, verify constant weights and
 stable log sums, and recompute fit residuals. A failed optimizer now raises an
 error instead of returning an apparently completed fit. The command produces
-the draft's observed-versus-predicted figure with those same parameters.
+an observed-versus-predicted figure with those same parameters.
 
-## Source and data
+## Data
 
-Recovered from research checkpoint `19d1371`; the numerical model and stage
-values are preserved. The current draft explicitly imports these routines.
 [DATA_NOTICE.md](DATA_NOTICE.md) records the Table 1 source and reuse terms.
-The blog and draft were not edited or deployed.

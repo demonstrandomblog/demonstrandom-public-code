@@ -2,11 +2,10 @@
 
 Companion to [Differential Games and Stag Hunt](https://demonstrandom.com/game_theory/posts/differential_stag_hunt/).
 
-> **AI warning:** This is experimental research code. AI assistance has been
-> used in the project and in this cleanup; historical generation details are
-> not established for every file. Existing file-level disclosures are retained.
-> Passing automated checks does not establish a full human or mathematical
-> review. Independently validate the behavior and results you rely on.
+> **AI warning:** This is experimental research code developed with AI assistance.
+> Generation history and human-review coverage are incomplete; see individual
+> files for additional disclosures. Passing automated checks does not establish
+> a full human or mathematical review. Independently validate results you rely on.
 
 ## Run
 
@@ -34,11 +33,9 @@ print(NormalFormConverter.to_payoff_matrix(arena, ["c1", "c2"]))
 
 ## Article comparison and checks
 
-The recovered `diffl_games3.py` model is retained. The unfinished optional
-`CollisionConstraint` is excluded: it called a nonexistent accessor and never
-updated overlapping positions. The Stag Hunt example does not use it.
-`BoundaryConstraint` remains available. Multiple supplied constraints are applied
-once in sequence, without a joint feasibility solver.
+`BoundaryConstraint` clamps positions to a box and reflects boundary velocities.
+Multiple supplied constraints are applied once in sequence, without a joint
+feasibility solver. The Stag Hunt example runs without constraints.
 
 Positive finite time steps and finite simulation bounds are required. Simulation
 retains whole fixed steps, ending at the first grid time at or beyond `until`.

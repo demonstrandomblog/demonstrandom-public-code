@@ -4,11 +4,10 @@ Educational and experimental code accompanying [Demonstrandom](https://demonstra
 
 ## Components
 
-> **AI warning:** This is experimental research code. AI assistance has been
-> used in the project and in this cleanup; historical generation details are
-> not established for every file. Existing file-level disclosures are retained.
-> Passing automated checks does not establish a full human or mathematical
-> review. Independently validate the behavior and results you rely on.
+> **AI warning:** This is experimental research code developed with AI assistance.
+> Generation history and human-review coverage are incomplete; see individual
+> files for additional disclosures. Passing automated checks does not establish
+> a full human or mathematical review. Independently validate results you rely on.
 
 | Component | Scope | Article |
 |---|---|---|
@@ -21,7 +20,7 @@ Educational and experimental code accompanying [Demonstrandom](https://demonstra
 | [System identification](systems/) | DMD, EDMD, kernel DMD, SINDy, SINDyC | [Linear Methods for Learning Dynamical Systems](https://demonstrandom.com/ml/posts/linear_methods_for_dynamical_systems/index.html) |
 | [Game control](game_control/) | Engineering Game Types appendix and ten vignettes | [Engineering Game Types](https://demonstrandom.com/game_theory/posts/engineering_game_types/index.html) |
 | [Color metric](color_metric/) | Polynomial Killing-field search | [Do We See the Same Colors?](https://demonstrandom.com/theory_of_mind/posts/color_qualia_riemannian/index.html) |
-| [Inspection bias](inspection_bias/) | Functional-information fitting draft | [Inspection Bias](https://demonstrandom.com/ml/posts/inspection_bias/index.html) (background) |
+| [Inspection bias](inspection_bias/) | Provisional functional-information models | [Inspection Bias](https://demonstrandom.com/ml/posts/inspection_bias/index.html) (background) |
 | [Cultural counting](art_and_info/) | Hamming/weighted counting and five overlap figures | [Are We Approaching Cultural Saturation?](https://demonstrandom.com/essays/posts/cultural_saturation/index.html) |
 
 Each component documents its status, dependencies, and run instructions. See

@@ -1,7 +1,7 @@
 {
   "source": "demonstrandom/game_theory/posts/engineering_game_types/index.qmd",
   "source_sha256": "aa63887c1d941b0f87c7a205a8dc3fefe163d1ee8e39583a89eb7d297bd360c6",
-  "generator": "code_promotion/game_control/promote.py",
+  "generator": "promote.py",
   "generator_sha256": "9f109b52780a708ce0e4f181a25fc82969e2fccd0796ad6898b85ab1e47d13f9",
   "definition_count": 103,
   "definitions": [
@@ -671,8 +671,7 @@
     "examples.py": "e558ef982486ea318c0004f3ad9c6a1ab63b5cc681789721777ae3295139320a",
     "pyproject.toml": "842442ee5d3a68d1ed5db53d726f0dc3e77cfce2d8c3836774d97591f50f45b8"
   },
-  "provenance": "Article discloses ChatGPT-generated code with user architecture guidance.",
-  "publication_status": "prepared_public_distribution",
+  "provenance": "Article discloses ChatGPT-generated code with author-provided architecture guidance.",
   "original_generated_files": {
     "src/game_control/__init__.py": "f2c86131fea07dacfe7f5dab231a18d475a7ab99ed70060afd1bef6d9c28617a",
     "examples.py": "e558ef982486ea318c0004f3ad9c6a1ab63b5cc681789721777ae3295139320a",
@@ -685,7 +684,7 @@
   },
   "portable_verifiers": [
     {
-      "source": "scratch/game-visualization-proposal/rebuild/verify.py",
+      "source": "verify.py",
       "source_sha256": "03151b3b3f606b68a7a75d4b7f4f4ac7be4fd9734b9c70dbe7c741a4fe9871db",
       "destination": "checks/mathematical.py",
       "sha256": "6c6ff645b22b6c2404748b920231bc3a97a11fdb6e8c6059f3c7f1998d6dc762",
@@ -695,7 +694,7 @@
       "assertion_count": 56
     },
     {
-      "source": "scratch/game-visualization-proposal/pid-extension/verify-pid.py",
+      "source": "verify-pid.py",
       "source_sha256": "50aeae97ec490308f83fc0b8175a3ac9f8ef5ae7062626754abc5ad5a4bed220",
       "destination": "checks/pid.py",
       "sha256": "1026929d64adcf08924d379811d55774ef7d40f5583b5714239664b126535546",
@@ -706,7 +705,7 @@
       "assertion_count": 14
     },
     {
-      "source": "scratch/game-visualization-proposal/polynomial-solver/verify.py",
+      "source": "verify.py",
       "source_sha256": "20387f7c621fc7f3cb8082de4bfa3bf1cb1fb5c0602565634fafd2763059c3bf",
       "destination": "checks/polynomial.py",
       "sha256": "019dafb65ccab1861237089f9733f584b296013986efd024ed70943c473cc8a2",
@@ -718,6 +717,6 @@
       "assertion_count": 19
     }
   ],
-  "source_paths": "Original source and generator paths identify the preparation workspace; they are not runtime dependencies. The bundled tools use paths within this package or an explicit --source argument.",
+  "source_paths": "Source filenames and hashes identify the original inputs. Bundled tool paths are relative to this package.",
   "hash_format": "SHA-256 of UTF-8 text with LF line endings, matching Git blobs; portable checks normalize checkout line endings."
 }

@@ -2,11 +2,10 @@
 
 Code accompanying [Demonstrandom](https://demonstrandom.com/ml/posts/linear_methods_for_dynamical_systems/index.html).
 
-> **AI warning:** This is experimental research code. AI assistance has been
-> used in the project and in this cleanup; historical generation details are
-> not established for every file. Existing file-level disclosures are retained.
-> Passing automated checks does not establish a full human or mathematical
-> review. Independently validate the behavior and results you rely on.
+> **AI warning:** This is experimental research code developed with AI assistance.
+> Generation history and human-review coverage are incomplete; see individual
+> files for additional disclosures. Passing automated checks does not establish
+> a full human or mathematical review. Independently validate results you rely on.
 
 ## Run
 
@@ -21,7 +20,8 @@ python systems/data_driven_systems.py
 
 ## Scope and known limitations
 
-DMD, EDMD, kernel DMD, SINDy, and SINDyC are teaching implementations. The Arnoldi draft still raises NotImplementedError and retains its Claude attribution. The demo no longer ends in a bare raise. No broad noisy-data or numerical-conditioning validation is claimed.
+DMD, EDMD, kernel DMD, SINDy, and SINDyC are teaching implementations.
+Arnoldi is unimplemented and raises `NotImplementedError`.
 
 Seven analytic regression tests cover exact linear DMD/EDMD/kernel-DMD spectra,
 SINDy oscillator recovery, SINDyC control recovery, heat-diffusion parameter use,

@@ -2,11 +2,10 @@
 
 Companion to [Learning Equilibria by Gradient Descent](https://demonstrandom.com/game_theory/posts/gradient_learning_nash/).
 
-> **AI warning:** This is experimental research code. AI assistance has been
-> used in the project and in this cleanup; historical generation details are
-> not established for every file. Existing file-level disclosures are retained.
-> Passing automated checks does not establish a full human or mathematical
-> review. Independently validate the behavior and results you rely on.
+> **AI warning:** This is experimental research code developed with AI assistance.
+> Generation history and human-review coverage are incomplete; see individual
+> files for additional disclosures. Passing automated checks does not establish
+> a full human or mathematical review. Independently validate results you rely on.
 
 ## Run
 
@@ -35,13 +34,12 @@ print(arena.expected_payoffs())
 
 ## Article comparison and checks
 
-The recovered training loop computes each player's gradient only with respect to
+The training loop computes each player's gradient only with respect to
 that player's parameters, with all gradients evaluated before either optimizer
 step. This implements the article's simultaneous-update intent; its displayed
 loop instead calls `backward()` and steps optimizers in sequence. Random draws
 and printed final probabilities differ because the public example fixes a seed.
 `Game.clone()` preserves whether payoff parameters require gradients.
-The later observation-conditioned policy is outside this article's release.
 
 Four tests check the article's `(4, 2)` payoff example, independent three-player
 payoff enumeration, finite-difference payoff gradients, and lazy initialization.

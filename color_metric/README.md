@@ -1,6 +1,6 @@
 # Color metric and Killing fields
 
-Companion to [Color Qualia and Riemannian Geometry](https://demonstrandom.com/theory_of_mind/posts/color_qualia_riemannian/index.html).
+Companion to [Do We See the Same Colors?](https://demonstrandom.com/theory_of_mind/posts/color_qualia_riemannian/index.html).
 
 > **AI warning:** Experimental research code with AI assistance. Historical
 > generation details are not established for every file; automated checks do
@@ -43,16 +43,14 @@ field and its spectrum; it is an implementation correction, not the original
 article calculation. Both modes have rank 20 at relative SVD tolerance 1e-10.
 The saved output records the full spectrum and threshold so they can be inspected.
 
-The article already explains the polynomial-ansatz, continuous-symmetry, and
-coordinate-scaling limitations. They apply here. The independent reference
-check recovers the two translations and rotation of the Euclidean plane.
+The independent reference check recovers the two translations and rotation
+of the Euclidean plane.
 Tests also check ellipse axes and positivity at every grid/finite-difference
-point for the corrected field. The blog has not been changed.
+point for the corrected field.
 
 ## Data
 
 [The table notice](data/NOTICE) identifies MacAdam, Wyszecki & Stiles, and the
 LuxPy transcription. Its [upstream GPL-3.0 notice](data/LICENSE) is retained
 separately; no LuxPy executable code is included. The sampled spectral-locus
-coordinates are the article's constants. This is separate from the larger,
-unpublished inverse-color-geometry project.
+coordinates are the article's constants.

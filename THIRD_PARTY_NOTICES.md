@@ -24,8 +24,7 @@ reference; PyTorch3D itself is not bundled or required. See the component's
 limitations and the source provenance records.
 
 Linked articles, papers, and implementations remain separate works. A reference
-does not grant rights to copy their code, text, artwork, or data. Further provenance
-review is required before describing this collection as fully audited.
+does not grant rights to copy their code, text, artwork, or data.
 
 ## Numerical tables
 

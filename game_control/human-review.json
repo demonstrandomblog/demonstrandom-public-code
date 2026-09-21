@@ -9,5 +9,5 @@
     "examples.py": "e558ef982486ea318c0004f3ad9c6a1ab63b5cc681789721777ae3295139320a",
     "pyproject.toml": "842442ee5d3a68d1ed5db53d726f0dc3e77cfce2d8c3836774d97591f50f45b8"
   },
-  "note": "No manual line-by-line review is recorded. Automated checks do not grant approval."
+  "note": "No manual line-by-line review is recorded. Automated checks do not establish human review."
 }

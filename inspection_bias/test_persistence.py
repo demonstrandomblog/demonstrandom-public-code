@@ -1,4 +1,4 @@
-# AI-assisted research code; see README.md and the repository AI_NOTICE.md.
+# AI-assisted experimental code; full human and mathematical review is not established.
 import math
 import numpy as np
 import pytest

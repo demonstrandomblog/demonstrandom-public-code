@@ -11,6 +11,28 @@ provides the length-biased-sampling background. The fitting model is provisional
 Original code: [PolyForm Noncommercial 1.0.0](../LICENSE), with [required notices](../NOTICE)
 and [citation metadata](../CITATION.cff). Third-party data keeps its own notices.
 
+## Model and inputs
+
+A formula of complexity `k` uses `k` distinct elements selected from `m`
+available elements and coefficients selected from `1..n`. Its possibility-space
+weight is `Phi(k) = comb(m,k) * n!/(n-k)! * correction(k)`. The tabulated
+corrections for `k=1..6` are `1, 0.64, 0.836, 0.924, 0.965, 0.983`; the
+implementation uses 1 for larger `k`. Use integers satisfying
+`1 <= k_max <= min(m,n)`.
+
+For `k=1..k_max`, define `N = sum(Phi(k))` and
+`M = sum(Phi(k)*w(k))`. The output is `I = log2(N/M)` bits, evaluated with
+stable logarithmic sums. The callable `log2_w(k)` supplies the logarithm of
+the effective weight. This weight combines formation, discovery, and persistence;
+fitting it does not identify those mechanisms separately.
+
+The four two-parameter models are `A*k**(-gamma)`, `A*exp(-beta*k)`,
+`A*exp(-beta*k*k)`, and `A/(k!)**alpha`. Each fit minimizes squared errors
+in information across the nine bundled observations. Rows of `HAZEN_WONG_DATA`
+store `(k_max, m, n, observed_count, observed_information_bits)`; the fit uses
+the information column. These are provisional models fitted to the same data
+used to report error, without held-out predictive validation.
+
 ## Run and reuse
 
 From the repository root:

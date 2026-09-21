@@ -667,8 +667,8 @@
     ]
   ],
   "generated_files": {
-    "src/game_control/__init__.py": "f2c86131fea07dacfe7f5dab231a18d475a7ab99ed70060afd1bef6d9c28617a",
-    "examples.py": "e558ef982486ea318c0004f3ad9c6a1ab63b5cc681789721777ae3295139320a",
+    "src/game_control/__init__.py": "4824ba7e740305f1a7fd56b13b3f3c523a8df4ab0a965accdd30bde11e18b6e8",
+    "examples.py": "dcebe544af279b87dbba7b77d556b12551e987f85c434d63725c36a399b22c7e",
     "pyproject.toml": "842442ee5d3a68d1ed5db53d726f0dc3e77cfce2d8c3836774d97591f50f45b8"
   },
   "provenance": "Article discloses ChatGPT-generated code with author-provided architecture guidance.",
@@ -677,17 +677,17 @@
     "examples.py": "e558ef982486ea318c0004f3ad9c6a1ab63b5cc681789721777ae3295139320a",
     "pyproject.toml": "b1d0acffd27d214f4425b61bdd2a169b5f9c2eb5927f1751bbf8b3ae70d1842d"
   },
-  "packaging_changes": "Added portable verification and extraction tools, distribution metadata, documentation, and license notices. Generated implementation and example bytes are unchanged.",
+  "packaging_changes": "Added portable verification and extraction tools, distribution metadata, documentation, and license notices. Generated headers describe local purpose; implementation definitions and example bodies are unchanged.",
   "portable_generator": {
     "path": "tools/extract_article.py",
-    "sha256": "c775baaafa23f3f32a0b2d4fb4a54fc8e13af8669a6b333cd340dd0017748bc9"
+    "sha256": "ca0d8e60ab1afdc18e00d47e97dbef8112c0240cb57d16128d3e6958b355fadb"
   },
   "portable_verifiers": [
     {
       "source": "verify.py",
       "source_sha256": "03151b3b3f606b68a7a75d4b7f4f4ac7be4fd9734b9c70dbe7c741a4fe9871db",
       "destination": "checks/mathematical.py",
-      "sha256": "6c6ff645b22b6c2404748b920231bc3a97a11fdb6e8c6059f3c7f1998d6dc762",
+      "sha256": "ac08551fd62063e0b426f6644578746df31a79c333284085de69d6caccf192e4",
       "retained_functions": [
         "verify"
       ],
@@ -697,7 +697,7 @@
       "source": "verify-pid.py",
       "source_sha256": "50aeae97ec490308f83fc0b8175a3ac9f8ef5ae7062626754abc5ad5a4bed220",
       "destination": "checks/pid.py",
-      "sha256": "1026929d64adcf08924d379811d55774ef7d40f5583b5714239664b126535546",
+      "sha256": "1a592c8127c344075c60226951a968459145b1e1ae3bba32ce44a07704437c81",
       "retained_functions": [
         "relabeled_measure",
         "check_pid"
@@ -708,7 +708,7 @@
       "source": "verify.py",
       "source_sha256": "20387f7c621fc7f3cb8082de4bfa3bf1cb1fb5c0602565634fafd2763059c3bf",
       "destination": "checks/polynomial.py",
-      "sha256": "019dafb65ccab1861237089f9733f584b296013986efd024ed70943c473cc8a2",
+      "sha256": "48aa6ec052b2bbaacf537019acdf10e7f49e011da2d18ea8e8ed27b20f26cc63",
       "retained_functions": [
         "square_commands",
         "disturbed_parameter",

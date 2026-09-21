@@ -1,4 +1,4 @@
-# Vignette 1
+# Example 1: Applying an Intervention and Changing a Game Type
 def add_payoff_terms(changes, payoffs, theta):
     return payoffs + changes(theta)
 
@@ -117,7 +117,7 @@ numerical_project_command = torch.tensor([.2, .1], dtype=torch.float64)
 project_sensitivity = torch.func.jacfwd(project_types)(numerical_project_command)
 
 
-# Vignette 2
+# Example 2: Inverse Design: Feasible Regions and Minimum-Cost Interventions
 project_problem = design(project_family, project_control, project_target)
 project_command_symbols = sp.symbols("v1 v2", real=True)
 project_answer = solve_affine(project_problem, project_command_symbols)
@@ -128,7 +128,7 @@ project_intervention = project_problem.select(project_command)
 project_intervention_valid = project_intervention.verify()
 
 
-# Vignette 3
+# Example 3: Constrained Reachability: Safe Paths and Obstructions
 project_safe_games = (
     ge(Map(lambda game: -project_measurements(game)[..., 1]), -sp.Rational(1, 48))
     | ge(Map(lambda game: project_measurements(game)[..., 2]), sp.Rational(1, 24))
@@ -149,7 +149,7 @@ matched_target_set = univariate_region(
 )
 
 
-# Vignette 4
+# Example 4: Robust Control: Maintaining a Desired Game Type
 shared_project_parameters = Map(lambda t:
     like(project_start, t)
     + t[..., :1] * like([0, 0, 0, -2, 1], t))
@@ -328,7 +328,7 @@ neural_safety_factor = neural_margin_answer.data["point"][0]
 neural_margin_verified = neural_margin_answer.verify()
 
 
-# Vignette 5
+# Example 5: Control Authority: Impossibility Certificates and Missing Instruments
 pair_actuator = exact([[1, 0, 0], [0, 1, 0], [0, 0, 1], [0, 0, 0], [0, 0, 0]])
 full_actuator = np.concatenate([pair_actuator, project_actuator], axis=1)
 full_parameters = Map(lambda v: like(project_start, v) + v @ like(full_actuator, v).T)
@@ -351,7 +351,7 @@ restricted_game = project_family(full_parameters(exact([*permission_symbols[:3],
 conserved_measurements = project_measurements(restricted_game)
 
 
-# Vignette 6
+# Example 6: Control Equivalence: Different Interventions with the Same Effect
 product_transfers = Map(lambda command: command[..., :1] * command[..., 1:])
 product_parameters = product_transfers.then_apply(project_parameters)
 product_allowed = (
@@ -383,7 +383,7 @@ finite_measurement_change = product_values(finite_null_step) - product_values(lo
 zero_product_jacobian = torch.func.jacfwd(product_values)(torch.zeros(3, dtype=torch.float64))
 
 
-# Vignette 7
+# Example 7: Equilibrium and Dynamics: Behavioral Consequences of Changing Payoffs
 response_game = project_solution.game()
 response_equilibria = pure_equilibria(response_game)
 response_initials = ((0, 0, 0), (1, 0, 1))
@@ -395,7 +395,7 @@ response_target_verified = project_target.contains(response_game)
 response_coordinates = project_measurements(response_game)
 
 
-# Vignette 8
+# Example 8: Temporary Control: Reaching a State Where Intervention Can End
 activation_effect = exact(np.zeros((3,) + project_shape, dtype=int))
 activation_effect[0] = efforts[0]
 activation_change = polynomial([((1,), activation_effect)])
@@ -432,7 +432,7 @@ activation_preserves_target = all(project_target.contains(activation_games(exact
 activation_measurements = [project_measurements(activation_games(exact([s]))) for s in activation_levels]
 
 
-# Vignette 9
+# Example 9: Distributed Control: Invariant Targets in Larger Games
 network_shape = (2,) * 6
 network_actions = np.meshgrid(*[exact([-1, 1])] * 6, indexing="ij")
 network_edges = ((0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (0, 5))
@@ -538,7 +538,7 @@ policy_sensitivity = torch.func.jacfwd(policy_problem.games.then_apply(policy_me
 )
 
 
-# Vignette 10
+# Example 10: Information Sufficiency
 information_reference = project_solution.game()
 information_joint = effect(information_reference, (0, 1, 2))
 information_change = polynomial([((0,), -information_joint), ((1,), information_joint)])

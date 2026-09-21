@@ -1,5 +1,11 @@
-# AI-assisted research code; see README.md and the repository AI_NOTICE.md.
-"""Color metric interpolation and polynomial Killing-equation experiments."""
+# AI-assisted experimental code; full human and mathematical review is not established.
+"""Interpolate chromaticity metrics and sample polynomial Killing equations.
+
+Measurements are (x,y,a,b,angle_deg) discrimination ellipses. MetricField returns
+a symmetric 2-by-2 matrix; its default logarithmic interpolation preserves
+positive definiteness. killing_matrix maps polynomial vector coefficients to
+sampled metric-preservation residuals, not a proof about all smooth fields.
+"""
 from pathlib import Path
 import json
 import numpy as np
@@ -8,7 +14,11 @@ from matplotlib.path import Path as Polygon
 
 
 def macadam_data():
-    """Return the 25 article measurements; see data/NOTICE for provenance."""
+    """Return 25 rows of (x,y,a,b,angle_deg) discrimination-ellipse measurements.
+
+    a and b are positive semiaxis lengths in chromaticity coordinates; angle
+    is counterclockwise in degrees. The bundled data/NOTICE gives provenance.
+    """
     return np.asarray(json.loads((Path(__file__).parent/'data/macadam.json').read_text()))
 
 
@@ -27,11 +37,13 @@ def _symmetric_function(matrix, function):
 
 
 class MetricField:
-    """Thin-plate RBF field, using log-Euclidean or article component fitting.
+    """Thin-plate radial-basis interpolation of 2-by-2 discrimination metrics.
 
-    log-euclidean interpolates symmetric matrix logarithms and exponentiates
-    the result, preserving positive definiteness. article-component reproduces
-    the article's SVD table but is indefinite at some evaluation points.
+    log-euclidean interpolates matrix logarithms and exponentiates the result,
+    preserving positive definiteness. article-component interpolates the three
+    independent matrix entries directly and can produce indefinite matrices.
+    Calling the field at (x,y) returns one symmetric matrix. smoothing is the
+    radial-basis regularization parameter, with default 1.0.
     """
     def __init__(self,mode="log-euclidean",smoothing=1.0):
         if mode not in ("log-euclidean","article-component"):
@@ -53,7 +65,11 @@ class MetricField:
 
 
 def gamut_grid():
-    """The article's 20x20 candidate grid clipped to its sampled spectral locus."""
+    """Return a rectangle grid clipped to the bundled spectral-locus polygon.
+
+    Sample 20 x values from 0.10 to 0.65 and 20 y values from 0.08 to 0.65.
+    Keep the 332 candidate points inside the polygon encoded in this function.
+    """
     x=np.array([0.1741, 0.174, 0.1714, 0.1644, 0.1566, 0.144, 0.1241, 0.0913, 0.0633, 0.0235, 0.0082, 0.0139, 0.0743, 0.1547, 0.2296, 0.295, 0.3616, 0.4294, 0.5028, 0.5706, 0.6256, 0.6658, 0.6915, 0.7079, 0.719, 0.726, 0.73, 0.732, 0.7334, 0.7344, 0.7347, 0.7347, 0.7347])
     y=np.array([0.005, 0.005, 0.0065, 0.0109, 0.0177, 0.0297, 0.0578, 0.1327, 0.265, 0.4073, 0.5384, 0.6548, 0.7243, 0.7514, 0.7543, 0.7449, 0.73, 0.7106, 0.6858, 0.6562, 0.6229, 0.5858, 0.5475, 0.5123, 0.4813, 0.4562, 0.4353, 0.4188, 0.4044, 0.3935, 0.3872, 0.3848, 0.383])
     path=Polygon(np.column_stack([np.append(x,x[0]),np.append(y,y[0])]))
@@ -66,7 +82,15 @@ def poly_basis(x,y,degree=3):
 
 
 def killing_matrix(metric,points,degree=3,h=.005):
-    """Three sampled Lie-derivative equations per point; article finite differences."""
+    """Return sampled coefficients of the metric-preservation equation L_X g = 0.
+
+    metric(x,y) returns a 2-by-2 matrix; points has shape (N,2). Each component
+    of X is a polynomial of total degree <= degree, with monomials ordered by
+    poly_basis. Columns list the first component's coefficients, then the second.
+    Rows are (00,01,11) at each point. Derivatives use central differences with
+    step h, giving shape (3*N, (degree+1)*(degree+2)). A finite sampled nullspace
+    is evidence only for this ansatz and sampling, not all smooth vector fields.
+    """
     if not isinstance(degree,int) or degree<0 or not np.isfinite(h) or h<=0:
         raise ValueError("Require integer degree >= 0 and finite h > 0")
     n=len(poly_basis(0,0,degree));rows=[]

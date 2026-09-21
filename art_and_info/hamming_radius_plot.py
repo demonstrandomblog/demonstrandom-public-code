@@ -1,4 +1,10 @@
-# AI-assisted research code; see README.md and the repository AI_NOTICE.md.
+# AI-assisted experimental code; full human and mathematical review is not established.
+"""Count binary configurations by Hamming distance and plot volume-based overlap.
+
+Here k is the number of binary features and N is the number of hypothetical
+configurations. The first radius with N*V(k,r) >= 2**k gives the proxy 1-r/k.
+This necessary volume condition does not construct a covering of the space.
+"""
 import math
 from functools import lru_cache
 
@@ -42,7 +48,11 @@ def min_radius_for_covering(k: int, N: int) -> int:
 
 
 def fractional_overlap(k: int, N: int) -> float:
-    """d_f = 1 - r/k."""
+    """Return 1-r/k for the smallest radius with N*V(k,r) >= 2**k.
+
+    k is a positive number of binary features and N a positive configuration
+    count. This volume-based proxy is not an observed overlap measurement.
+    """
     if k <= 0:
         raise ValueError("Overlap requires k > 0")
     r = min_radius_for_covering(k, N)
@@ -61,7 +71,7 @@ def plot_overlap_heatmap(
     Uses semantic dimensions 5 through 60 in steps of 5.
     """
     if k_values is None:
-        # Semantic dimensions used in the article's heatmap.
+        # Binary feature counts: 5, 10, ..., 60.
         k_values = np.arange(5, 61, 5)  # 5,10,...,60
 
     if log10N_values is None:

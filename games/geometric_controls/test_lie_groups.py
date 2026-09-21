@@ -1,9 +1,8 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See this component's README.md and the repository AI_NOTICE.md before relying on results.
-"""
-Simple pytest unit tests for Lie group implementation
+"""Check Lie group axioms, coordinates, batching, and gradients on CPU.
 
-Run with: pytest test_lie_groups.py -v
+From the repository root, run:
+    python -m pytest -q games/geometric_controls/test_lie_groups.py
 """
 
 import pytest

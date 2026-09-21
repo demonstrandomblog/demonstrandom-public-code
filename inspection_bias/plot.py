@@ -1,4 +1,4 @@
-# AI-assisted research code; see README.md and the repository AI_NOTICE.md.
+# AI-assisted experimental code; full human and mathematical review is not established.
 """Plot observed functional information and power-law model predictions."""
 import argparse
 from pathlib import Path

@@ -1,6 +1,6 @@
 # Copyright (c) 2024-2026 Kevin T. Procopio and contributors.
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
-# AI assistance/review status: see AI_NOTICE.md at the repository root.
+# AI-assisted experimental code; full human and mathematical review is not established.
 
 """Bounded pendulum and free-rotor demonstration with saved plots."""
 import argparse
@@ -29,7 +29,7 @@ def main():
         vi = VariationalIntegrator(system,args.step_size,on_step=recorder.on_step)
         if name == 'rotor':
             vi.register_noether_charge('angular_momentum',Symmetry(system.model.layout['theta'][0],torch.tensor([1.],dtype=torch.float64)))
-        # Retain the article's first-order q1 initialization.
+        # Initialize the second position by q1=q0+h*v0 (first-order accurate).
         a = torch.tensor([.8],dtype=torch.float64)
         b = a + args.step_size*velocity
         positions = [a.item(),b.item()]

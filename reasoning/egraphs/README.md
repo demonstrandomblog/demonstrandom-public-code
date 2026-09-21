@@ -12,7 +12,40 @@ of code or tests does not establish correctness. See the repository's
 > files for additional disclosures. Passing automated checks does not establish
 > a full human or mathematical review. Independently validate results you rely on.
 
+## Data structures and reuse
+
+`UnionFind` maintains disjoint sets using union by rank and path compression.
+Call `make_set(value)` before `find(value)` or `union(a,b)`. `HashCons.cons`
+interns an immutable, hashable value so equal values share one Python object.
+
+`EGraph` groups expression nodes into equivalence classes. An `ENode(op,args)`
+contains an operator name and a tuple of child class IDs; a leaf has no children.
+`add` returns a class ID, `union` asserts equality of two classes, and `rebuild`
+propagates equality through parent expressions. Call `find` to compare current
+representatives after merges. The module does not infer algebraic rewrite rules;
+the caller supplies equalities explicitly.
+
+```python
+from reasoning.egraphs.e_graphs import EGraph, ENode
+
+graph = EGraph()
+one = graph.add(ENode("1", ()))
+two = graph.add(ENode("2", ()))
+left = graph.add(ENode("+", (one, two)))
+right = graph.add(ENode("+", (two, one)))
+graph.union(left, right)  # Assert commutativity for these two expressions.
+graph.rebuild()
+assert graph.find(left) == graph.find(right)
+```
+
+These small implementations use Python's standard library; pytest is needed
+only for verification. Extraction orders nodes by arity and operator name and
+recursively expands children. It has no cost optimizer or cycle guard, so do
+not use `extract` on cyclic expression classes.
+
 ## Run
+
+From the repository root:
 
 ```sh
 python -m pip install pytest
@@ -33,19 +66,6 @@ and the required attribution lines in [NOTICE](../../NOTICE).
 
 If these examples contribute to your work, please cite the post and record the
 repository commit or release you used.
-
-Procopio, K. T. (2024, November 4). *E-Graph Basics*. Demonstrandom.
-https://demonstrandom.com/reasoning/posts/egraph/index.html
-
-```bibtex
-@misc{procopio2024egraph,
-  author = {Procopio, Kevin T.},
-  title = {E-Graph Basics},
-  year = {2024},
-  month = nov,
-  url = {https://demonstrandom.com/reasoning/posts/egraph/index.html}
-}
-```
 
 Repository citation metadata is in [CITATION.cff](../../CITATION.cff).
 Academic citation is requested separately from the license's redistribution

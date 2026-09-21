@@ -1,5 +1,4 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See README.md and the repository AI_NOTICE.md for scope and limitations.
 """Small analytic regressions; not broad numerical-conditioning coverage."""
 import numpy as np
 import pytest

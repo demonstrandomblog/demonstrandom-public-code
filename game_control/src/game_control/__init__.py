@@ -1,7 +1,7 @@
-# Generated from demonstrandom/game_theory/posts/engineering_game_types/index.qmd
-# Edit the article, then regenerate this file.
+# Game design via payoff maps, target regions, and constrained control commands.
+# Payoffs use trailing dimensions (players, *actions); Map composes transformations.
 # AI-generated research code; no full human review is recorded.
-# Validate results independently; see the article and package README.
+# Local usage, solver contracts, and examples are in this package README.
 from dataclasses import dataclass
 
 from functools import partial, reduce

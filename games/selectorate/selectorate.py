@@ -1,5 +1,4 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See this component's README.md and the repository AI_NOTICE.md before relying on results.
 """Selectorate theory model -- channel-based, with hierarchy as attenuation."""
 
 import torch
@@ -18,7 +17,12 @@ class SelectorateEquilibrium:
 
 
 class SelectorateModel(nn.Module):
-    """One-decision selectorate model: leader chooses targeted transfer p."""
+    """One-decision model with coalition W, selectorate S, and budget B.
+
+    A targeted transfer p gives each coalition member p/W versus a defection
+    benchmark B/S. p_min=B*W/S makes these equal. Calling the model returns
+    the transfer, rents, payoffs, inclusion share, and loyalty margin.
+    """
 
     def __init__(self, W=10.0, S=100.0, B=100.0):
         super().__init__()
@@ -85,7 +89,12 @@ def r_eff_from_levels(*levels):
 
 
 def p_min_composed(top, *sub_levels):
-    """Required top transfer under the article's nested hierarchy model."""
+    """Return the top budget times the hierarchy's effective coalition share.
+
+    Levels are ordered top to bottom. Start at x=W_bottom/S_bottom and apply
+    x=(W_i/S_i)/(1-x) upward. Nonpositive denominators raise ValueError;
+    subordinate budgets do not enter the recurrence.
+    """
     return top.B * r_eff_from_levels(top, *sub_levels)
 
 
@@ -128,9 +137,10 @@ def decision_count(r, s, n):
 # ---------------------------------------------------------------------------
 
 def channel_coefficients(W, S, N, beta=0.5):
-    """Return the three key coefficients: 1/W, 1/S, beta/N.
+    """Return targeted loyalty 1/W, targeted defection 1/S, and universal beta/N.
 
-    These determine the full selectorate geometry.
+    W is coalition size, S selectorate size, N population size, and beta the
+    effectiveness factor of the universal channel. Supply positive sizes.
     """
     return {
         'loyalty_targeted': 1.0 / W,
@@ -140,9 +150,10 @@ def channel_coefficients(W, S, N, beta=0.5):
 
 
 def democratic_region(S, N, beta=0.5):
-    """Whether the adversarial benchmark shifts to the universal channel.
+    """Test whether universal-channel benefit beta/N meets defection benefit 1/S.
 
-    Returns True when beta/N >= 1/S, i.e., N <= beta*S.
+    S is selectorate size, N population size, and beta universal effectiveness.
+    For positive sizes this is equivalent to N <= beta*S.
     """
     return beta / N >= 1.0 / S
 

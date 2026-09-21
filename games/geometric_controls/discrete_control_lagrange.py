@@ -1,7 +1,15 @@
 # Copyright (c) 2024-2026 Kevin T. Procopio and contributors.
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
-# AI assistance/review status: see AI_NOTICE.md at the repository root.
+# AI-assisted experimental code; full human and mathematical review is not established.
 
+"""Midpoint variational integration for pendulum and free-rotor models.
+
+Flat configuration tensors follow the order of each model's control plane.
+The discrete Lagrangian is h times the Lagrangian at the group midpoint and
+relative velocity. Given two positions, Newton's method solves
+D2 Ld(q_prev,q,h) + D1 Ld(q,q_next,h) = 0. step returns a detached position
+and a final-residual success flag. Use float64 at the default tolerance.
+"""
 from dataclasses import dataclass
 from typing import Callable, Optional
 import math

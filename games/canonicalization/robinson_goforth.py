@@ -1,10 +1,16 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See this component's README.md and the repository AI_NOTICE.md before relying on results.
 # Companion implementation for Differentiable Game Canonicalization.
-# The article targets strict ordinal 2x2 games.
+# The exact classifier supports ordinal 2x2 games, including tied payoffs.
 # forward() uses soft ranks and permutations; hard_canonical() and
 # class_id() also use discrete operations outside the differentiable path.
 
+"""Ordinal classification and soft representations of normal-form payoff tensors.
+
+For the exact two-player, two-action API, payoffs[p,i,j] selects recipient p
+and actions i,j. Dense ranks preserve ties. class_id enumerates action and
+player relabelings, including strategy-axis exchange when players swap.
+forward supplies a differentiable approximation, not an exact class identifier.
+"""
 from typing import Tuple
 
 import torchsort

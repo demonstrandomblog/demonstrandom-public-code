@@ -5,9 +5,10 @@
       "source": "games/selectorate/selectorate.py",
       "destination": "games/selectorate/selectorate.py",
       "source_sha256": "f7e6d78f6d7cd74cec16e16dfd9caea88c06e8b102ae6fe968b0c425354cb3f4",
-      "prepared_sha256": "568eb54c3dc07908c95dfd7961de57a9bd37ead06e9601a02aadcffc827433d8",
+      "prepared_sha256": "08e4ef13ad0153bba4a72283ddda4f0e2f6f4b17a8af5754c89ab47876ae209f",
       "earlier_prepared_sha256": [
-        "bd25c831d32a325bb746c2cf6e176d42faab986682e62b4893c4b407ff7af238"
+        "bd25c831d32a325bb746c2cf6e176d42faab986682e62b4893c4b407ff7af238",
+        "568eb54c3dc07908c95dfd7961de57a9bd37ead06e9601a02aadcffc827433d8"
       ],
       "update": "2026-09-20 hierarchy/canonicalization correctness repair; see ARTICLE_DIFFERENCES.md"
     },
@@ -15,9 +16,10 @@
       "source": "games/selectorate/test_selectorate.py",
       "destination": "games/selectorate/test_selectorate.py",
       "source_sha256": "60ae93e6cef0942ee83ec2ebbd3e2d91138343a44febd056a765a6a168799e35",
-      "prepared_sha256": "005d7edf61376446cfb9959a91fef974a9f5ee981d236bdf7dbb9d67ab7d028f",
+      "prepared_sha256": "66cf3425002cdb276fe72380cade69da96677dff20612df7ffa232bda9373949",
       "earlier_prepared_sha256": [
-        "fb736a60f0c40b52be2ecaaea132c33838fe8d621b037c0dfbbdda1d761d3daf"
+        "fb736a60f0c40b52be2ecaaea132c33838fe8d621b037c0dfbbdda1d761d3daf",
+        "005d7edf61376446cfb9959a91fef974a9f5ee981d236bdf7dbb9d67ab7d028f"
       ],
       "update": "2026-09-20 hierarchy/canonicalization correctness repair; see ARTICLE_DIFFERENCES.md"
     },
@@ -25,9 +27,10 @@
       "source": "games/selectorate/__init__.py",
       "destination": "games/selectorate/__init__.py",
       "source_sha256": "57d1ae9f23c975790a7dea76dcd02dce9fb4fdc8ce82debe2626f5c110e9da56",
-      "prepared_sha256": "c517529cb2f0f74de039de200951566379b77818d458077ce28138f6e45eaf6f",
+      "prepared_sha256": "65bdf3e997b48dfc603bf99d20d5f71627410099f5a88944d6dc2753059a90b1",
       "earlier_prepared_sha256": [
-        "107cef0bc302f3f0d4ea13a169fbef1c9ba60b6e928d0b882ae1c1cc309d4567"
+        "107cef0bc302f3f0d4ea13a169fbef1c9ba60b6e928d0b882ae1c1cc309d4567",
+        "c517529cb2f0f74de039de200951566379b77818d458077ce28138f6e45eaf6f"
       ],
       "update": "2026-09-20 hierarchy/canonicalization correctness repair; see ARTICLE_DIFFERENCES.md"
     },
@@ -35,9 +38,10 @@
       "source": "games/games/robinson_goforth.py",
       "destination": "games/canonicalization/robinson_goforth.py",
       "source_sha256": "dee88080652cb30da90cd8fe754a0b3970b151fe3efb064c9ee8d80fbc08e9f5",
-      "prepared_sha256": "057f8c7a09bf1035c596464ce333ce2f10de7fe7790d889a447c7f5dc5464125",
+      "prepared_sha256": "60f7aa767cd6e67282cbfa9d06ea94d500d4efc14fe8e4d29198b340e8c04536",
       "earlier_prepared_sha256": [
-        "8d22d51c7975b4d20fb20653896a06d9040b4576b9da486985d033ac2a44c4ff"
+        "8d22d51c7975b4d20fb20653896a06d9040b4576b9da486985d033ac2a44c4ff",
+        "057f8c7a09bf1035c596464ce333ce2f10de7fe7790d889a447c7f5dc5464125"
       ],
       "update": "2026-09-20 hierarchy/canonicalization correctness repair; see ARTICLE_DIFFERENCES.md"
     },
@@ -45,55 +49,75 @@
       "source": "games/games/test_games.py",
       "destination": "games/canonicalization/test_games.py",
       "source_sha256": "63de0e66948995327561ce698d47b981acc200c3dc36beb55c715bc13783f976",
-      "prepared_sha256": "aff74045ba0aeac0daa8a9ccf83a9af0820c6d8324d5121de77acd4305e39465"
+      "prepared_sha256": "3e36764160d6b2308ab2c5921d21e96e39e50fb6d3861e962a714b0a8b2ed510",
+      "earlier_prepared_sha256": [
+        "aff74045ba0aeac0daa8a9ccf83a9af0820c6d8324d5121de77acd4305e39465"
+      ]
     },
     {
       "source": "games/geometric_controls/learnable_lie_groups.py",
       "destination": "games/geometric_controls/learnable_lie_groups.py",
       "source_sha256": "2a1c5708f803d46cc9fada19e5db09c61d31004034dcf3810206e92747264c6c",
-      "prepared_sha256": "f02735800628e1cfbf3cd605f47ccf4e528dd6dbebbd511bb4f0bdac1ff8f120",
+      "prepared_sha256": "b0a2167a275da3d67731955501a5af41405de8d4dbbefe28e0c1de893c9c87f6",
       "earlier_prepared_sha256": [
-        "fa510fd87dba72f403ea7361a85c6e89f625ff334ea29c339a789f5098ecec54"
+        "fa510fd87dba72f403ea7361a85c6e89f625ff334ea29c339a789f5098ecec54",
+        "f02735800628e1cfbf3cd605f47ccf4e528dd6dbebbd511bb4f0bdac1ff8f120"
       ]
     },
     {
       "source": "games/geometric_controls/lie_groups.py",
       "destination": "games/geometric_controls/lie_groups.py",
       "source_sha256": "950eca82d910caa3e46d1d7aa9f20606d7edd57d24842d4f4099277ba7768fc9",
-      "prepared_sha256": "f98ce746af28ec5062cd6711011884d2990ee072ba8d483af4954817f12142d9"
+      "prepared_sha256": "2941980320845e5816f6c7dc21c1d047010a8d192473b5b685453de6f19788fb",
+      "earlier_prepared_sha256": [
+        "f98ce746af28ec5062cd6711011884d2990ee072ba8d483af4954817f12142d9"
+      ]
     },
     {
       "source": "games/geometric_controls/test_learnable_lie_groups.py",
       "destination": "games/geometric_controls/test_learnable_lie_groups.py",
       "source_sha256": "b2bcbf3ba6bb56233d23e2881b5757186fc19511c8e902fc8f413b1703a7d5de",
-      "prepared_sha256": "9febe4a36e2dcc800243639f848a93892062bece1f379467584d69492b3d12cc"
+      "prepared_sha256": "5a2dbeccdc769378df2d752abb0fc09fcd1c7bba5619263806101f982daf6569",
+      "earlier_prepared_sha256": [
+        "9febe4a36e2dcc800243639f848a93892062bece1f379467584d69492b3d12cc"
+      ]
     },
     {
       "source": "games/geometric_controls/test_lie_groups.py",
       "destination": "games/geometric_controls/test_lie_groups.py",
       "source_sha256": "e0b5568edb32663f2745bd70e5ad9aa412d8546182eeb62784df4a653aed7d8e",
-      "prepared_sha256": "117641c6eac23c317654ca4e9a6addfbc30446f94899498c8d7f2f01ab0c1e83"
+      "prepared_sha256": "187656adf7b67ffae634457ef03ea866e536374750838b33aec149261c7bfcbe",
+      "earlier_prepared_sha256": [
+        "117641c6eac23c317654ca4e9a6addfbc30446f94899498c8d7f2f01ab0c1e83"
+      ]
     },
     {
       "source": "games/geometric_controls/test_lie_repairs.py",
       "destination": "games/geometric_controls/test_lie_repairs.py",
       "source_sha256": "0595a30e622edea156cb5f151dcdf234ad6b7cbcfce2754c5a1179c3e81fed9e",
-      "prepared_sha256": "05efba44ca427c437418463a69afeb11ac90b431a860190893528c2c03475e30"
+      "prepared_sha256": "2a41e43115e842b79b575840d50c196c17def2ed059b5a43b5092874aa8a4528",
+      "earlier_prepared_sha256": [
+        "05efba44ca427c437418463a69afeb11ac90b431a860190893528c2c03475e30"
+      ]
     },
     {
       "source": "games/geometric_controls/__init__.py",
       "destination": "games/geometric_controls/__init__.py",
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "prepared_sha256": "5a20a04912368760c3d9fb289912ec996a3b9d3da1e9b7829405b547408b96d4"
+      "prepared_sha256": "5c9b6b84254b19f98cc3ffcb8086f38814e99e70cb7d040a653a2f5adf8cfc32",
+      "earlier_prepared_sha256": [
+        "5a20a04912368760c3d9fb289912ec996a3b9d3da1e9b7829405b547408b96d4"
+      ]
     },
     {
       "source": "systems/data_driven_systems.py",
       "destination": "systems/data_driven_systems.py",
       "source_sha256": "70e52c429ed608253b8409f3c0fa9d77a7eeeca5fe2926b755dc5ace88bcc7aa",
-      "prepared_sha256": "e6fe19529e8b97d3833843bba258c7c3e818dc603c95b948e15abcb742b1410b",
+      "prepared_sha256": "7245e363ba2322115f74339db26aebad2025b14e82012ec64b719d49e51622c8",
       "changes": "Heat-diffusion stepping uses the computed step size; Arnoldi raises NotImplementedError.",
       "earlier_prepared_sha256": [
-        "83f3799810eff9bab08f130c2567aea26cce2299dae31ebba254ccfd466bc0d3"
+        "83f3799810eff9bab08f130c2567aea26cce2299dae31ebba254ccfd466bc0d3",
+        "e6fe19529e8b97d3833843bba258c7c3e818dc603c95b948e15abcb742b1410b"
       ]
     },
     {
@@ -101,9 +125,10 @@
       "source_revision": "19d1371",
       "destination": "inspection_bias/persistence.py",
       "source_sha256": "82e0edbdaa24ac9fbdc212d0f0af7278ef2608e9e87759e5572e3652daf179ac",
-      "prepared_sha256": "dd6b329337c9f5f9c7ab6105b591a1615e9f33ed39299e089280d1581ccb4786",
+      "prepared_sha256": "69781b0ed211c2f1a4842891a1716a90964c10548209b9f522e546f01984d779",
       "earlier_prepared_sha256": [
-        "d028771fb24ab4e5a0d07be082d53c0f5c499ff9b10c18ee5861014697110d70"
+        "d028771fb24ab4e5a0d07be082d53c0f5c499ff9b10c18ee5861014697110d70",
+        "dd6b329337c9f5f9c7ab6105b591a1615e9f33ed39299e089280d1581ccb4786"
       ]
     },
     {
@@ -111,16 +136,20 @@
       "source_revision": "19d1371",
       "destination": "inspection_bias/fit.py",
       "source_sha256": "882bc3add12c7443cda563cb0e3fdab41a12ec86838d4086cb7608911d417361",
-      "prepared_sha256": "b8f84d161fa679fb7febe839fc8fb2fdfa5796dbaaaf279ffcb35f084495f605"
+      "prepared_sha256": "efe7cd5ff334be00838f970a9f7b855a4456cbb5cddf261466ca5ec3f7891f5f",
+      "earlier_prepared_sha256": [
+        "b8f84d161fa679fb7febe839fc8fb2fdfa5796dbaaaf279ffcb35f084495f605"
+      ]
     },
     {
       "source": "art_and_info/hamming_radius_plot.py",
       "source_revision": "19d1371",
       "destination": "art_and_info/hamming_radius_plot.py",
       "source_sha256": "9090320a270e714216a78d44ad23a68dd47147041934bbca2e74d1f98f67191f",
-      "prepared_sha256": "c46fd62b95c5194674b396852ceed7ff8cc2777c95799faa9154f7c76ee97dea",
+      "prepared_sha256": "8f08c618add62a6d68bb13e8c087b7c912b568662e958378d9534daaffdf6a68",
       "earlier_prepared_sha256": [
-        "f849f0781672ab4154c54054de852ee6610ba6aaac3bfcc0910889109c81541d"
+        "f849f0781672ab4154c54054de852ee6610ba6aaac3bfcc0910889109c81541d",
+        "c46fd62b95c5194674b396852ceed7ff8cc2777c95799faa9154f7c76ee97dea"
       ]
     },
     {
@@ -128,40 +157,53 @@
       "source_revision": "19d1371",
       "destination": "art_and_info/weighted_hamming_radius_plot.py",
       "source_sha256": "a607454759e694aa77badd9cf7f1820f5572217d60fae607450180ca1bc7645e",
-      "prepared_sha256": "a95a0653790c5ca907f6c64d862e3a3662f27d71a49d61e2f5483b2af71969c7"
+      "prepared_sha256": "530dcd93489b9bd2e110605790f760916738eff858c1b8c80512b4416fce0933",
+      "earlier_prepared_sha256": [
+        "a95a0653790c5ca907f6c64d862e3a3662f27d71a49d61e2f5483b2af71969c7"
+      ]
     },
     {
       "source": "demonstrandom/theory_of_mind/posts/color_qualia_riemannian/index.qmd",
       "destination": "color_metric/metric.py",
       "source_sha256": "09acb6a03b73eb8346274ad99f884d3f5507208dac065f77b7757550fd300cad",
-      "prepared_sha256": "fecd63bba87a053aa0ee9de887c227fccf07cb9c50839606affe8bd4b4c92577",
-      "changes": "Functions extracted and parameterized; article-component reproduction retained; log-Euclidean interpolation added. Data and its upstream notice are separate."
+      "prepared_sha256": "45f59cb9d49362d1246c9f02530d67e3cce9574b4f1748dbd15479a37a77bd8f",
+      "changes": "Functions extracted and parameterized; article-component reproduction retained; log-Euclidean interpolation added. Data and its upstream notice are separate.",
+      "earlier_prepared_sha256": [
+        "fecd63bba87a053aa0ee9de887c227fccf07cb9c50839606affe8bd4b4c92577"
+      ]
     },
     {
       "source": "games/games/games.py",
       "destination": "games/gradient_learning/core.py",
       "source_sha256": "344e2ddea2b71948464af36c8971803746a1d147589ff42558fa31f5120063ec",
-      "prepared_sha256": "e2d3e7442ac992fdd5d0497b529dec410755143c7addc34a33aaba9958f044b4",
+      "prepared_sha256": "88e089dcbe6487bcfb093c14dcc68c2ced9fe3f93a9cf5d55ca59aae4d427ee6",
       "changes": "Action-only policies and payoff evaluation; clone preserves requires_grad.",
-      "source_revision": "19d1371"
+      "source_revision": "19d1371",
+      "earlier_prepared_sha256": [
+        "e2d3e7442ac992fdd5d0497b529dec410755143c7addc34a33aaba9958f044b4"
+      ]
     },
     {
       "source": "games/geometric_controls/discrete_control_lagrange.py",
       "destination": "games/geometric_controls/discrete_control_lagrange.py",
       "source_sha256": "03b2aeb45fb4c922d20f62dbb49d05419f97be49744282c74fa22ffb1ab1fac3",
-      "prepared_sha256": "fa14684a62962c5ecc929dbb55b8d4720bd799ef2a5f7458016fdc8d6461f423",
+      "prepared_sha256": "7c7af268ba148a44fb0338c5168a423f1cedfa2c671e11ed4dc8d200f3688a5c",
       "changes": "Uses the public Lie primitives; final equation residual determines success; step size, tolerance and iteration bounds are validated.",
-      "source_revision": "19d1371"
+      "source_revision": "19d1371",
+      "earlier_prepared_sha256": [
+        "fa14684a62962c5ecc929dbb55b8d4720bd799ef2a5f7458016fdc8d6461f423"
+      ]
     },
     {
       "source": "games/games/diffl_games3.py",
       "destination": "games/differential_games/core.py",
       "source_sha256": "5c811ba15d51507a710289a0eb21b69f9a7b14b1282894cdaf852f5d6c2b1e05",
-      "prepared_sha256": "3e7fb3a392b6d088f3c278d52a9b39e6b364de4799f5e31d2a955d3c5192983d",
+      "prepared_sha256": "b17488f3ee2ad623ffae8aaf65a2bd1b6c0a4bea67fca35b1e8342095e965123",
       "changes": "Finite simulation bounds and positive dt/sample counts are required; whole-step timing is retained.",
       "source_revision": "19d1371",
       "earlier_prepared_sha256": [
-        "f82afc4e6c88fa22a7a6c8c4348c0c518d87d717815970bb5a96a509ecefb5e4"
+        "f82afc4e6c88fa22a7a6c8c4348c0c518d87d717815970bb5a96a509ecefb5e4",
+        "3e7fb3a392b6d088f3c278d52a9b39e6b364de4799f5e31d2a955d3c5192983d"
       ]
     },
     {
@@ -169,8 +211,11 @@
       "source_revision": "19d1371",
       "destination": "games/gradient_learning/__main__.py",
       "source_sha256": "344e2ddea2b71948464af36c8971803746a1d147589ff42558fa31f5120063ec",
-      "prepared_sha256": "3b32339bf1113beebafe876a96a0fff0414cd31e0efa193198c602bbd998c0d8",
-      "changes": "200 simultaneous-gradient steps with deterministic seed 0."
+      "prepared_sha256": "11bba9b77d3e7b18655354870be05641259633deba7905c5c444162d6db7a46e",
+      "changes": "200 simultaneous-gradient steps with deterministic seed 0.",
+      "earlier_prepared_sha256": [
+        "3b32339bf1113beebafe876a96a0fff0414cd31e0efa193198c602bbd998c0d8"
+      ]
     }
   ],
   "egraphs": "See reasoning/egraphs/README.md and ARTICLE_DIFFERENCES.md.",

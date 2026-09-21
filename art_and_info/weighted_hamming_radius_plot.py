@@ -1,4 +1,10 @@
-# AI-assisted research code; see README.md and the repository AI_NOTICE.md.
+# AI-assisted experimental code; full human and mathematical review is not established.
+"""Count weighted binary-feature balls using integer subset-sum dynamic programming.
+
+Feature i has real weight i**(-beta), for i=1..k, rounded to a positive integer
+after multiplication by scale. Counts are exact for those rounded weights.
+The reported overlap proxy uses their radius divided by the real total weight.
+"""
 import math
 from functools import lru_cache
 

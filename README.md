@@ -23,7 +23,8 @@ Educational and experimental code accompanying [Demonstrandom](https://demonstra
 | [Inspection bias](inspection_bias/) | Provisional functional-information models | [Inspection Bias](https://demonstrandom.com/ml/posts/inspection_bias/index.html) (background) |
 | [Cultural counting](art_and_info/) | Hamming/weighted counting and five overlap figures | [Are We Approaching Cultural Saturation?](https://demonstrandom.com/essays/posts/cultural_saturation/index.html) |
 
-Each component documents its status, dependencies, and run instructions. See
+Each component documents its own model, input conventions, usage examples,
+status, dependencies, and limitations. Article links provide further background. See
 [VALIDATION.md](VALIDATION.md) for checks and limitations and
 [AI_NOTICE.md](AI_NOTICE.md) for AI assistance and review status.
 [ARTICLE_DIFFERENCES.md](ARTICLE_DIFFERENCES.md) records corrections and article comparisons.

@@ -1,6 +1,5 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See README.md and the repository AI_NOTICE.md for scope and limitations.
-"""Portable checks retained from the article verification harness."""
+"""Verify exact polynomial feasibility, optimization, disturbances, and solver edge cases."""
 import sympy as sp
 
 

@@ -1,5 +1,12 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See this component's README.md and the repository AI_NOTICE.md before relying on results.
+"""Snapshot-based identification of linear and nonlinear dynamical systems.
+
+DMD/EDMD/kernel DMD accept X and one-step successors Y as (variables,samples).
+SINDy uses the same X layout with derivatives shaped (samples,variables).
+SINDyC adds controls to the feature library. DMD/EDMD invert retained singular
+values directly; select rank explicitly for ill-conditioned data. The Arnoldi
+variant is unavailable. Running this file executes the numerical demonstrations.
+"""
 import math
 import numpy as np
 
@@ -58,6 +65,12 @@ def reduced_frobenius_ratio(matrix, r=None):
     return numerator/denominator
 
 def dmd(X, Y, r=None):
+    """Fit discrete-time dynamic mode decomposition from column snapshots X,Y.
+
+    Return (modes, eigenvalues, amplitudes, modes@diag(amplitudes)); the last
+    matrix is not a time trajectory. r truncates the SVD; retained singular
+    values must be nonzero because this routine inverts them directly.
+    """
     U, S, Vt = np.linalg.svd(X, full_matrices=False)
 
     if r is not None and r < len(S):
@@ -357,6 +370,12 @@ def sindy(X, dXdt, poly_order=3, lambda_reg=0.1, include_sine=False,
           include_cosine=False, max_iter=10):
 
     # Build library of candidate functions
+    """Fit sparse derivative equations using sequential thresholded least squares.
+
+    X has shape (variables,samples), dXdt has shape (samples,variables).
+    Return (Xi, descriptions), with Xi shaped (library_features,variables).
+    lambda_reg thresholds coefficient magnitude; it is not an L1 penalty.
+    """
     Theta, descriptions = sindy_library(
         X,
         poly_order=poly_order,

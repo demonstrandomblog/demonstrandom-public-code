@@ -1,6 +1,5 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See README.md and the repository AI_NOTICE.md for scope and limitations.
-"""Portable checks retained from the article verification harness."""
+"""Verify symbolic/tensor agreement, relabeling invariance, and constrained control certificates."""
 import itertools
 import numpy as np
 import sympy as sp

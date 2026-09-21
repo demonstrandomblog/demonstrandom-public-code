@@ -1,6 +1,5 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See README.md and the repository AI_NOTICE.md for scope and limitations.
-"""Run all article examples and portable mathematical regression suites."""
+"""Run the bundled game-design examples and mathematical, PID, and polynomial checks."""
 from pathlib import Path
 import argparse
 import hashlib

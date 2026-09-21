@@ -1,7 +1,14 @@
 # Copyright (c) 2024-2026 Kevin T. Procopio and contributors.
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
-# AI assistance/review status: see AI_NOTICE.md at the repository root.
+# AI-assisted experimental code; full human and mathematical review is not established.
 
+"""Independent mixed policies and expected payoffs for normal-form games.
+
+Payoffs have shape (players, actions_1, ..., actions_n). LogitsPolicy applies
+softmax to a trainable vector; Arena initializes these vectors and evaluates
+the product distribution. Build the arena before constructing optimizers.
+The classes do not themselves guarantee convergence of policy learning.
+"""
 from abc import ABC, abstractmethod
 
 from typing import List
@@ -131,6 +138,11 @@ class Arena:
         return actions_chosen, payoffs
 
     def expected_payoffs(self):
+        """Return one expected payoff per player under independent mixed policies.
+
+        The joint probability is the product of the policy probabilities. The
+        returned tensor keeps gradients through both payoffs and policy logits.
+        """
         dists = [agent.policy(self.game.actions[i]) for i, agent in enumerate(self.agents)]
         joint_dist = dists[0]
         for dist in dists[1:]:

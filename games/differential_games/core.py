@@ -1,7 +1,15 @@
 # Copyright (c) 2024-2026 Kevin T. Procopio and contributors.
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
-# AI assistance/review status: see AI_NOTICE.md at the repository root.
+# AI-assisted experimental code; full human and mathematical review is not established.
 
+"""Compose continuous-state games from policies, dynamics, and payoff rules.
+
+StateSpace maps named agent variables to slices of the joint physical tensor.
+Arena evaluates policies once per fixed time step and integrates dx/dt=f(x,u)
+with Euler or RK4. Constraints project the endpoint sequentially. The normal-
+form converter simulates each named policy combination to produce payoffs.
+The bundled example contains two hunters and three moving prey agents.
+"""
 import math
 import numpy as np
 import torch

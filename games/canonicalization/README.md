@@ -7,6 +7,22 @@ Code accompanying [Demonstrandom](https://demonstrandom.com/game_theory/posts/ca
 > files for additional disclosures. Passing automated checks does not establish
 > a full human or mathematical review. Independently validate results you rely on.
 
+## Representation and equivalence
+
+This module assigns an identifier to a two-player game with two actions per
+player. The input tensor has shape `(2, 2, 2)`; entry `payoffs[p, i, j]` is
+player `p`'s payoff when player 0 chooses action `i` and player 1 chooses `j`.
+Each player's four payoffs are replaced by their within-player ordinal ranks.
+Equal payoffs receive equal ranks.
+
+Two inputs are equivalent when their rank tensors agree after exchanging
+either player's action labels and optionally exchanging the players. Player
+exchange also swaps the two strategy axes. The exact path enumerates these
+eight transformations and hashes a canonical rank tensor. It therefore
+ignores payoff magnitudes while retaining ties and strategic ownership.
+This is an educational exact classifier for 2x2 games, with a separate
+differentiable approximation exposed through the PyTorch module's `forward`.
+
 ## Run
 
 From the repository root, install this component's dependencies in your own

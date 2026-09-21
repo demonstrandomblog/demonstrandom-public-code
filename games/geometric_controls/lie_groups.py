@@ -1,5 +1,12 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See this component's README.md and the repository AI_NOTICE.md before relying on results.
+"""Tensor-backed Lie group elements, algebra coordinates, and group operations.
+
+Rn represents translations; SOn represents rotations using upper-triangle
+coordinates of skew matrices. Products compose components; the SO(n)-acting-
+on-Rn semidirect product includes rotation/translation coupling. Principal
+rotation logarithms are implemented for dimensions two and three, and are
+discontinuous at a half-turn. Group multiplication is exposed through *.
+"""
 from abc import ABC, abstractmethod
 from typing import Tuple, List, Optional, Union
 import torch

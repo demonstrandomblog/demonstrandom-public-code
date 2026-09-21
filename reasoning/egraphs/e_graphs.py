@@ -1,5 +1,11 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See this component's README.md and the repository AI_NOTICE.md before relying on results.
+"""Expression equivalence classes with explicit merges and congruence rebuilding.
+
+ENode(op,args) stores an operator and child class IDs; leaves have empty args.
+EGraph.add returns a class ID. union asserts equality and rebuild propagates
+it to expressions with equivalent children. No algebraic rules are inferred.
+extract chooses by arity and operator name, and has no guard against cycles.
+"""
 class ENode:
     def __init__(self, op, args):
         self.op = op

@@ -1,8 +1,8 @@
 # Copyright (c) 2024-2026 Kevin T. Procopio and contributors.
 # SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
-# AI assistance/review status: see AI_NOTICE.md at the repository root.
+# AI-assisted experimental code; full human and mathematical review is not established.
 
-"""Reproduce the three article scenarios and normal-form payoff matrix."""
+"""Plot mutual stag pursuit, mutual hare pursuit, asymmetric pursuit, and their payoff matrix."""
 import argparse
 from pathlib import Path
 import matplotlib.pyplot as plt

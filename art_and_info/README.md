@@ -10,6 +10,22 @@ Hamming and weighted-Hamming counting calculations with five overlap plots.
 Original code: [PolyForm Noncommercial 1.0.0](../LICENSE), with [required notices](../NOTICE)
 and [citation metadata](../CITATION.cff). Third-party data keeps its own notices.
 
+## Model and notation
+
+A configuration is a string of `k` binary features. Hamming distance counts
+the features on which two strings differ. A radius-`r` ball contains
+`V(k,r) = sum(comb(k,i), i=0..r)` strings. Given a positive integer `N`, the
+code finds the first radius satisfying `N * V(k,r) >= 2**k` and reports the
+overlap proxy `1 - r/k`. This is a counting model for hypothetical feature
+spaces; it does not measure similarities between actual works of art.
+
+Weighted distance assigns feature `i` the weight `i**(-beta)`, for `i=1..k`.
+Dynamic programming counts subsets after rounding each weight to a positive
+integer using `scale`. The weighted overlap proxy is
+`1 - (r_int/scale) / sum(i**(-beta), i=1..k)`.
+Larger scales increase both resolution and memory use. NumPy and Matplotlib
+support the plots; the unweighted counts use exact Python integers.
+
 ## Run and reuse
 
 From the repository root:
@@ -35,7 +51,7 @@ beta=0.5/1/2 and integer-weight scale 500. Weighted plots also use log10(N)=0..1
 The `min_radius_for_covering` helpers use the **volume criterion** N*V >= 2**k;
 they do not construct an actual optimal covering code. Weighted subset counts
 are exact for the rounded integer weights; the real-weight diameter remains
-the article's sum of i**(-beta).
+the sum of i**(-beta) for i=1..k.
 
 Verification enumerates every binary string for small dimensions, checks weighted
 subset counts independently, and reproduces the article's 0.84 example. Integer

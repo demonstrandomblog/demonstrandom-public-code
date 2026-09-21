@@ -1,5 +1,4 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See README.md and the repository AI_NOTICE.md for scope and limitations.
 """Reproduce the implementation and examples from an explicit article source."""
 from pathlib import Path
 import argparse
@@ -16,9 +15,10 @@ def extract(post):
     text = post.read_text(encoding='utf-8')
     start = text.index('# Appendix: Atomic Operations')
     appendix = text[start:]
-    chunks = ['# Generated from ' + SOURCE + '\n# Edit the article, then regenerate this file.\n'
+    chunks = ['# Game design via payoff maps, target regions, and constrained control commands.\n'
+              '# Payoffs use trailing dimensions (players, *actions); Map composes transformations.\n'
               '# AI-generated research code; no full human review is recorded.\n'
-              '# Validate results independently; see the article and package README.\n']
+              '# Local usage, solver contracts, and examples are in this package README.\n']
     symbols = []
     names = set()
     for block in BLOCK.finditer(appendix):
@@ -49,7 +49,8 @@ def extract(post):
         if not blocks:
             raise ValueError(f'No concrete blocks in vignette {number}')
         counts.append([number, len(blocks)])
-        examples.append(f'# Vignette {number}\n' + '\n'.join(blocks))
+        title = re.sub(r'\s*\{[^}]*\}\s*$', '', match[2].splitlines()[0])
+        examples.append(f'# Example {number}: {title}\n' + '\n'.join(blocks))
     if not examples:
         raise ValueError('No vignettes found')
     return ''.join(chunks), '\n\n'.join(examples) + '\n', symbols, counts

@@ -7,6 +7,31 @@ Code accompanying [Demonstrandom](https://demonstrandom.com/game_theory/posts/di
 > files for additional disclosures. Passing automated checks does not establish
 > a full human or mathematical review. Independently validate results you rely on.
 
+## Coordinates and components
+
+`lie_groups.py` implements Euclidean translations `Rn(n)`, proper rotations
+`SOn(n)`, direct products, and rotation/translation semidirect products. Group
+elements wrap tensors; multiplication composes elements, `inverse()` reverses
+them, and `exp`/`log` convert between algebra coordinates and elements.
+For rotations, coordinates fill the upper triangle of a skew-symmetric
+matrix in row order. In 2D the convention is `hat(a) = [[0,a],[-a,0]]`.
+For rigid motions `(R,t)`, composition is
+`(R1,t1)*(R2,t2) = (R1@R2, t1 + R1@t2)`.
+
+`learnable_lie_groups.py` stores trainable algebra coordinates in PyTorch
+parameters and exponentiates them to group elements. Rotation and translation
+actions are available; the rigid-motion class does not implement a point action.
+`discrete_control_lagrange.py` supplies mechanical models and a variational
+integrator, with pendulum and free-rotor demonstrations in `variational_example.py`.
+
+The integrator approximates the action over one step by a midpoint discrete
+Lagrangian `Ld(q_k,q_next,h)`. Given consecutive configurations, Newton's method
+solves `D2 Ld(q_prev,q_k,h) + D1 Ld(q_k,q_next,h) = 0` for the next one.
+Coordinates are flat tensors in the order defined by the model's control plane.
+The pendulum uses `L = m*l**2*theta_dot**2/2 - m*g*l*(1-cos(theta))`;
+the rotor omits the potential term. Principal rotation logarithms restrict
+the coordinate chart and are discontinuous at a half-turn.
+
 ## Run
 
 From the repository root, install this component's dependencies in your own
@@ -20,7 +45,7 @@ python -m games.geometric_controls.variational_example --output-dir outputs/vari
 
 ## Scope and known limitations
 
-Repaired SO(n) sampling and rigid-motion exponentials are included. Principal logarithms are supported for SO(2), SO(3), SE(2), and SE(3); unsupported general semidirect products raise NotImplementedError. Matrix inputs use exp_matrix(). CPU checks do not establish GPU coverage. The trainable layer retains its entirely-GPT-generated, unreviewed notice.
+SO(n) sampling and rigid-motion exponentials are included. Principal logarithms are supported for SO(2), SO(3), SE(2), and SE(3); unsupported general semidirect products raise NotImplementedError. Matrix inputs use exp_matrix(). CPU checks do not establish GPU coverage. The trainable layer retains its entirely-GPT-generated, unreviewed notice.
 
 See [validation report](../../VALIDATION.md) for the exact checks and their results.
 Dependencies retain their own licenses. The original project code is covered
@@ -33,7 +58,7 @@ For citation details see [CITATION.cff](../../CITATION.cff).
 [Controls from the Geometric Perspective](https://demonstrandom.com/game_theory/posts/discrete_controls_lagrange/index.html)
 and the free-rotor charge in
 [Noether's Theorem and Geometric Controls](https://demonstrandom.com/game_theory/posts/noether_geometric_controls/).
-It uses this repository's repaired Lie primitives, midpoint discrete Lagrangians,
+It uses the bundled Lie primitives, midpoint discrete Lagrangians,
 autograd derivatives, and Newton steps for the discrete Euler-Lagrange equation.
 
 ```python
@@ -49,7 +74,7 @@ assert success  # q_next is 0.22
 
 Use float64 for the default `1e-10` Newton tolerance. `step()` returns a detached
 position and a boolean determined by the final equation residual. A small Newton
-step alone no longer counts as convergence. Linear solve failures still raise.
+step alone does not establish convergence. Linear solve failures still raise.
 Eight tests cover analytic rotor motion/momentum, second-order pendulum refinement,
 zero-iteration failure, small-step false success, and invalid step sizes.
 

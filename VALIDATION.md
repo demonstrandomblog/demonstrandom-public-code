@@ -25,7 +25,9 @@ generated figures were visually inspected.
 Game control's report is in [verification.json](game_control/verification.json).
 Its wheel installs and runs the full portable verification harness. The source
 distribution includes the examples, checks, extraction tool, and legal notices.
-The implementation and examples reproduce the recorded article source exactly.
+The implementation definitions and example bodies reproduce the recorded article
+source. Generated headers describe their local purpose; the extraction check
+reproduces those headers as well.
 
 ## Commands
 

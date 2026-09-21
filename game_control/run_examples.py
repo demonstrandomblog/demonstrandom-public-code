@@ -1,4 +1,4 @@
-# AI-assisted research code; see README.md for review status and limitations.
+# AI-assisted experimental code; full human and mathematical review is not established.
 from pathlib import Path
 import game_control
 

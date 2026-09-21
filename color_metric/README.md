@@ -9,6 +9,30 @@ Companion to [Do We See the Same Colors?](https://demonstrandom.com/theory_of_mi
 Original code: [PolyForm Noncommercial 1.0.0](../LICENSE), with [required notices](../NOTICE)
 and [citation metadata](../CITATION.cff). Third-party data keeps its own notices.
 
+## Model and notation
+
+The input is 25 measured discrimination ellipses in CIE 1931 chromaticity
+coordinates. Each row of `data/macadam.json` is `(x, y, a, b, angle_deg)`:
+ellipse center, positive semiaxis lengths, and counterclockwise orientation
+in degrees. For a rotation matrix `R` at that angle, the local metric is
+`g = R @ diag(1/a**2, 1/b**2) @ R.T`. Its unit ellipse satisfies
+`displacement.T @ g @ displacement = 1`.
+
+A `MetricField` instance called as `metric(x, y)` returns a symmetric 2-by-2 matrix. A Killing field is a
+vector field whose flow preserves that metric. `killing_matrix` represents
+the three independent equations
+`X^k * partial_k(g_ij) + g_kj * partial_i(X^k) + g_ik * partial_j(X^k) = 0`
+at each sampled point, summing over `k`. Each vector component is a polynomial
+of total degree at most three by default. Columns contain the coefficients
+of the first component followed by those of the second; there are 20 columns.
+Metric and polynomial derivatives use central differences with step `0.005`.
+
+`gamut_grid()` samples a 20-by-20 rectangle with `x` from 0.10 to 0.65 and
+`y` from 0.08 to 0.65, retaining points inside the bundled spectral-locus
+polygon. This gives 332 points and a 996-by-20 matrix. Singular values measure
+the residual of this sampled polynomial ansatz; full rank does not rule out
+all smooth Killing fields or establish a claim about subjective perception.
+
 ## Run
 
 From the repository root:

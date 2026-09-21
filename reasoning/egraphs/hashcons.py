@@ -1,5 +1,9 @@
 # AI-assisted research code; no blanket human or mathematical review is claimed.
-# See this component's README.md and the repository AI_NOTICE.md before relying on results.
+"""Intern immutable hashable objects by equality, with hash-collision handling.
+
+HashCons.cons(value) returns the stored equal object, preserving identity across
+equal values. Unequal objects remain distinct even if their hashes collide.
+"""
 class HashCons:
     def __init__(self):
         self.store = {}

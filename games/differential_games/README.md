@@ -7,6 +7,24 @@ Companion to [Differential Games and Stag Hunt](https://demonstrandom.com/game_t
 > files for additional disclosures. Passing automated checks does not establish
 > a full human or mathematical review. Independently validate results you rely on.
 
+## Simulation model
+
+A differential game evolves a joint state by `dx/dt = f(x, u)`. Each agent has
+named state variables and a policy mapping observations to a control vector.
+`Game` bundles these definitions with an initial-state sampler and payoff
+rule. `Arena` evaluates the policies, takes Euler or fourth-order Runge-Kutta
+steps, and records state and accumulated payoff. Policies, dynamics, and
+payoffs must agree on the slices supplied by `StateSpace`; positions in the
+bundled example use `(x, y)` coordinates.
+
+The supplied Stag Hunt has two hunters, `c1` and `c2`, and three moving prey
+agents: a stag and two hares. Each hunter chooses `ChaseStag` (cooperate) or
+`ChaseHare` (defect). Joint stag capture earns both hunters 4; hare capture
+earns 3. With the bundled initial conditions, a lone stag pursuer earns 0. The normal-form converter
+runs each policy combination from sampled initial states and returns a tensor
+of shape `(players, strategies_1, strategies_2, ...)`. These are simulation
+payoffs for the supplied policies, not a search for optimal continuous controls.
+
 ## Run
 
 From the repository root:

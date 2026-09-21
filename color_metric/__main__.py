@@ -1,4 +1,4 @@
-# AI-assisted research code; see README.md and the repository AI_NOTICE.md.
+# AI-assisted experimental code; full human and mathematical review is not established.
 """Run both interpolation modes and save a spectrum comparison and JSON results."""
 import argparse,json
 from pathlib import Path

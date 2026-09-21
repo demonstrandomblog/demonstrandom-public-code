@@ -54,9 +54,9 @@ licenses.
 ## Why noncommercial?
 
 The goal is to help people learn from the posts, reproduce results, and build
-on the work, with credit to Kevin T. Procopio and Demonstrandom. Noncommercial
-licensing supports that sharing while reserving commercial reuse outside the
-licenses' existing permissions for a separate conversation.
+on the work. Noncommercial licensing supports that sharing while reserving
+commercial reuse outside the licenses' existing permissions for a separate
+conversation.
 
 Commercial projects can be worthwhile; asking first is the intended tradeoff.
 This can make the code less convenient to adopt in products or libraries whose

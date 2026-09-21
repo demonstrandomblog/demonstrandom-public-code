@@ -7,12 +7,12 @@ limitations remain applicable; passing these checks is not a correctness proof.
 | Component | Measured result | Limits |
 |---|---|---|
 | Invariant theory | 63 tests pass, including exact rank and lattice-saturation checks, bounded separation, and symbolic relations | Degree bounds and signed-permutation restriction are explicit; Koszul relations are incomplete |
-| Game invariant coordinates | 17 tests and all 21 appendix scripts run; all three candidate atlases pass 216 group images and 630 sample-pair checks | Numerical ranks and finite samples do not certify global generation or separation |
+| Game invariant coordinates | 34 tests, a game-structure driver and all 21 appendix scripts run; all three candidate atlases pass 216 group images and 630 sample-pair checks | Numerical ranks and finite samples do not certify global generation or separation |
 | Allometry | 3 tests pass; installed CLI plots 573 valid PanTHERIA pairs | Descriptive supplement; no fitted exponent, outlier correction, or validation of a scaling mechanism |
 | EGraphs | 6 tests pass, including a real hash-collision regression | Simple teaching implementation and extractor |
 | Selectorate | Nested-depth, unequal-level, infeasibility, budget, and gradient checks pass | Continued-fraction model; old product-form results superseded |
 | Canonicalizer | All 576 strict games partition into 78 reference orbits without splits/merges; tied examples and returned transformations pass | Exact 2x2 ordinal ID, separate from the soft path |
-| Lie groups and variational integration | 85 Lie tests and 8 integrator tests pass | SO/SE scope plus rotor trajectory/charge, pendulum refinement and Newton failure checks; trainable layer remains explicitly unreviewed |
+| Lie groups and variational integration | 85 Lie tests and 19 integration/time tests pass | SO/SE scope plus rotor, pendulum, explicit time and Kepler scaling; trainable layer remains explicitly unreviewed |
 | Gradient learning | 4 tests and seeded 200-step demo pass | Article payoffs, independent three-player enumeration and finite-difference gradients |
 | Differential games | 11 tests and three scenario plots/payoff heatmap pass | Stag Hunt matrix, Euler/RK4 refinement and fixed-step timing |
 | System identification | 7 analytic tests pass and full demo completes | Arnoldi unimplemented; no broad noisy-data/conditioning claim |
@@ -21,7 +21,7 @@ limitations remain applicable; passing these checks is not a correctness proof.
 | Inspection bias | 3 checks; direct combinatorial cases and four fitted RMSE values reproduced | Provisional functional-information model |
 | Cultural counting | 6 checks; exact small-space enumerations and 0.84 article example reproduced | Five overlap figures; rounded weights and volume criterion |
 
-The full suite passes **251 pytest tests**, with warnings treated as errors and
+The full suite passes **279 pytest tests**, with warnings treated as errors and
 pytest plugin autoload disabled. Component examples complete, and thirteen
 generated figures were visually inspected.
 
@@ -51,9 +51,11 @@ python -m inspection_bias.plot
 python -m art_and_info
 python -m games.gradient_learning
 python -m games.geometric_controls.variational_example
+python -m games.geometric_controls.kepler_example
 python -m games.differential_games
 python -m invariants
 python -m games.invariant_coordinates
+python -m games.invariant_coordinates.structure_example
 python -m games.invariant_coordinates.verify_atlases all
 ```
 
@@ -65,7 +67,7 @@ hashes are recorded in [SOURCE_PROVENANCE.json](SOURCE_PROVENANCE.json).
 
 ## Validated environment
 
-The full 251-test suite used Python 3.13.5 in WSL, NumPy 2.3.3, SciPy 1.16.1,
+The full 279-test suite used Python 3.13.5 in WSL, NumPy 2.3.3, SciPy 1.16.1,
 PyTorch 2.7.1+cu126, torchsort 0.1.10, and SymPy 1.14.0, on CPU. GPU behavior
 was not tested.
 
@@ -109,7 +111,7 @@ examples pass. The distributions include required license notices and the
 game companion includes all three numeric atlas files.
 
 That fresh environment used Python 3.13.5, NumPy 2.5.3, SciPy 1.18.1,
-SymPy 1.14.0, and pytest 9.1.1 on CPU. The full 251-test suite also passes
+SymPy 1.14.0, and pytest 9.1.1 on CPU. The full 279-test suite also passes
 in the previously recorded scientific environment, with warnings as errors.
 
 The integer-kernel tests include negative weights, dependent and empty
@@ -143,3 +145,30 @@ study mass. A local diagnostic plot was visually inspected.
 
 The isolated installation used Python 3.13.5, NumPy 2.5.3, Matplotlib 3.11.2,
 and pytest 9.1.1 on CPU.
+
+## Time-dependent controls and game structure
+
+The full 279-test public suite passes with warnings as errors. The game
+companion's version 0.2.0 wheel installs into a fresh environment and passes
+all 34 installed tests, both commands, and README/STRUCTURE Python examples.
+Its source distribution and wheel contain the new modules, documentation,
+atlas data and license notices.
+
+The geometric component passes all 104 tests in the isolated CPU environment.
+Eleven new checks cover explicit time, analytic forced motion, independent
+Kepler refinement, endpoint energy, rotational momentum, scaling and failures.
+Both Kepler runs use 500 positions; the rescaled trajectory error is 2.52e-9
+or less and charge error is 4.98e-9 or less. Angular-momentum range is below
+1.16e-10. Energy range is approximately 3.8782e-4, not zero. The similarity
+charge varies by about 4.78 while obeying the inter-trajectory scaling check.
+See [time verification](games/geometric_controls/time_verification.json).
+
+Seventeen new game tests verify Hodge dimensions/components for k=2,3,4,
+all 72 relabelings for k=3, potential reconstruction, exact Reynolds averages,
+non-bijective best responses, ties, transient paths, cycle witnesses, and
+counterexamples to low-degree separation claims.
+See [structure verification](games/invariant_coordinates/structure_verification.json).
+
+The isolated environments use Python 3.13.5, NumPy 2.5.3, SciPy 1.18.1,
+SymPy 1.14.0 and pytest 9.1.1; geometry additionally uses PyTorch 2.7.1+cpu.
+No GPU verification is claimed.

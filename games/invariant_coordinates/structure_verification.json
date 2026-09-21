@@ -1,0 +1,78 @@
+{
+  "command": "python -m games.invariant_coordinates.structure_example",
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0"
+  },
+  "tests": {
+    "new_structure_checks": 17,
+    "installed_companion": 34,
+    "warnings": "errors"
+  },
+  "measurements": {
+    "matching_pennies": {
+      "classes": {
+        "potential": false,
+        "zero_sum": true,
+        "common_interest": false,
+        "symmetric_in_given_labels": false,
+        "strictly_dominant_rows": [],
+        "strictly_dominant_columns": []
+      },
+      "potential_obstruction": 64.0,
+      "hodge_component_squared_norms": {
+        "potential": 1.217187724852733e-31,
+        "harmonic": 7.999999999999994,
+        "nonstrategic": 1.7410406697260612e-31
+      },
+      "best_response_type": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "pure_nash": [],
+      "alternating_cycle_lengths": [
+        2
+      ],
+      "four_deviation_witness": 16.0
+    },
+    "coordination_potential_reconstruction_error": 0.0,
+    "hodge_dimensions_k3": [
+      8,
+      4,
+      6
+    ],
+    "exact_quadratic_orbit_averages_k2": [
+      "35/2",
+      "65/4",
+      "65/4",
+      "15",
+      "19/2",
+      "33/4",
+      "7"
+    ],
+    "potential_pair_quadratic_collision": {
+      "same_d4_orbit": false,
+      "quadratics_equal": true,
+      "cubics_equal": false
+    },
+    "nine_coordinate_collision": {
+      "same_d4_orbit": false,
+      "quadratics_equal": true,
+      "cubics_equal": true
+    }
+  },
+  "limitations": [
+    "Square bimatrix games only.",
+    "Unique-best-response APIs reject ties.",
+    "Nine low-degree coordinates do not separate all orbits.",
+    "Cycle witnesses are labeled polynomials."
+  ]
+}

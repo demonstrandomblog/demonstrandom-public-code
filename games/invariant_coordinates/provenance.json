@@ -125,19 +125,24 @@
     "__init__.py": "56708c3bb8ac5a3db105d9fb8e539eb3086ae421fb4cf33d409f9723d8570038",
     "__main__.py": "67b4a2578cbd6a01010e8cbcc33db324a670aee4200fdfc93f93de2b5d21185d",
     "atlas_3x3.py": "6f954f6a9c75f56330bc90ce4c2086c8e518f468abfc65292a3309f3c685f729",
+    "br_type_invariants.py": "bbf0499a8bfdd7598866b34aab3ee57b7ebe6b063a502f4ca78543e27fd47f0b",
     "candidate_atlases.py": "fadd23d6e8f5429e60b7164881f01e6e42020c4115c1ad0bfd9e7106888af9b2",
     "classify_3x3.py": "77f98920764a5210e021160e252ff18b5943b1794cbe77a518ddb8f11aa3b602",
     "contrast_blocks_3x3.py": "f8611ca30dcf885be99209b75e1f37b07cde82f24fcf650d1eb175c834786068",
+    "cycles.py": "84f4e578d2d5d2b6bfb9ee1213457530a9f169d107fd7f34e25d405a64519edd",
     "data/atlas598.npz": "4e1cfc7f699a2ce46bf1bf6661135db0040159057eab012e047265018f94d161",
     "data/manifest.json": "a76bbc8440efbabf5530764d9596f1112f971b97d6d3db9c61d764d52d0d81c1",
     "data/polarized1456.npz": "977ac02bc42569f7c78a2a64f2e30eb8dd9fabc562786c61fad32ff3f78fa25c",
     "data/polarized302.npz": "8e0f87d89f042cb3f50ef589b9019f90a50a4c28c8bf699baeb336f0d421cccf",
     "degree3_mz_strategy_only.py": "5beeb62f260041d50b092c9e58a4d0c86a770b14d951e5fef4e565e194ba166a",
     "enumerate_3x3_generators.py": "a6bf46e49d4c14d9ec9834c7a856a34a24861cc612efc137e7ba7be02c05f935",
+    "game_classes.py": "dd5ba93f95091f18b88834f3fcd10de369359bc6dc9bb908d580d524668fba0d",
     "generators_2x2_mz.py": "35dfc5bf6e63d3f88abf6561f7edd3840d9a2d107c65651ad2fb016209454646",
     "generators_2x2_strategy_only.py": "3ee27447fa526dff720f2f96f04f86cacede4188011cb9518847facb0e1a4658",
     "generators_3x3_strategy_only.py": "76dfedf0082993c5ae11911befb8a3cb3912cac972a184138dabd7a99faaeb97",
     "hilbert_separation_3x3.py": "5c14d97fbe16583a5a7f1fa6c9bbf0c80ba70c15656792565d8d273d0ad79f58",
+    "hodge.py": "e91d59cd39ba20588fdedf1f8e1678908be2feadf1d03000794c9816653ab2dc",
+    "hodge_invariants.py": "f1d6e61c22fc96a4c9a3a80981b289848f6ee070749e41a85cc1c4412320956f",
     "LICENSE": "ffcca38841adb694b6f380647e15f17c446a4d1656fed51a1e2041d064c94cc8",
     "MANIFEST.in": "6794b789ce626a27a84fd2f741e57e95204a2258496d67afc1451f2de9ab07e0",
     "molien_3x3_strategy_only.py": "9a1feff7b13fed5276245bc323b194e42fd5b2f45a89835857ecc7761557a5d5",
@@ -145,19 +150,77 @@
     "ne_disc_degree.py": "c88ce1c332bb9d187af41589a8213a7373170dcbb7505a8e134842c684fc3fc6",
     "NOTICE": "94123aa1217668f6286f4bc347ba4de695124748a1d6a1a3f0a254e997262aaf",
     "orbit_separation_3x3.py": "7ced4bc6e057b2d1eb26b9f64e8835d55635c8f6f8efa39da006d9956a723d0d",
-    "pyproject.toml": "c80865f0ded2e578e6849a967512ea8f27bf1f455b6c5c1982cfa74f8fff76c0",
-    "README.md": "29658a8f56452a1f401e2f74a4e657fac5063a0c9ebd681f5d89f0a9a672e792",
+    "potential_subvariety.py": "b7a8e36696db74378f29d1502f24e18e2fe8ba7932a32b051dc3e428ff5df417",
+    "pyproject.toml": "4b4eb3af06f266d9144a7c4e4d74e0a0f0513f1ee3a287aea15fdd33de3583ed",
+    "README.md": "9710879c3172af6f66b358ce6e0184ddfc3b04cc39617927bc0d883189e02a9d",
     "requirements.txt": "3913b78b98297453c0fe83c9a2a202d5ca110c31e931a3b1ea364760e553e4ee",
     "rg_from_invariants.py": "61e431be881669e37e28630ddae99e016d997fedddeef07c999d659977a66cab",
     "rg_minimal.py": "bd392b64f8fe0ecb1e988314c944a460d7c60f2b7e63a4177c4561855f14d452",
     "scaling.py": "4cb23bc64601f5d11cd80664ab9f800afcc496de3899e62dad6977d05f251939",
+    "selection.py": "4d2fa021fb7b9233703f7e816458df16e7908f2210cf71c806746359cd075602",
+    "STRUCTURE.md": "8834b347a4126dac380d2b0bd9a782a5e4f7905d74c172bdfcd35a94997f2498",
+    "structure_example.py": "42b77d3c6bc409e8bdd7c5323efba61553b7c287df03e928110d2d26e5be29ea",
+    "structure_verification.json": "b03d5f7bde1f2b55d9639b1d2f6b18affd2f51a69a36cb0f66e43f976f180db4",
     "syzygies_exact.py": "b30653e8da406f62ceb9d2bb099aa1eaec3422ecdb61b7bdc7fc0b180542f773",
     "syzygies_strategy_only.py": "c640e67ab707489b2f8a780794767c80bc2df26255dc10edd5873afd8adbc79c",
     "test_coordinates.py": "d375b34719b7cbf5d8d98d573f6d49b977a1380a654dd83f7541e182040d8072",
+    "test_game_structure.py": "11540215ac8e9cfaad70f6fcde0cb20190ddc28b893c485bad57ddb0a04c095e",
     "typology_census_3x3.py": "c9cf4296f04bb8435f12756db7cf96647ecba957efbef172d7ce48c4e4975267",
     "verification.json": "879c8fc30d93a382e8c08c19c578a7bcbdd2941899827e990f181a2d5962fb7c",
     "verify_atlases.py": "64e11146d8af5f8a7ca159e6556a356fd6695fb3cce578771436d1fa17845eff",
     "verify_ne_discriminant.py": "05109fcafbbaec6510f57205fd271f0f317870faeb8368f16096da9093d32ee2",
     "verify_solvability.py": "5c4f9b5fba948b416d1613f04b0ca9df6221b6f544ce9398e5a9bc9f4afe1196"
-  }
+  },
+  "structure_sources": [
+    {
+      "source": "invariants/game_invariants/game_classes.py",
+      "source_sha256": "1d740154633be68e0c5fd42fccb346fa5e702b7dfb571b549d6954f816b3cac6",
+      "destination": "game_classes.py",
+      "prepared_sha256": "dd5ba93f95091f18b88834f3fcd10de369359bc6dc9bb908d580d524668fba0d",
+      "adaptation": "Selected article-facing routines corrected or rewritten; see STRUCTURE.md and ARTICLE_DIFFERENCES.md."
+    },
+    {
+      "source": "invariants/game_invariants/potential_subvariety.py",
+      "source_sha256": "592a628862135a646dc4aa9875acbf3bb8cc3c78517ff9961589ebd0f8bb4db3",
+      "destination": "potential_subvariety.py",
+      "prepared_sha256": "b7a8e36696db74378f29d1502f24e18e2fe8ba7932a32b051dc3e428ff5df417",
+      "adaptation": "Selected article-facing routines corrected or rewritten; see STRUCTURE.md and ARTICLE_DIFFERENCES.md."
+    },
+    {
+      "source": "invariants/game_invariants/br_type_invariants.py",
+      "source_sha256": "889db0f6f1be2e1ced4e4ef0d8ec9d02d68d098e346946873417d5d58b655ab9",
+      "destination": "br_type_invariants.py",
+      "prepared_sha256": "bbf0499a8bfdd7598866b34aab3ee57b7ebe6b063a502f4ca78543e27fd47f0b",
+      "adaptation": "Selected article-facing routines corrected or rewritten; see STRUCTURE.md and ARTICLE_DIFFERENCES.md."
+    },
+    {
+      "source": "invariants/game_invariants/hodge.py",
+      "source_sha256": "869e569b47c8351a0c8095c24ae27e998587be3b79928e5f0a38bed672c6122b",
+      "destination": "hodge.py",
+      "prepared_sha256": "e91d59cd39ba20588fdedf1f8e1678908be2feadf1d03000794c9816653ab2dc",
+      "adaptation": "Selected article-facing routines corrected or rewritten; see STRUCTURE.md and ARTICLE_DIFFERENCES.md."
+    },
+    {
+      "source": "invariants/game_invariants/hodge_invariants.py",
+      "source_sha256": "cb08ea1bfa58486da1c53f2c36bd3e262401ff18f7a5432392f4532febb8a922",
+      "destination": "hodge_invariants.py",
+      "prepared_sha256": "f1d6e61c22fc96a4c9a3a80981b289848f6ee070749e41a85cc1c4412320956f",
+      "adaptation": "Selected article-facing routines corrected or rewritten; see STRUCTURE.md and ARTICLE_DIFFERENCES.md."
+    },
+    {
+      "source": "invariants/game_invariants/selection.py",
+      "source_sha256": "5e99bfd619225de693644c44cfd4c2ae0d60cb462b29260268cc69344d96762d",
+      "destination": "selection.py",
+      "prepared_sha256": "4d2fa021fb7b9233703f7e816458df16e7908f2210cf71c806746359cd075602",
+      "adaptation": "Selected article-facing routines corrected or rewritten; see STRUCTURE.md and ARTICLE_DIFFERENCES.md."
+    },
+    {
+      "source": "invariants/game_invariants/cycles.py",
+      "source_sha256": "48e365940f091660acc34f63f645039c51cef262e645ca483ba2b4eae27b1a62",
+      "destination": "cycles.py",
+      "prepared_sha256": "84f4e578d2d5d2b6bfb9ee1213457530a9f169d107fd7f34e25d405a64519edd",
+      "adaptation": "Selected article-facing routines corrected or rewritten; see STRUCTURE.md and ARTICLE_DIFFERENCES.md."
+    }
+  ],
+  "structure_article_source_sha256": "ac077d8245d326a9a65bafecf8e2423faed38c75fcf73757dbb5572119242177"
 }

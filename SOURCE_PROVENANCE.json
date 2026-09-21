@@ -223,6 +223,7 @@
   "prepared_hash_format": "SHA-256 of UTF-8 file bytes with LF line endings, as stored in Git.",
   "game_control": "See game_control/provenance.json for article, implementation, extraction, and verification provenance.",
   "invariants": "See invariants/provenance.json for input identities, corrections, and prepared file hashes.",
-  "game_invariant_coordinates": "See games/invariant_coordinates/provenance.json and data/manifest.json for article blocks, polynomial data, and prepared file hashes.",
-  "allometry": "See allometry/provenance.json for the supplementary plotting helper, corrections, input identities, and prepared hashes."
+  "game_invariant_coordinates": "See games/invariant_coordinates/provenance.json and data/manifest.json for article blocks, game-structure source identities, polynomial data and prepared hashes.",
+  "allometry": "See allometry/provenance.json for the supplementary plotting helper, corrections, input identities, and prepared hashes.",
+  "time_controls": "See games/geometric_controls/time_provenance.json for article identities, recovered source, corrections and prepared hashes."
 }

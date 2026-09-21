@@ -85,3 +85,11 @@ test uses an independently accurate q1 to isolate integration error. Reported
 energy uses the article's backward-difference velocity estimate.
 The Noether charge retains the article's finite-difference generator with epsilon
 equal to the solver tolerance; the tested rotor charge error is below `1e-5`.
+
+## Explicit time and Kepler scaling
+
+[Time-dependent controls](TIME_CONTROLS.md) documents the fixed-step time-aware
+integrator, endpoint energy, rotational momentum, and the Kepler scaling example
+for [Noether with Time](https://demonstrandom.com/game_theory/posts/noether_time/)
+and [Dynamical Similarity](https://demonstrandom.com/game_theory/posts/dynamical_similarity/).
+Run python -m games.geometric_controls.kepler_example for the numerical report.

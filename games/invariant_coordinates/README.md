@@ -179,3 +179,12 @@ Original code, documentation, and generated polynomial data use
 [PolyForm Noncommercial 1.0.0](LICENSE).
 Preserve [NOTICE](NOTICE); citation metadata is in
 [CITATION.cff](../../CITATION.cff). Dependencies retain their own licenses.
+
+## Game classes, Hodge components and response dynamics
+
+[Game structure](STRUCTURE.md) documents the seven article-referenced companion
+modules for potential games, orthogonal Hodge decomposition, best-response types,
+cycles, exact Reynolds averages and low-degree pair comparisons. Run
+python -m games.invariant_coordinates.structure_example for a deterministic
+combined demonstration. These APIs use square two-player games and explicitly
+handle non-bijective response maps, ties and incomplete invariant coordinates.

@@ -95,3 +95,45 @@ arrays. Polarization residues are lifted to centered signed integers as in the
 numerical experiment. All 630 sample pairs are now checked; the original
 diagnostic printed only the ten closest pairs. The three atlases pass the
 recorded 36-game experiment, without a global separation claim.
+
+## Explicit time and Kepler diagnostics
+
+The time companion implements the article example on a prescribed physical-time
+grid. Spatial states exclude t; explicit time is passed to the midpoint
+Lagrangian. The first recorded edge now runs from start_time+h to start_time+2h.
+Newton success depends on the final equation residual and failure preserves
+the clock. Transform callbacks use a documented three-argument signature.
+
+Endpoint energy is -dLd/dh with the spatial endpoints and initial time fixed.
+The time-translation charge is its negative. The example's fixed time steps
+do not guarantee exact energy conservation, despite its printed "should be
+constant" label. Angular momentum and scaled-orbit diagnostics are checked
+separately. The Kepler similarity charge varies along an orbit.
+
+The article's radius-squared regularizer 1e-10 is an explicit softening=1e-5
+option. The default unsoftened model obeys Kepler scaling and rejects the
+collision point. The example retains the article's first-order initialization.
+
+## Additional game-structure routines
+
+Seven article-referenced modules provide selected routines through a documented
+shared API and one deterministic driver. Corrections below concern recovered
+scripts; they do not silently revise the article or extend its claims.
+
+- Potential-game constraints are additive rectangle differences, not
+  determinant minors. The sum of their squares supplies an invariant test;
+  sampled invariant relations are not treated as a sufficiency proof.
+- The Hodge nonstrategic component includes all opponent-dependent payoffs.
+  For square games its dimension is 2k, with potential/harmonic dimensions
+  k^2-1 and (k-1)^2. The invariant helper shares the corrected projectors.
+- Best-response maps need not be invertible. Player exchange swaps the maps;
+  it does not invert them. Unique-response APIs reject ties and the response
+  graph preserves all maximizers.
+- Cycle extraction counts actual directed cycles without transient tails.
+  Alternating cycles count pairs of moves; labeled payoff-gain witnesses do
+  not by themselves become relabeling invariants.
+- Distinct-monomial sums are divided by orbit size for a Reynolds average,
+  accounting for stabilizer multiplicity.
+- Nine quadratic/cubic coordinates are an incomplete list. Explicit pairs
+  disprove both quadratic separation of all potential games and separation
+  of all orbits by these nine coordinates. Comparisons retain payoff scale.

@@ -1,0 +1,25 @@
+{
+  "articles": [
+    {
+      "url": "https://demonstrandom.com/game_theory/posts/noether_time/",
+      "source_sha256": "5d120c67fc53e422212063f535a59ac0b5aba1e93f6e1d6ef885ddb3d4dba0a1"
+    },
+    {
+      "url": "https://demonstrandom.com/game_theory/posts/dynamical_similarity/",
+      "source_sha256": "29f879c8b8313af75e80de81e3db7469ad9efe48ef213448bfa778f9e4c61ec6"
+    }
+  ],
+  "source": {
+    "path": "games/geometric_controls/discrete_control_lagrange_t.py",
+    "revision": "19d1371",
+    "sha256": "36987a2a4004511ff7279a026738061546e2b9f4cea65f59b247de8bf677b6fe"
+  },
+  "adaptation": "Fixed physical-time API using shared Lie/model primitives; explicit time, corrected timestamps and endpoint energy, residual-based success, optional Kepler softening. See TIME_CONTROLS.md.",
+  "files": {
+    "discrete_control_lagrange_t.py": "1f6c2d5d336fbe268e9e92d18fa93e53010e0da04cdcc9bbb6e6caee45b9e10d",
+    "kepler_example.py": "45755c5dfefa563434091613558aa560a1dfb46190af3f520670224efbcebb44",
+    "test_time_controls.py": "a09fa0c2bc3a7c45a34b8551b4772f74db6ae114adaedf87bb7ec1cd8065c22d",
+    "TIME_CONTROLS.md": "02b2d0a245e9646ea57603a7a7c1fc17d41685c0deaea9470777a0e61bf32c29",
+    "time_verification.json": "1c690f47f9ffcb2297080cdefa73081729f4a704cb377f1b809fb7af251e2d98"
+  }
+}

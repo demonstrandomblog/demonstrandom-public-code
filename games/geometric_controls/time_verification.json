@@ -1,0 +1,31 @@
+{
+  "command": "python -m games.geometric_controls.kepler_example",
+  "environment": {
+    "python": "3.13.5",
+    "torch": "2.7.1+cpu",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "tests": {
+    "new_time_checks": 11,
+    "full_component": 104,
+    "warnings": "errors"
+  },
+  "measurements": {
+    "steps": 500,
+    "step_size": 0.01,
+    "scale": 2.0,
+    "energy_range": 0.00038782081209498553,
+    "angular_momentum_range": 1.1506384733905861e-10,
+    "similarity_charge_range": 4.777243740799663,
+    "position_scaling_max_error": 2.511149316264394e-09,
+    "charge_scaling_max_error": 4.9734163454218105e-09,
+    "time_scaling_max_error": 2.353672812205332e-14,
+    "max_solver_residual": 9.962424896964363e-11
+  },
+  "limitations": [
+    "Fixed physical time steps do not conserve energy exactly.",
+    "Similarity charge is not constant along an orbit.",
+    "CPU and small teaching examples only."
+  ]
+}

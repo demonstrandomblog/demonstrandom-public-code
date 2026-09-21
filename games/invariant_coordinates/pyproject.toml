@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "demonstrandom-game-invariant-coordinates"
-version = "0.1.0"
+version = "0.2.0"
 description = "Experimental invariant coordinates and candidate atlases for normal-form games"
 readme = "README.md"
 license = "PolyForm-Noncommercial-1.0.0"
@@ -23,4 +23,4 @@ include-package-data = true
 "games.invariant_coordinates" = "."
 
 [tool.setuptools.package-data]
-"games.invariant_coordinates" = ["README.md", "LICENSE", "NOTICE", "*.json", "requirements.txt", "data/*.npz", "data/*.json"]
+"games.invariant_coordinates" = ["README.md", "STRUCTURE.md", "LICENSE", "NOTICE", "*.json", "requirements.txt", "data/*.npz", "data/*.json"]

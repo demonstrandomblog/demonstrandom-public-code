@@ -1,0 +1,58 @@
+{
+  "scope": "Finite 36-game sample; no global separation claim.",
+  "results": [
+    {
+      "atlas": "atlas598",
+      "coordinates": 598,
+      "group_images": 216,
+      "games": 36,
+      "pairs": 630,
+      "invariance_max_absolute_error": 5.255795798575491e-13,
+      "invariance_relative_error": 2.2654241241030033e-15,
+      "minimum_normalized_distance": 1.1512758903833835,
+      "median_normalized_distance": 1.3982846407823146,
+      "false_merges": [],
+      "same_orbit_collisions": [],
+      "passed": true
+    },
+    {
+      "atlas": "polarized302",
+      "coordinates": 299,
+      "group_images": 216,
+      "games": 36,
+      "pairs": 630,
+      "invariance_max_absolute_error": 1.1283418643870391e-11,
+      "invariance_relative_error": 1.5842594467416342e-14,
+      "minimum_normalized_distance": 0.8724645240273269,
+      "median_normalized_distance": 1.377308789714653,
+      "false_merges": [],
+      "same_orbit_collisions": [],
+      "passed": true
+    },
+    {
+      "atlas": "polarized1456",
+      "coordinates": 1453,
+      "group_images": 216,
+      "games": 36,
+      "pairs": 630,
+      "invariance_max_absolute_error": 1.736566446197685e-11,
+      "invariance_relative_error": 2.115677803408954e-14,
+      "minimum_normalized_distance": 0.8891410058577601,
+      "median_normalized_distance": 1.3692170526141298,
+      "false_merges": [],
+      "same_orbit_collisions": [],
+      "passed": true
+    }
+  ],
+  "thresholds": {
+    "invariance_relative": 1e-08,
+    "normalized_collision_distance": 1e-06,
+    "orbit_absolute": 1e-07,
+    "orbit_relative": 0
+  },
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.5.3",
+    "platform": "WSL Linux, CPU"
+  }
+}

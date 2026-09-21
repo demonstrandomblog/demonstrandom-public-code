@@ -1,0 +1,3 @@
+include README.md LICENSE NOTICE provenance.json verification.json requirements.txt
+include *.py
+recursive-include data *.json *.npz

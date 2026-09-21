@@ -1,0 +1,73 @@
+{
+  "format": "sparse-polynomials-v1",
+  "atlases": [
+    {
+      "name": "atlas598",
+      "file": "atlas598.npz",
+      "sha256": "4e1cfc7f699a2ce46bf1bf6661135db0040159057eab012e047265018f94d161",
+      "source_file": "generating_set_3x3_598.pkl",
+      "source_sha256": "7272a9701acca6d807fc6da1326dd4a4b6575673791dd1a3390f740a4a98b266",
+      "source_fields": [
+        "invariants_deg_2",
+        "invariants_deg_3"
+      ],
+      "article_count": 598,
+      "mean_zero_count": 598,
+      "n_vars": 78,
+      "terms": 999288,
+      "degree_counts": {
+        "2": 42,
+        "3": 556
+      },
+      "coefficient_domain": "rational",
+      "conversion": "Exact rational coefficients unchanged.",
+      "maximum_absolute_numerator": 6,
+      "bytes": 1961409
+    },
+    {
+      "name": "polarized302",
+      "file": "polarized302.npz",
+      "sha256": "8e0f87d89f042cb3f50ef589b9019f90a50a4c28c8bf699baeb336f0d421cccf",
+      "source_file": "separating_3x3_dkw.pkl",
+      "source_sha256": "6a07e7497103659c447bfdbef584c3d99fb1a33c68455058bb7b3a475ca3e635",
+      "source_fields": [
+        "polarized_meanzero"
+      ],
+      "article_count": 302,
+      "mean_zero_count": 299,
+      "n_vars": 78,
+      "terms": 544326,
+      "degree_counts": {
+        "2": 40,
+        "3": 259
+      },
+      "coefficient_domain": "rational",
+      "conversion": "Centered integer representatives of residues modulo 998244353.",
+      "maximum_absolute_numerator": 48,
+      "bytes": 1160926
+    },
+    {
+      "name": "polarized1456",
+      "file": "polarized1456.npz",
+      "sha256": "977ac02bc42569f7c78a2a64f2e30eb8dd9fabc562786c61fad32ff3f78fa25c",
+      "source_file": "separating_3x3_singular_polarized.pkl",
+      "source_sha256": "2edf6ca5bc0988f6899370a2f6ece62526c0c99ae8cef9868cf2b22c802251d2",
+      "source_fields": [
+        "polarized_mz"
+      ],
+      "article_count": 1456,
+      "mean_zero_count": 1453,
+      "n_vars": 78,
+      "terms": 15112227,
+      "degree_counts": {
+        "2": 35,
+        "3": 203,
+        "4": 1215
+      },
+      "coefficient_domain": "rational",
+      "conversion": "Centered integer representatives of residues modulo 998244353.",
+      "maximum_absolute_numerator": 30,
+      "bytes": 29305751
+    }
+  ]
+}

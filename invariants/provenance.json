@@ -1,0 +1,98 @@
+{
+  "article": "https://demonstrandom.com/symmetry/posts/computational_invariant_theory/",
+  "source_files": [
+    {
+      "source": "invariants/poly.py",
+      "source_sha256": "0c2efe2d19bb6d233f11e1c6c3b4bf1fd9a38ccb1bf1258a14f0ea6bea111a00",
+      "destination": "poly.py",
+      "prepared_sha256": "bd31f3779b36249c66bb0bffa67a7df1923f6741bc5e330e98ca5c1c3e1d884c"
+    },
+    {
+      "source": "invariants/groebner.py",
+      "source_sha256": "62718583264524fda590e5f95a0f45443e30ab923eff2304006b6225cb1e071e",
+      "destination": "groebner.py",
+      "prepared_sha256": "3f1d853492a09a551519691f3f335d4e01f94d018fcecea0eb911dedd7d4bd5b"
+    },
+    {
+      "source": "invariants/action.py",
+      "source_sha256": "f6eab2d4d149e1ce5b2e643424c33a082fa38007549bbf23fcf98cf1d6c9ca6a",
+      "destination": "action.py",
+      "prepared_sha256": "aa5e840729b1beb16bc2c6e4eb2cc82b98707755c60383e2058efbbb29c9430a"
+    },
+    {
+      "source": "invariants/classical.py",
+      "source_sha256": "ef32ca5494e0d9c2217276fc0b978d4b61d6af3bc68bf255ebc6426a7d6ce78e",
+      "destination": "classical.py",
+      "prepared_sha256": "00c91818397779f544dc63b76bb34c79355bfd1e9995288b12a84c814ae01f99"
+    },
+    {
+      "source": "invariants/orbits.py",
+      "source_sha256": "72439151f97a5fe31b4c1aca3ad7041ef9bfcd97247bd94505f076eed030bc8b",
+      "destination": "orbits.py",
+      "prepared_sha256": "c735f38b2061d8d82319c0b8834abd9c68482fcd8940e02ff51790a508e3a1d9"
+    },
+    {
+      "source": "invariants/spaces.py",
+      "source_sha256": "f0e5805bf323a1561edfabc2e09a8c1f56666ab1808c7215cad99f5ba3df7efc",
+      "destination": "spaces.py",
+      "prepared_sha256": "3bfb01523c197edcb392f1e56af19cecd6431c912dbcbcb21e86e4a4dfeb9dc1"
+    },
+    {
+      "source": "invariants/groups/finite.py",
+      "source_sha256": "23c5363020d4cefa3a46ae05634fcf38edff7b894cd8c81424cb39cab3f42973",
+      "destination": "groups/finite.py",
+      "prepared_sha256": "cb7e09615e56b18ba1fff6fb888a2df7f8415668b382328f64bcf5f5312dbe1a"
+    },
+    {
+      "source": "invariants/groups/torus.py",
+      "source_sha256": "eb0f2de66ff6d1d8dd12078506dd2d57b39a861a4c5c18aae2175a56a8cf4867",
+      "destination": "groups/torus.py",
+      "prepared_sha256": "cbd31af739fdffc73d9ba1393bb41d9c2768629498594c36c5481ce911c47b66"
+    },
+    {
+      "source": "invariants/groups/constructors.py",
+      "source_sha256": "fbb08d560cf409f3fa9f2a975e01a02b852a61c4b02da2819f05fac3be848f81",
+      "destination": "groups/constructors.py",
+      "prepared_sha256": "d1d838ba52d8f02230c654d8919d807c56a5b645a17ef200dfbcc9f641c5892a"
+    },
+    {
+      "source": "invariants/groups/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "destination": "groups/__init__.py",
+      "prepared_sha256": "81b6cc48ae5cf2b40cf95b46c27b8d3d68d0566de06ec551fe8b7b7713f1b1c6"
+    }
+  ],
+  "article_source_sha256": "bb83c4de7c0c81c885a60222bce72edb957ece08d3abe1542fc86da1233a3e06",
+  "corrections": [
+    "Full integer-lattice kernel with exact signed arithmetic.",
+    "Separating candidates retain all basis invariants through the degree cutoff.",
+    "Zero-dimensional parameter criterion and explicit incomplete-search failure.",
+    "Polynomial action restricted to signed-permutation matrices.",
+    "Independent classical graded products; zero and constant handling.",
+    "Elimination outputs use generator variables; syzygies are pairwise Koszul relations only.",
+    "Greedy pair coverage raises when candidates do not distinguish all supplied pairs."
+  ],
+  "files": {
+    "__init__.py": "2f1e21a09be2684d849e42ee95c7152efc9ed92860d01189245878570be0696d",
+    "__main__.py": "ab62a0417a466c16e342c02b0e7ea6f451f6e8889b9085da748836d8cf58a48e",
+    "action.py": "aa5e840729b1beb16bc2c6e4eb2cc82b98707755c60383e2058efbbb29c9430a",
+    "classical.py": "00c91818397779f544dc63b76bb34c79355bfd1e9995288b12a84c814ae01f99",
+    "groebner.py": "3f1d853492a09a551519691f3f335d4e01f94d018fcecea0eb911dedd7d4bd5b",
+    "groups/__init__.py": "81b6cc48ae5cf2b40cf95b46c27b8d3d68d0566de06ec551fe8b7b7713f1b1c6",
+    "groups/constructors.py": "d1d838ba52d8f02230c654d8919d807c56a5b645a17ef200dfbcc9f641c5892a",
+    "groups/finite.py": "cb7e09615e56b18ba1fff6fb888a2df7f8415668b382328f64bcf5f5312dbe1a",
+    "groups/torus.py": "cbd31af739fdffc73d9ba1393bb41d9c2768629498594c36c5481ce911c47b66",
+    "LICENSE": "ffcca38841adb694b6f380647e15f17c446a4d1656fed51a1e2041d064c94cc8",
+    "MANIFEST.in": "dc99272f426b9222c6a916b204103c82b46e7765f7c4bc7895af50f11811ecce",
+    "NOTICE": "94123aa1217668f6286f4bc347ba4de695124748a1d6a1a3f0a254e997262aaf",
+    "orbits.py": "c735f38b2061d8d82319c0b8834abd9c68482fcd8940e02ff51790a508e3a1d9",
+    "poly.py": "bd31f3779b36249c66bb0bffa67a7df1923f6741bc5e330e98ca5c1c3e1d884c",
+    "pyproject.toml": "b9833e1f6489d4fd6ca01cd73a8e114c07af97977049ac029e9a30c6e4bb9c1b",
+    "README.md": "fca2b7ab5990cd0ff912ebbe61e026dd07b726c73e7e30eacfb73d5f29b20ecf",
+    "requirements.txt": "d4202fa85ffb1b29a40b59e02c5fa39f4e78ac0a8bd8769b21556021583c1739",
+    "spaces.py": "3bfb01523c197edcb392f1e56af19cecd6431c912dbcbcb21e86e4a4dfeb9dc1",
+    "test_core.py": "8ae4425bba85c2d8dab2ffa8d4f2951940e93868f391e4164f58e61698b93601",
+    "test_integer_kernel.py": "a8b64d2a355ce28a09e554cbbeb3b884ac0527d585c2179cd261ae5d9af685e2",
+    "test_release_checks.py": "a0b870203a2f2a380b9305492dba7c1da6b82c33e06891c2cfe034492fad1b10"
+  }
+}

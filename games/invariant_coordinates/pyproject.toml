@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "demonstrandom-game-invariant-coordinates"
+version = "0.1.0"
+description = "Experimental invariant coordinates and candidate atlases for normal-form games"
+readme = "README.md"
+license = "PolyForm-Noncommercial-1.0.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24", "sympy>=1.12", "scipy>=1.10"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["games.invariant_coordinates"]
+include-package-data = true
+
+[tool.setuptools.package-dir]
+"games.invariant_coordinates" = "."
+
+[tool.setuptools.package-data]
+"games.invariant_coordinates" = ["README.md", "LICENSE", "NOTICE", "*.json", "requirements.txt", "data/*.npz", "data/*.json"]

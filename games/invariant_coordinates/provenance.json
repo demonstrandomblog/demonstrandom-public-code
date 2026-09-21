@@ -1,0 +1,163 @@
+{
+  "article": "https://demonstrandom.com/symmetry/posts/invariant_coords_normal_form_games_v2/",
+  "article_source_sha256": "ac077d8245d326a9a65bafecf8e2423faed38c75fcf73757dbb5572119242177",
+  "article_blocks": [
+    {
+      "file": "generators_2x2_strategy_only.py",
+      "article_block_sha256": "ca5ff8a8fa625b27c58001fd4550248df9c68ecd6f800e440d7e3ebedc50a512",
+      "prepared_sha256": "3ee27447fa526dff720f2f96f04f86cacede4188011cb9518847facb0e1a4658"
+    },
+    {
+      "file": "generators_2x2_mz.py",
+      "article_block_sha256": "1898c2add6d2d542faad41d60fc23d9614b1b46e244684a321ef084040393184",
+      "prepared_sha256": "35dfc5bf6e63d3f88abf6561f7edd3840d9a2d107c65651ad2fb016209454646"
+    },
+    {
+      "file": "syzygies_exact.py",
+      "article_block_sha256": "79b9d1ec1d83994b010855d66b4265380a33c775194af143511de13738c6a17d",
+      "prepared_sha256": "b30653e8da406f62ceb9d2bb099aa1eaec3422ecdb61b7bdc7fc0b180542f773"
+    },
+    {
+      "file": "scaling.py",
+      "article_block_sha256": "6be8c4b77ba198bbe6ee2328f05e24bc521351c2b6eb97d5f7f6f0f1aa3582f7",
+      "prepared_sha256": "4cb23bc64601f5d11cd80664ab9f800afcc496de3899e62dad6977d05f251939"
+    },
+    {
+      "file": "degree3_mz_strategy_only.py",
+      "article_block_sha256": "8cff27b5a6da0e7a155fd05ae7a9f4d2adede7534852d9295c8152f6b8b95283",
+      "prepared_sha256": "5beeb62f260041d50b092c9e58a4d0c86a770b14d951e5fef4e565e194ba166a"
+    },
+    {
+      "file": "syzygies_strategy_only.py",
+      "article_block_sha256": "26535e32720be10e2d82ffd8275861897d38476e5a782b96c81c30481e73a72d",
+      "prepared_sha256": "c640e67ab707489b2f8a780794767c80bc2df26255dc10edd5873afd8adbc79c"
+    },
+    {
+      "file": "rg_from_invariants.py",
+      "article_block_sha256": "b9087a347e337b65887466c294e1cd669505e9e90a7adf885a4c86021d616858",
+      "prepared_sha256": "61e431be881669e37e28630ddae99e016d997fedddeef07c999d659977a66cab"
+    },
+    {
+      "file": "rg_minimal.py",
+      "article_block_sha256": "23f23fee882edcbc7aa2874141df4678e46d02121dd5dca0761785117b94294a",
+      "prepared_sha256": "bd392b64f8fe0ecb1e988314c944a460d7c60f2b7e63a4177c4561855f14d452"
+    },
+    {
+      "file": "verify_ne_discriminant.py",
+      "article_block_sha256": "6f3bb1f3654ed5963c3c2724f92fd360b2e99047129d5d94ab4334f3f59bc9f7",
+      "prepared_sha256": "05109fcafbbaec6510f57205fd271f0f317870faeb8368f16096da9093d32ee2"
+    },
+    {
+      "file": "ne_disc_3_2_solve.py",
+      "article_block_sha256": "bbc135d92a0e6e8286fcd21f08a44aa6322b382e62df276108d92a7518898c0b",
+      "prepared_sha256": "8dfb9207804ba115e6f5b10359c51fee98c2e64b5025c7226f1399cd233f33b9"
+    },
+    {
+      "file": "ne_disc_degree.py",
+      "article_block_sha256": "abbfeed4aeafd463492153710418847b492661dc81af0712bbc0e28ed12fcaf0",
+      "prepared_sha256": "c88ce1c332bb9d187af41589a8213a7373170dcbb7505a8e134842c684fc3fc6"
+    },
+    {
+      "file": "verify_solvability.py",
+      "article_block_sha256": "8afc472bebc9267b2145adc73fcd852b0614299fe6dec58b8d0b775a560a7b01",
+      "prepared_sha256": "5c4f9b5fba948b416d1613f04b0ca9df6221b6f544ce9398e5a9bc9f4afe1196"
+    },
+    {
+      "file": "molien_3x3_strategy_only.py",
+      "article_block_sha256": "80aa3b331ba018ad0572889c5f87d8389ac07703f344a74c4f7747c867ca3b4e",
+      "prepared_sha256": "9a1feff7b13fed5276245bc323b194e42fd5b2f45a89835857ecc7761557a5d5"
+    },
+    {
+      "file": "contrast_blocks_3x3.py",
+      "article_block_sha256": "7e861588afe649fe092e3d06030bfc0c89f0c7be4fde67718d2305f5601136ea",
+      "prepared_sha256": "f8611ca30dcf885be99209b75e1f37b07cde82f24fcf650d1eb175c834786068"
+    },
+    {
+      "file": "generators_3x3_strategy_only.py",
+      "article_block_sha256": "3c6adceff03f2d30305372795cad4529bbf98b4b74f8be7bad31396638450f48",
+      "prepared_sha256": "76dfedf0082993c5ae11911befb8a3cb3912cac972a184138dabd7a99faaeb97"
+    },
+    {
+      "file": "enumerate_3x3_generators.py",
+      "article_block_sha256": "12c0ae9444145450bd3598ae010fa2da0d6fd94b7e0293acd64d9d1703b57531",
+      "prepared_sha256": "a6bf46e49d4c14d9ec9834c7a856a34a24861cc612efc137e7ba7be02c05f935"
+    },
+    {
+      "file": "atlas_3x3.py",
+      "article_block_sha256": "a4ba50c5de99977e491e237bbea558f817b05477c99bc3f9bae1c4e2d37da216",
+      "prepared_sha256": "6f954f6a9c75f56330bc90ce4c2086c8e518f468abfc65292a3309f3c685f729"
+    },
+    {
+      "file": "classify_3x3.py",
+      "article_block_sha256": "b84c89749136f5e80b8d3823c391139ae6928fe9d38a63768d83da62f1288c24",
+      "prepared_sha256": "77f98920764a5210e021160e252ff18b5943b1794cbe77a518ddb8f11aa3b602"
+    },
+    {
+      "file": "orbit_separation_3x3.py",
+      "article_block_sha256": "c3098fa5b59433f97d77d615d9697d71c1a29fc898d951a599da7a99a7a1a2fd",
+      "prepared_sha256": "7ced4bc6e057b2d1eb26b9f64e8835d55635c8f6f8efa39da006d9956a723d0d"
+    },
+    {
+      "file": "hilbert_separation_3x3.py",
+      "article_block_sha256": "2b94ebdc30f5553cb631f9ed03d0114255642ac7e4085733b19b7c9e3c1fe84e",
+      "prepared_sha256": "5c14d97fbe16583a5a7f1fa6c9bbf0c80ba70c15656792565d8d273d0ad79f58"
+    },
+    {
+      "file": "typology_census_3x3.py",
+      "article_block_sha256": "dc7f6788bd87d8cb9529669a5cdf62163c63350bd57575e08936b1562661c6db",
+      "prepared_sha256": "c9cf4296f04bb8435f12756db7cf96647ecba957efbef172d7ce48c4e4975267"
+    }
+  ],
+  "verification_source": {
+    "source": "invariants/experiments/separation_singular_streaming_n3k3.py",
+    "source_sha256": "913beafaa214bf27e6c702440490d0727c29c5f4cbf9f63038101a0c9dbba220",
+    "destination": "verify_atlases.py",
+    "changes": "Preserve seeds, sample strata, and group convention; load portable numeric data, check every unordered sample pair, use explicit absolute orbit tolerance."
+  },
+  "corrections": [
+    "Relative imports and missing ordinal helper imports.",
+    "Self-contained model/shape documentation and finite-sample qualifiers.",
+    "Positive-degree generator count and complete lower-degree product bookkeeping.",
+    "Fingerprint degrees 2,3,6; zero pair-block determinants; rank sample-size limits.",
+    "Jacobian-at-root scaling distinguished from polynomial discriminant scaling."
+  ],
+  "files": {
+    "__init__.py": "56708c3bb8ac5a3db105d9fb8e539eb3086ae421fb4cf33d409f9723d8570038",
+    "__main__.py": "67b4a2578cbd6a01010e8cbcc33db324a670aee4200fdfc93f93de2b5d21185d",
+    "atlas_3x3.py": "6f954f6a9c75f56330bc90ce4c2086c8e518f468abfc65292a3309f3c685f729",
+    "candidate_atlases.py": "fadd23d6e8f5429e60b7164881f01e6e42020c4115c1ad0bfd9e7106888af9b2",
+    "classify_3x3.py": "77f98920764a5210e021160e252ff18b5943b1794cbe77a518ddb8f11aa3b602",
+    "contrast_blocks_3x3.py": "f8611ca30dcf885be99209b75e1f37b07cde82f24fcf650d1eb175c834786068",
+    "data/atlas598.npz": "4e1cfc7f699a2ce46bf1bf6661135db0040159057eab012e047265018f94d161",
+    "data/manifest.json": "a76bbc8440efbabf5530764d9596f1112f971b97d6d3db9c61d764d52d0d81c1",
+    "data/polarized1456.npz": "977ac02bc42569f7c78a2a64f2e30eb8dd9fabc562786c61fad32ff3f78fa25c",
+    "data/polarized302.npz": "8e0f87d89f042cb3f50ef589b9019f90a50a4c28c8bf699baeb336f0d421cccf",
+    "degree3_mz_strategy_only.py": "5beeb62f260041d50b092c9e58a4d0c86a770b14d951e5fef4e565e194ba166a",
+    "enumerate_3x3_generators.py": "a6bf46e49d4c14d9ec9834c7a856a34a24861cc612efc137e7ba7be02c05f935",
+    "generators_2x2_mz.py": "35dfc5bf6e63d3f88abf6561f7edd3840d9a2d107c65651ad2fb016209454646",
+    "generators_2x2_strategy_only.py": "3ee27447fa526dff720f2f96f04f86cacede4188011cb9518847facb0e1a4658",
+    "generators_3x3_strategy_only.py": "76dfedf0082993c5ae11911befb8a3cb3912cac972a184138dabd7a99faaeb97",
+    "hilbert_separation_3x3.py": "5c14d97fbe16583a5a7f1fa6c9bbf0c80ba70c15656792565d8d273d0ad79f58",
+    "LICENSE": "ffcca38841adb694b6f380647e15f17c446a4d1656fed51a1e2041d064c94cc8",
+    "MANIFEST.in": "6794b789ce626a27a84fd2f741e57e95204a2258496d67afc1451f2de9ab07e0",
+    "molien_3x3_strategy_only.py": "9a1feff7b13fed5276245bc323b194e42fd5b2f45a89835857ecc7761557a5d5",
+    "ne_disc_3_2_solve.py": "8dfb9207804ba115e6f5b10359c51fee98c2e64b5025c7226f1399cd233f33b9",
+    "ne_disc_degree.py": "c88ce1c332bb9d187af41589a8213a7373170dcbb7505a8e134842c684fc3fc6",
+    "NOTICE": "94123aa1217668f6286f4bc347ba4de695124748a1d6a1a3f0a254e997262aaf",
+    "orbit_separation_3x3.py": "7ced4bc6e057b2d1eb26b9f64e8835d55635c8f6f8efa39da006d9956a723d0d",
+    "pyproject.toml": "c80865f0ded2e578e6849a967512ea8f27bf1f455b6c5c1982cfa74f8fff76c0",
+    "README.md": "29658a8f56452a1f401e2f74a4e657fac5063a0c9ebd681f5d89f0a9a672e792",
+    "requirements.txt": "3913b78b98297453c0fe83c9a2a202d5ca110c31e931a3b1ea364760e553e4ee",
+    "rg_from_invariants.py": "61e431be881669e37e28630ddae99e016d997fedddeef07c999d659977a66cab",
+    "rg_minimal.py": "bd392b64f8fe0ecb1e988314c944a460d7c60f2b7e63a4177c4561855f14d452",
+    "scaling.py": "4cb23bc64601f5d11cd80664ab9f800afcc496de3899e62dad6977d05f251939",
+    "syzygies_exact.py": "b30653e8da406f62ceb9d2bb099aa1eaec3422ecdb61b7bdc7fc0b180542f773",
+    "syzygies_strategy_only.py": "c640e67ab707489b2f8a780794767c80bc2df26255dc10edd5873afd8adbc79c",
+    "test_coordinates.py": "d375b34719b7cbf5d8d98d573f6d49b977a1380a654dd83f7541e182040d8072",
+    "typology_census_3x3.py": "c9cf4296f04bb8435f12756db7cf96647ecba957efbef172d7ce48c4e4975267",
+    "verification.json": "879c8fc30d93a382e8c08c19c578a7bcbdd2941899827e990f181a2d5962fb7c",
+    "verify_atlases.py": "64e11146d8af5f8a7ca159e6556a356fd6695fb3cce578771436d1fa17845eff",
+    "verify_ne_discriminant.py": "05109fcafbbaec6510f57205fd271f0f317870faeb8368f16096da9093d32ee2",
+    "verify_solvability.py": "5c4f9b5fba948b416d1613f04b0ca9df6221b6f544ce9398e5a9bc9f4afe1196"
+  }
+}

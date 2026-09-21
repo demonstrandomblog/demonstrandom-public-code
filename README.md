@@ -10,21 +10,21 @@ Educational and experimental code accompanying [Demonstrandom](https://demonstra
 > Passing automated checks does not establish a full human or mathematical
 > review. Independently validate the behavior and results you rely on.
 
-| Component | Scope | Status |
+| Component | Scope | Article |
 |---|---|---|
-| [EGraphs](reasoning/egraphs/) | Union-find, hash-consing, equality examples | Teaching implementation; collision handling and test fixtures corrected |
-| [Selectorate](games/selectorate/) | Model, hierarchy, channels, gradients | Nested hierarchy repaired; independent formula and gradient checks |
-| [Canonicalization](games/canonicalization/) | Ordinal 2x2 game examples | Exact 2x2 orbit enumeration; all 576 strict games verified |
-| [Lie groups and variational integration](games/geometric_controls/) | Rotations, rigid motions, Newton integrator, pendulum and rotor | 85 Lie checks plus 8 independent integrator checks |
-| [Gradient learning](games/gradient_learning/) | Normal-form games and simultaneous policy gradients | Seeded 200-step example; independent payoffs and gradients |
-| [Differential games](games/differential_games/) | State/dynamics simulation and normal-form conversion | Article Stag Hunt matrix and Euler/RK4 refinement checks |
-| [System identification](systems/) | DMD, EDMD, kernel DMD, SINDy, SINDyC | Seven analytic checks and demo pass; Arnoldi unimplemented |
-| [Game control](game_control/) | Engineering Game Types appendix and ten vignettes | Portable mathematical/PID/polynomial checks; human review pending |
-| [Color metric](color_metric/) | Polynomial Killing-field search | Article table reproduced; positive-definite interpolation added |
-| [Inspection bias](inspection_bias/) | Functional-information fitting draft | Four recorded fits and analytic checks reproduced |
-| [Cultural counting](art_and_info/) | Hamming/weighted counting and five overlap figures | Brute-force count checks and article example reproduced |
+| [EGraphs](reasoning/egraphs/) | Union-find, hash-consing, equality examples | [E-Graph Basics](https://demonstrandom.com/reasoning/posts/egraph/index.html) |
+| [Selectorate](games/selectorate/) | Model, hierarchy, channels, gradients | [Thoughts on Selectorate Theory](https://demonstrandom.com/governance/posts/game_theory_dictatorships_selectorate/index.html) |
+| [Canonicalization](games/canonicalization/) | Ordinal 2x2 game examples | [Differentiable Game Canonicalization](https://demonstrandom.com/game_theory/posts/canonical_games/index.html) |
+| [Lie groups and variational integration](games/geometric_controls/) | Rotations, rigid motions, Newton integrator, pendulum and rotor | [Controls from the Geometric Perspective](https://demonstrandom.com/game_theory/posts/discrete_controls_lagrange/index.html); [Noether's Theorem and Geometric Controls](https://demonstrandom.com/game_theory/posts/noether_geometric_controls/) |
+| [Gradient learning](games/gradient_learning/) | Normal-form games and simultaneous policy gradients | [Learning Equilibria by Gradient Descent](https://demonstrandom.com/game_theory/posts/gradient_learning_nash/) |
+| [Differential games](games/differential_games/) | State/dynamics simulation and normal-form conversion | [Differential Games and Stag Hunt](https://demonstrandom.com/game_theory/posts/differential_stag_hunt/) |
+| [System identification](systems/) | DMD, EDMD, kernel DMD, SINDy, SINDyC | [Linear Methods for Learning Dynamical Systems](https://demonstrandom.com/ml/posts/linear_methods_for_dynamical_systems/index.html) |
+| [Game control](game_control/) | Engineering Game Types appendix and ten vignettes | [Engineering Game Types](https://demonstrandom.com/game_theory/posts/engineering_game_types/index.html) |
+| [Color metric](color_metric/) | Polynomial Killing-field search | [Do We See the Same Colors?](https://demonstrandom.com/theory_of_mind/posts/color_qualia_riemannian/index.html) |
+| [Inspection bias](inspection_bias/) | Functional-information fitting draft | [Inspection Bias](https://demonstrandom.com/ml/posts/inspection_bias/index.html) (background) |
+| [Cultural counting](art_and_info/) | Hamming/weighted counting and five overlap figures | [Are We Approaching Cultural Saturation?](https://demonstrandom.com/essays/posts/cultural_saturation/index.html) |
 
-Each component has its own dependency and run instructions. See
+Each component documents its status, dependencies, and run instructions. See
 [VALIDATION.md](VALIDATION.md) for checks and limitations and
 [AI_NOTICE.md](AI_NOTICE.md) for AI assistance and review status.
 [ARTICLE_DIFFERENCES.md](ARTICLE_DIFFERENCES.md) records corrections and article comparisons.

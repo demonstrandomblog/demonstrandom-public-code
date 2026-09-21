@@ -8,6 +8,7 @@ limitations remain applicable; passing these checks is not a correctness proof.
 |---|---|---|
 | Invariant theory | 63 tests pass, including exact rank and lattice-saturation checks, bounded separation, and symbolic relations | Degree bounds and signed-permutation restriction are explicit; Koszul relations are incomplete |
 | Game invariant coordinates | 17 tests and all 21 appendix scripts run; all three candidate atlases pass 216 group images and 630 sample-pair checks | Numerical ranks and finite samples do not certify global generation or separation |
+| Allometry | 3 tests pass; installed CLI plots 573 valid PanTHERIA pairs | Descriptive supplement; no fitted exponent, outlier correction, or validation of a scaling mechanism |
 | EGraphs | 6 tests pass, including a real hash-collision regression | Simple teaching implementation and extractor |
 | Selectorate | Nested-depth, unequal-level, infeasibility, budget, and gradient checks pass | Continued-fraction model; old product-form results superseded |
 | Canonicalizer | All 576 strict games partition into 78 reference orbits without splits/merges; tied examples and returned transformations pass | Exact 2x2 ordinal ID, separate from the soft path |
@@ -20,7 +21,7 @@ limitations remain applicable; passing these checks is not a correctness proof.
 | Inspection bias | 3 checks; direct combinatorial cases and four fitted RMSE values reproduced | Provisional functional-information model |
 | Cultural counting | 6 checks; exact small-space enumerations and 0.84 article example reproduced | Five overlap figures; rounded weights and volume criterion |
 
-The full suite passes **248 pytest tests**, with warnings treated as errors and
+The full suite passes **251 pytest tests**, with warnings treated as errors and
 pytest plugin autoload disabled. Component examples complete, and thirteen
 generated figures were visually inspected.
 
@@ -35,12 +36,12 @@ reproduces those headers as well.
 
 Run from the repository root in your Python environment. Install the dependencies
 for the components you need, as described in each component's README. To check
-all thirteen:
+all fourteen:
 
 ```sh
 python -m pip install -r games/selectorate/requirements.txt -r games/canonicalization/requirements.txt -r games/geometric_controls/requirements.txt -r systems/requirements.txt -r color_metric/requirements.txt -r inspection_bias/requirements.txt -r art_and_info/requirements.txt -r games/gradient_learning/requirements.txt -r games/differential_games/requirements.txt
-python -m pip install './game_control[polynomial]' './invariants[test]' './games/invariant_coordinates[test]'
-python -m pytest -q reasoning/egraphs/union_find.py reasoning/egraphs/hashcons.py reasoning/egraphs/e_graphs.py games/selectorate games/canonicalization games/geometric_controls systems color_metric inspection_bias art_and_info games/gradient_learning games/differential_games invariants games/invariant_coordinates
+python -m pip install './game_control[polynomial]' './invariants[test]' './games/invariant_coordinates[test]' './allometry[test]'
+python -m pytest -q reasoning/egraphs/union_find.py reasoning/egraphs/hashcons.py reasoning/egraphs/e_graphs.py games/selectorate games/canonicalization games/geometric_controls systems color_metric inspection_bias art_and_info games/gradient_learning games/differential_games invariants games/invariant_coordinates allometry
 python -m games.canonicalization.test_games
 python systems/data_driven_systems.py
 python game_control/verify.py
@@ -64,7 +65,7 @@ hashes are recorded in [SOURCE_PROVENANCE.json](SOURCE_PROVENANCE.json).
 
 ## Validated environment
 
-The full 248-test suite used Python 3.13.5 in WSL, NumPy 2.3.3, SciPy 1.16.1,
+The full 251-test suite used Python 3.13.5 in WSL, NumPy 2.3.3, SciPy 1.16.1,
 PyTorch 2.7.1+cu126, torchsort 0.1.10, and SymPy 1.14.0, on CPU. GPU behavior
 was not tested.
 
@@ -108,7 +109,7 @@ examples pass. The distributions include required license notices and the
 game companion includes all three numeric atlas files.
 
 That fresh environment used Python 3.13.5, NumPy 2.5.3, SciPy 1.18.1,
-SymPy 1.14.0, and pytest 9.1.1 on CPU. The full 248-test suite also passes
+SymPy 1.14.0, and pytest 9.1.1 on CPU. The full 251-test suite also passes
 in the previously recorded scientific environment, with warnings as errors.
 
 The integer-kernel tests include negative weights, dependent and empty
@@ -126,3 +127,19 @@ records all 216 images of one game and every one of the 630 pairs in a seeded
 36-game sample for each of three atlases. All three show zero false merges;
 relative invariance errors are below 2.2e-14. This reproduces the finite
 experiment and does not certify global separation.
+
+## Allometry helper
+
+The allometry wheel and source distribution contain code and documentation.
+A fresh environment passes all three installed-package tests, the command-line
+help, and a run against a separately downloaded official PanTHERIA WR05 table.
+That run produces 573 positive finite mass/rate pairs. The generated plots and
+the external dataset are not distributed.
+
+Checks verify the mL O2/hour units, grams-to-kilograms conversion, invalid-data
+filtering, required columns, matched metabolic-study mass, and the explicit
+general-adult-mass option. No fallback substitutes adult mass for missing
+study mass. A local diagnostic plot was visually inspected.
+
+The isolated installation used Python 3.13.5, NumPy 2.5.3, Matplotlib 3.11.2,
+and pytest 9.1.1 on CPU.

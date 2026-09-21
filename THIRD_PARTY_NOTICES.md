@@ -34,6 +34,14 @@ does not grant rights to copy their code, text, artwork, or data.
 - Inspection bias: [Hazen-Wong Table 1 notice](inspection_bias/DATA_NOTICE.md),
   with attribution, source link, transcription details, and CC BY-NC 4.0 terms.
 
+## External datasets
+
+The [allometry helper](allometry/) accepts a separately downloaded
+[PanTHERIA dataset](https://esapubs.org/archive/ecol/E090/184/).
+The dataset is not distributed here. Its metadata provides the data authors,
+field definitions, and requested citation. The repository code license does
+not apply to that external dataset.
+
 ## Adding or distributing third-party material
 
 For any copied or adapted third-party code, include its upstream source,

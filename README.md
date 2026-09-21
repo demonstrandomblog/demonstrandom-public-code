@@ -13,6 +13,7 @@ Educational and experimental code accompanying [Demonstrandom](https://demonstra
 |---|---|---|
 | [Invariant theory](invariants/) | Sparse rational polynomials, integer kernels, bounded generators and orbit diagnostics | [Building a Minimal Computational Invariant Theory Library](https://demonstrandom.com/symmetry/posts/computational_invariant_theory/) |
 | [Game invariant coordinates](games/invariant_coordinates/) | 2x2 and three-player game examples, contrast blocks, and three candidate atlases | [Invariant Coordinates for Normal-Form Games](https://demonstrandom.com/symmetry/posts/invariant_coords_normal_form_games_v2/) |
+| [Allometry](allometry/) | PanTHERIA mass and oxygen-consumption plotting helper | [Algebra and Allometry](https://demonstrandom.com/symmetry/posts/allometry/) (supplementary example) |
 | [EGraphs](reasoning/egraphs/) | Union-find, hash-consing, equality examples | [E-Graph Basics](https://demonstrandom.com/reasoning/posts/egraph/index.html) |
 | [Selectorate](games/selectorate/) | Model, hierarchy, channels, gradients | [Thoughts on Selectorate Theory](https://demonstrandom.com/governance/posts/game_theory_dictatorships_selectorate/index.html) |
 | [Canonicalization](games/canonicalization/) | Ordinal 2x2 game examples | [Differentiable Game Canonicalization](https://demonstrandom.com/game_theory/posts/canonical_games/index.html) |

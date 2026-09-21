@@ -1,0 +1,48 @@
+{
+  "article": "https://demonstrandom.com/symmetry/posts/allometry/",
+  "relationship": "Supplementary PanTHERIA data example for the scaling discussion.",
+  "article_source_sha256": "b645da93a238f8e49207e027f2a2a5075c6a7f634238bc016823644ca8e2e86a",
+  "source_files": [
+    {
+      "source": "allometry/__init__.py",
+      "source_sha256": "23f2ea1f8b2d18182b013081e74aaa7f4b6a9241b3f3ccfae30a80ab6a91dcc4",
+      "destination": "__init__.py",
+      "prepared_sha256": "86cceab02fdb9dcd6d2eb189c3ad1fbcc6bf1c8c0d39f795146a6789aee85d49"
+    },
+    {
+      "source": "allometry/allometry.py",
+      "source_sha256": "48b60cd69ee6d61fb9db6e2fac5446d006955923b3f3b3c4f456ce5a92cadce8",
+      "destination": "allometry.py",
+      "prepared_sha256": "ad753ad7fd9f8c675c0343dfbf559f357aa9bf3f37f1e64d8d4356970be479b9"
+    },
+    {
+      "source": "allometry/test_allometry.py",
+      "source_sha256": "b6fac732b303eb9a5feb2e1804077d70c8b282bc5a8f6535b7e93b54daf6fbfd",
+      "destination": "test_allometry.py",
+      "prepared_sha256": "cd55f4586ac152ff608e65ba991c1d35028e89fcba67a5c08ae8c051e02725c3"
+    }
+  ],
+  "prototype_revision": "929766b476d2d8a1f7289c01251f426644630764",
+  "corrections": [
+    "Keep oxygen-consumption units in mL O2/hour; convert only grams to kilograms.",
+    "Use metabolic-study mass by default, with an explicit general-adult-mass option.",
+    "Read a local TSV and reject missing, nonfinite, or nonpositive pairs."
+  ],
+  "external_data": {
+    "source": "https://esapubs.org/archive/ecol/E090/184/",
+    "metadata": "https://esapubs.org/archive/ecol/E090/184/metadata.htm",
+    "distributed": false
+  },
+  "files": {
+    ".gitignore": "8ec72a567e0cbbfca624d655d950070ae5640261377305ac414364d9ce55d1c5",
+    "__init__.py": "86cceab02fdb9dcd6d2eb189c3ad1fbcc6bf1c8c0d39f795146a6789aee85d49",
+    "allometry.py": "ad753ad7fd9f8c675c0343dfbf559f357aa9bf3f37f1e64d8d4356970be479b9",
+    "LICENSE": "ffcca38841adb694b6f380647e15f17c446a4d1656fed51a1e2041d064c94cc8",
+    "MANIFEST.in": "a4834aa3b0349ea3540498ba1eca0307114f09ae694d1abf3639e3e3527685b9",
+    "NOTICE": "94123aa1217668f6286f4bc347ba4de695124748a1d6a1a3f0a254e997262aaf",
+    "pyproject.toml": "8987566ecd5b5aac1a14e32edc8d5121ae9be2a3cad2901d3c64474d3ec98ffc",
+    "README.md": "9a6e4b24845a0029a49efc3f6d21b07837766d9c9d47ffd0819da406a0ccb932",
+    "requirements.txt": "632938dad94f057903cb9517a2c610c983966e68d68b4ade87ae5e38dc07fa3c",
+    "test_allometry.py": "cd55f4586ac152ff608e65ba991c1d35028e89fcba67a5c08ae8c051e02725c3"
+  }
+}

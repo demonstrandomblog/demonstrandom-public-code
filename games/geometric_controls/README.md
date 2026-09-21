@@ -1,4 +1,4 @@
-# Lie groups
+# Lie groups and variational integration
 
 Code accompanying [Demonstrandom](https://demonstrandom.com/game_theory/posts/discrete_controls_lagrange/index.html).
 
@@ -16,6 +16,7 @@ Python environment:
 ```sh
 python -m pip install -r games/geometric_controls/requirements.txt
 python -m pytest -q games/geometric_controls
+python -m games.geometric_controls.variational_example --output-dir outputs/variational
 ```
 
 ## Scope and known limitations
@@ -26,3 +27,38 @@ See [validation report](../../VALIDATION.md) for the exact checks and their resu
 Dependencies retain their own licenses. The original project code is covered
 by [PolyForm Noncommercial 1.0.0](../../LICENSE); preserve [NOTICE](../../NOTICE).
 For citation details see [CITATION.cff](../../CITATION.cff).
+
+## Basic variational integrator
+
+`discrete_control_lagrange.py` accompanies the basic integrator in
+[Controls from the Geometric Perspective](https://demonstrandom.com/game_theory/posts/discrete_controls_lagrange/index.html)
+and the free-rotor charge in
+[Noether's Theorem and Geometric Controls](https://demonstrandom.com/game_theory/posts/noether_geometric_controls/).
+It uses this repository's repaired Lie primitives, midpoint discrete Lagrangians,
+autograd derivatives, and Newton steps for the discrete Euler-Lagrange equation.
+
+```python
+import torch
+from games.geometric_controls.discrete_control_lagrange import FreeRotor, VariationalIntegrator
+
+rotor = FreeRotor({"mass": 1.0, "length": 1.0})
+solver = VariationalIntegrator(rotor, step_size=0.01)
+q_next, success = solver.step(torch.tensor([0.20], dtype=torch.float64),
+                             torch.tensor([0.21], dtype=torch.float64))
+assert success  # q_next is 0.22
+```
+
+Use float64 for the default `1e-10` Newton tolerance. `step()` returns a detached
+position and a boolean determined by the final equation residual. A small Newton
+step alone no longer counts as convergence. Linear solve failures still raise.
+Eight tests cover analytic rotor motion/momentum, second-order pendulum refinement,
+zero-iteration failure, small-step false success, and invalid step sizes.
+
+The CLI saves pendulum and rotor angle plots, using 500 positions at `h=0.01`
+by default. `--steps 10000 --step-size 0.001` restores the article-scale run.
+It retains the article's first-order initialization `q1=q0+h*v0`; the convergence
+test uses an independently accurate q1 to isolate integration error. Reported
+energy uses the article's backward-difference velocity estimate.
+The Noether charge retains the article's finite-difference generator with epsilon
+equal to the solver tolerance; the tested rotor charge error is below `1e-5`.
+The separate time-aware integrator is outside this release.

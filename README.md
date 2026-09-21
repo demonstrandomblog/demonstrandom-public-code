@@ -17,7 +17,9 @@ Educational and experimental code accompanying [Demonstrandom](https://demonstra
 | [EGraphs](reasoning/egraphs/) | Union-find, hash-consing, equality examples | Teaching implementation; collision handling and test fixtures corrected |
 | [Selectorate](games/selectorate/) | Model, hierarchy, channels, gradients | Nested hierarchy repaired; independent formula and gradient checks |
 | [Canonicalization](games/canonicalization/) | Ordinal 2x2 game examples | Exact 2x2 orbit enumeration; all 576 strict games verified |
-| [Lie groups](games/geometric_controls/) | Rotations, rigid motions, trainable layers | Repaired operations; 85 checks pass within the documented scope |
+| [Lie groups and variational integration](games/geometric_controls/) | Rotations, rigid motions, Newton integrator, pendulum and rotor | 85 Lie checks plus 8 independent integrator checks |
+| [Gradient learning](games/gradient_learning/) | Normal-form games and simultaneous policy gradients | Seeded 200-step example; independent payoffs and gradients |
+| [Differential games](games/differential_games/) | State/dynamics simulation and normal-form conversion | Article Stag Hunt matrix and Euler/RK4 refinement checks |
 | [System identification](systems/) | DMD, EDMD, kernel DMD, SINDy, SINDyC | Seven analytic checks and demo pass; Arnoldi unimplemented |
 | [Game control](game_control/) | Engineering Game Types appendix and ten vignettes | Portable mathematical/PID/polynomial checks; human review pending |
 | [Color metric](color_metric/) | Polynomial Killing-field search | Article table reproduced; positive-definite interpolation added |

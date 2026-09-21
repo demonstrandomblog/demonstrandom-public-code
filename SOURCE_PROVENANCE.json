@@ -1,5 +1,5 @@
 {
-  "status": "Source recovery and prepared-file records for the nine-component distribution; not a complete historical authorship review.",
+  "status": "Source recovery and prepared-file records for the eleven-component distribution; not a complete historical authorship review.",
   "recovered_components": [
     {
       "source": "analysis/public-code-comment-review-20260920/candidates/games/selectorate/selectorate.py",
@@ -124,6 +124,38 @@
       "source_sha256": "09acb6a03b73eb8346274ad99f884d3f5507208dac065f77b7757550fd300cad",
       "prepared_sha256": "fecd63bba87a053aa0ee9de887c227fccf07cb9c50839606affe8bd4b4c92577",
       "changes": "Functions extracted and parameterized; article-component reproduction retained; log-Euclidean interpolation added. Data and its upstream notice are separate."
+    },
+    {
+      "source": "analysis/post-code-inventory-20260920/branch-sources/research-checkpoint-2026-08-02/games/games/games.py",
+      "destination": "games/gradient_learning/core.py",
+      "source_sha256": "344e2ddea2b71948464af36c8971803746a1d147589ff42558fa31f5120063ec",
+      "prepared_sha256": "e2d3e7442ac992fdd5d0497b529dec410755143c7addc34a33aaba9958f044b4",
+      "changes": "Published action-only policies; excluded observation-policy extension; removed unused dependencies. Clone preserves requires_grad as in recovered source.",
+      "source_revision": "19d1371"
+    },
+    {
+      "source": "analysis/post-code-inventory-20260920/branch-sources/research-checkpoint-2026-08-02/games/geometric_controls/discrete_control_lagrange.py",
+      "destination": "games/geometric_controls/discrete_control_lagrange.py",
+      "source_sha256": "03b2aeb45fb4c922d20f62dbb49d05419f97be49744282c74fa22ffb1ab1fac3",
+      "prepared_sha256": "fa14684a62962c5ecc929dbb55b8d4720bd799ef2a5f7458016fdc8d6461f423",
+      "changes": "Package-relative repaired Lie dependency; final equation residual determines success; validate step/tolerance/iteration bounds; move long interactive demo to bounded CLI; remove unrelated brainstorming and dead snippets.",
+      "source_revision": "19d1371"
+    },
+    {
+      "source": "analysis/post-code-inventory-20260920/branch-sources/research-checkpoint-2026-08-02/games/games/diffl_games3.py",
+      "destination": "games/differential_games/core.py",
+      "source_sha256": "5c811ba15d51507a710289a0eb21b69f9a7b14b1282894cdaf852f5d6c2b1e05",
+      "prepared_sha256": "f82afc4e6c88fa22a7a6c8c4348c0c518d87d717815970bb5a96a509ecefb5e4",
+      "changes": "Exclude unfinished CollisionConstraint; validate finite simulation bounds and positive dt/sample counts; retain fixed-step end-time convention; correct snapshot copy description; move demo to CLI.",
+      "source_revision": "19d1371"
+    },
+    {
+      "source": "analysis/post-code-inventory-20260920/branch-sources/research-checkpoint-2026-08-02/games/games/games.py",
+      "source_revision": "19d1371",
+      "destination": "games/gradient_learning/__main__.py",
+      "source_sha256": "344e2ddea2b71948464af36c8971803746a1d147589ff42558fa31f5120063ec",
+      "prepared_sha256": "3b32339bf1113beebafe876a96a0fff0414cd31e0efa193198c602bbd998c0d8",
+      "changes": "Recovered 200-step simultaneous-gradient example; deterministic seed; corrected matrix-axis comments; CLI wrapper."
     }
   ],
   "egraphs": "Current public-main teaching examples with explicitly documented collision/test cleanup.",
